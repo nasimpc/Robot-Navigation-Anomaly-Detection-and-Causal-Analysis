@@ -27,7 +27,7 @@ You are also encouraged to explore additional resources and blogs for a deeper u
 > The framework considers several kinds of variations in simulated scenarios, such as:
 > 1. Differences in map structures and layouts
 > 2. Location and size of obstacles
-> 3. Variations or disturbances in sensor data
+> 3. Variations or disturbances in sensor data and its drop rate
 > 4. Changes in starting and goal positions, including varying waypoints
 > 
 > I have collected a substantial dataset from multiple simulated TurtleBot runs that cover these kinds of variations. The dataset includes scenario-related information and various logs recorded during each run.
@@ -48,7 +48,7 @@ You are also encouraged to explore additional resources and blogs for a deeper u
 ### Task
 
 1. **Prepare protocol for follow-up questions:** 
-    - Read Samuel’s email carefully to identify the main problem, goals, and possible open questions
+    - Understand the dataset and Samuel’s email carefully to identify the main problem, goals, and possible open questions
     - Refer to [2], [3], and [4] for guidance on structuring interview questions for requirements elicitation
     - Prepare a document with a set of targeted questions (technical, organizational, and data-related)
     - Define a clear protocol for collecting the desired information. Specify the format of questions, interview structure, and how responses will be documented
@@ -62,6 +62,8 @@ You are also encouraged to explore additional resources and blogs for a deeper u
     - For guidance on writing effective requirements, please review [8], [9], and [10] in the *Resources* section, which present different approaches. You are free to choose an appropriate format for expressing the requirements. Examples include **User Stories** [5], **Behaviour-Driven Development (BDD)** [6], **EARS** [10], or a hybrid of these approaches 
     - In future assignments, you will extend these with **clear acceptance criteria** for each requirement
     - Note that you may revise and refine these requirements after receiving answers to your follow-up questions
+
+Download the sample dataset from this [link](https://nc.uni-bremen.de/index.php/s/jK2f2ceNWgLRazK). The complete dataset will be provided to you in the next assignment.
 
 ---
 
