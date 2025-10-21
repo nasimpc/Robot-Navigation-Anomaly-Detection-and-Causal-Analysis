@@ -87,8 +87,9 @@ Download the sample dataset from this [link](https://nc.uni-bremen.de/index.php/
       - Reasoning for data preprocessing, correctness, meta-data extraction and readability of code (25 Points)
       - Relevance and quality of visualizations (15 Points)
 
-**Note**: Submit all files and folders in the same folder level where *task.md* is located by 08:00 AM on October 29, 2025.
-
+**Note**:  
+- Submit all files and folders in the same folder level where *task.md* is located by 08:00 AM on October 29, 2025  
+- **Presenting your assignment** during the tutorial session scheduled after the deadline is mandatory to to receive a grade for the assignment. Otherwise, the submission will not be graded     
 ---
 
 ### Resources
