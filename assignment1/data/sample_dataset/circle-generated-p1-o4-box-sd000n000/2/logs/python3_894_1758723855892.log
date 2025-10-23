@@ -1,0 +1,21 @@
+[INFO] [1758723855.904058638] [rosbag2_recorder]: Press SPACE for pausing/resuming
+[INFO] [1758723855.915747343] [rosbag2_recorder]: Listening for topics...
+[INFO] [1758723855.915787523] [rosbag2_recorder]: Event publisher thread: Starting
+[INFO] [1758723855.916020333] [rosbag2_recorder]: Recording...
+[INFO] [1758723855.916086483] [rosbag2_recorder]: use_sim_time set, waiting for /clock before starting recording...
+[INFO] [1758723855.916159613] [rosbag2_recorder]: Sim time /clock found, starting recording.
+[INFO] [1758723855.923787080] [rosbag2_recorder]: Subscribed to topic '/amcl_pose'
+[INFO] [1758723855.925766040] [rosbag2_recorder]: Subscribed to topic '/map'
+[INFO] [1758723855.926897719] [rosbag2_recorder]: Subscribed to topic '/system/cpu_usage'
+[INFO] [1758723855.927719609] [rosbag2_recorder]: Subscribed to topic '/gazebo/real_time_factor'
+[INFO] [1758723855.933396907] [rosbag2_recorder]: Subscribed to topic '/scenario_execution/snapshots'
+[INFO] [1758723855.935556186] [rosbag2_recorder]: Subscribed to topic '/scenario_status'
+[INFO] [1758723855.945149612] [rosbag2_recorder]: Subscribed to topic '/tf'
+[INFO] [1758723855.947814911] [rosbag2_recorder]: Subscribed to topic '/system/memory_usage'
+[INFO] [1758723855.949354461] [rosbag2_recorder]: Subscribed to topic '/tf_static'
+[INFO] [1758723856.055062670] [rosbag2_recorder]: Subscribed to topic '/local_costmap/costmap'
+[INFO] [1758723856.155247832] [rosbag2_recorder]: All requested topics are subscribed. Stopping discovery...
+[INFO] [1758723943.999509741] [rosbag2_recorder]: Pausing recording.
+[INFO] [1758723943.999566761] [rosbag2_cpp]: Writing remaining messages from cache to the bag. It may take a while
+[INFO] [1758723944.006086689] [rosbag2_recorder]: Event publisher thread: Exiting
+[INFO] [1758723944.006272679] [rosbag2_recorder]: Recording stopped

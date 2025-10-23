@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite errors="0" failures="1" name="scenario_execution" tests="1" time="13.288812">
+  <testcase classname="tests.scenario" name="nav_scenario" time="13.288812">
+    <failure message="execution failed.">-^- nav_scenario [✕] -- child finished before timeout triggered
+    {-} nav_scenario [✕]
+        /_/ parallel [✕]
+            --&gt; capture_screen [-] -- Capturing screen...
+            {-} serial [✕]
+                --&gt; floorplan_generator.generate_gazebo_world
+                --&gt; ros_launch
+                --&gt; wait_for_sim
+                /_/ parallel [✕]
+                    -^- repeat [-] -- running [status: 7 success from -1]
+                        {-} serial [-]
+                            --&gt; wait 1s [-] -- still running
+                            --&gt; check_process_running
+                    {-} serial [✕]
+                        {-} spawn_multiple
+                            --&gt; spawn_multiple
+                            --&gt; spawn_multiple
+                            --&gt; spawn_multiple
+                            --&gt; spawn_multiple
+                        --&gt; differential_drive_robot.init_nav2
+                        --&gt; bag_record
+                        --&gt; differential_drive_robot.nav_through_poses [✕] -- Goal aborted.
+                        --&gt; emit end
+</failure>
+  </testcase>
+</testsuite>

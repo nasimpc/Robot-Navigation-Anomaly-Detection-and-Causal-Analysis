@@ -1,0 +1,12 @@
+[INFO] [1758704853.336837110] [sys_stats_publisher]: System Stats Publisher node started
+[INFO] [1758704854.418374614] [sys_stats_publisher]: Published stats - CPU: 43.60%, Memory: 22.10%
+[INFO] [1758704855.417209603] [sys_stats_publisher]: Published stats - CPU: 65.20%, Memory: 23.20%
+[INFO] [1758704856.417558653] [sys_stats_publisher]: Published stats - CPU: 64.50%, Memory: 25.00%
+[INFO] [1758704857.417187693] [sys_stats_publisher]: Published stats - CPU: 62.30%, Memory: 26.00%
+[INFO] [1758704858.416676522] [sys_stats_publisher]: Published stats - CPU: 52.60%, Memory: 26.30%
+[INFO] [1758704859.417468082] [sys_stats_publisher]: Published stats - CPU: 55.40%, Memory: 26.90%
+[INFO] [1758704860.418006131] [sys_stats_publisher]: Published stats - CPU: 67.70%, Memory: 26.90%
+[INFO] [1758704861.417287071] [sys_stats_publisher]: Published stats - CPU: 54.50%, Memory: 27.20%
+[INFO] [1758704862.417438290] [sys_stats_publisher]: Published stats - CPU: 75.00%, Memory: 27.60%
+[INFO] [1758704863.416690279] [sys_stats_publisher]: Published stats - CPU: 72.80%, Memory: 27.80%
+[INFO] [1758704864.417822928] [sys_stats_publisher]: Published stats - CPU: 77.10%, Memory: 28.30%

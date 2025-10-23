@@ -1,0 +1,5 @@
+[INFO] [1758736509.714622666] [static_camera_transform]: Spinning until stopped - publishing transform
+translation: ('3.050000', '0.000000', '19.706573')
+rotation: ('-0.499602', '0.500000', '0.500000', '0.500398')
+from '/map' to 'static_camera'
+[INFO] [1758736521.713350877] [rclcpp]: signal_handler(signum=2)

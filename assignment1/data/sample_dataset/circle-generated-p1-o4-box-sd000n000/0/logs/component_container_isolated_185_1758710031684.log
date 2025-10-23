@@ -1,0 +1,433 @@
+[INFO] [1758710031.791418233] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1758710031.889966146] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1758710031.890037836] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1758710031.909549527] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710031.942662818] [controller_server]: Creating controller server
+[INFO] [1758710031.995306880] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710031.996963910] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1758710032.001306930] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1758710032.027253591] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1758710032.027368411] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1758710032.027385211] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1758710032.027394471] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1758710032.042118262] [map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.042317942] [map_server]: Creating
+[INFO] [1758710032.043943432] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1758710032.047933792] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1758710032.047983592] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1758710032.091978124] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.094029414] [amcl]: Creating
+[INFO] [1758710032.098873024] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1758710032.102274514] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1758710032.102313244] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1758710032.126382025] [smoother_server]: 
+	smoother_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.134255665] [smoother_server]: Creating smoother server
+[INFO] [1758710032.135560186] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1758710032.137584956] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758710032.137617266] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758710032.146513636] [lifecycle_manager_localization]: Creating
+[INFO] [1758710032.154285476] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1758710032.154756736] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1758710032.156934056] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1758710032.156958846] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1758710032.161768767] [lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1758710032.161810047] [lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1758710032.162071537] [map_server]: Configuring
+[INFO] [1758710032.188681318] [map_io]: Loading yaml file: /config/maps/circle.yaml
+[INFO] [1758710032.189358028] [map_io]: resolution: 0.05
+[INFO] [1758710032.189378898] [map_io]: origin[0]: -1.77
+[INFO] [1758710032.189383518] [map_io]: origin[1]: -1.49
+[INFO] [1758710032.189387428] [map_io]: origin[2]: 0
+[INFO] [1758710032.189391198] [map_io]: free_thresh: 0.196
+[INFO] [1758710032.189395338] [map_io]: occupied_thresh: 0.65
+[INFO] [1758710032.189403888] [map_io]: mode: trinary
+[INFO] [1758710032.189409568] [map_io]: negate: 0
+[INFO] [1758710032.189789368] [map_io]: Loading image_file: /config/maps/circle.pgm
+[INFO] [1758710032.192904318] [map_io]: Read map /config/maps/circle.pgm: 291 X 291 map @ 0.05 m/cell
+[INFO] [1758710032.198016818] [lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1758710032.198311488] [amcl]: Configuring
+[INFO] [1758710032.198550848] [amcl]: initTransforms
+[INFO] [1758710032.210464338] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.215801579] [amcl]: initPubSub
+[INFO] [1758710032.225616629] [planner_server]: Creating
+[INFO] [1758710032.228242869] [amcl]: Subscribed to map topic.
+[INFO] [1758710032.236585239] [lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1758710032.236784879] [map_server]: Activating
+[INFO] [1758710032.236925159] [map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1758710032.237039849] [amcl]: Received a 291 X 291 map @ 0.050 m/pix
+[INFO] [1758710032.247438830] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.249971840] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1758710032.257900470] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libbehavior_server_core.so
+[INFO] [1758710032.259412600] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1758710032.259446650] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1758710032.293109632] [behavior_server]: 
+	behavior_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.304225352] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libbt_navigator_core.so
+[INFO] [1758710032.305496062] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[INFO] [1758710032.305532542] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[INFO] [1758710032.323316013] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.330431853] [bt_navigator]: Creating
+[INFO] [1758710032.339571223] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libwaypoint_follower_core.so
+[INFO] [1758710032.342605283] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[INFO] [1758710032.342656693] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[INFO] [1758710032.351169124] [lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1758710032.351309074] [lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1758710032.352163424] [amcl]: Activating
+[INFO] [1758710032.352294644] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1758710032.358382814] [waypoint_follower]: 
+	waypoint_follower lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.362056234] [waypoint_follower]: Creating
+[INFO] [1758710032.393736155] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libvelocity_smoother_core.so
+[INFO] [1758710032.395313005] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[INFO] [1758710032.395331715] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[INFO] [1758710032.406210796] [velocity_smoother]: 
+	velocity_smoother lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.409842096] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libcollision_monitor_core.so
+[INFO] [1758710032.416246226] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[INFO] [1758710032.416338686] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[INFO] [1758710032.428225167] [collision_monitor]: 
+	collision_monitor lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.435210107] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libopennav_docking_core.so
+[INFO] [1758710032.439196467] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<opennav_docking::DockingServer>
+[INFO] [1758710032.439242557] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<opennav_docking::DockingServer>
+[INFO] [1758710032.448801607] [docking_server]: 
+	docking_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758710032.448965137] [docking_server]: Creating docking_server
+[INFO] [1758710032.456606878] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758710032.456660318] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758710032.458211658] [lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1758710032.458297328] [lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1758710032.458339678] [lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1758710032.492235709] [lifecycle_manager_navigation]: Creating
+[INFO] [1758710032.494519729] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1758710032.501784459] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1758710032.501831339] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[INFO] [1758710032.501973689] [controller_server]: Configuring controller interface
+[INFO] [1758710032.502010149] [controller_server]: getting progress checker plugins..
+[INFO] [1758710032.502320999] [controller_server]: getting goal checker plugins..
+[INFO] [1758710032.502450999] [controller_server]: Controller frequency set to 20.0000Hz
+[INFO] [1758710032.502571859] [local_costmap.local_costmap]: Configuring
+[INFO] [1758710032.505990600] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[INFO] [1758710032.510080940] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1758710032.513893140] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[INFO] [1758710032.513935130] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1758710032.527765450] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1758710032.540895331] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1758710032.541518581] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[INFO] [1758710032.542659171] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758710032.543269181] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758710032.545603401] [controller_server]: Created controller : FollowPath of type nav2_mppi_controller::MPPIController
+[INFO] [1758710032.549260311] [controller_server]: Controller period is equal to model dt. Control sequence shifting is ON
+[INFO] [1758710032.555326861] [controller_server]: ConstraintCritic instantiated with 1 power and 4.000000 weight.
+[INFO] [1758710032.555371601] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
+[INFO] [1758710032.559845862] [controller_server]: InflationCostCritic instantiated with 1 power and 300.000000 / 0.015000 weights. Critic will collision check based on circular cost.
+[INFO] [1758710032.559919222] [controller_server]: Critic loaded : mppi::critics::CostCritic
+[INFO] [1758710032.560779842] [controller_server]: GoalCritic instantiated with 1 power and 5.000000 weight.
+[INFO] [1758710032.560819642] [controller_server]: Critic loaded : mppi::critics::GoalCritic
+[INFO] [1758710032.561500812] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.500000 angular threshold.
+[INFO] [1758710032.561523472] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
+[INFO] [1758710032.564109752] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 14.000000 weight
+[INFO] [1758710032.564157162] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
+[INFO] [1758710032.565004832] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
+[INFO] [1758710032.566630682] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Mode set to: Forward Preference
+[INFO] [1758710032.566673122] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
+[INFO] [1758710032.567176532] [controller_server]: PreferForwardCritic instantiated with 1 power and 5.000000 weight.
+[INFO] [1758710032.567212502] [controller_server]: Critic loaded : mppi::critics::PreferForwardCritic
+[INFO] [1758710032.572553172] [controller_server]: Optimizer reset
+[INFO] [1758710032.578891922] [MPPIController]: Configured MPPI Controller: FollowPath
+[INFO] [1758710032.578921042] [controller_server]: Controller Server has FollowPath  controllers available.
+[INFO] [1758710032.588512633] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[INFO] [1758710032.589203223] [smoother_server]: Configuring smoother server
+[INFO] [1758710032.599237533] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[INFO] [1758710032.600169483] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[INFO] [1758710032.604456323] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[INFO] [1758710032.604584753] [planner_server]: Configuring
+[INFO] [1758710032.604638713] [global_costmap.global_costmap]: Configuring
+[INFO] [1758710032.608727193] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1758710032.611998564] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[INFO] [1758710032.612841114] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1758710032.612866294] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1758710032.615964704] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1758710032.620959664] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1758710032.620984834] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1758710032.622070214] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1758710032.630957004] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 291 X 291 at 0.050000 m/pix
+[INFO] [1758710032.633182324] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner::NavfnPlanner
+[INFO] [1758710032.633234184] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[INFO] [1758710032.635101954] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1758710032.640084125] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[INFO] [1758710032.640467115] [behavior_server]: Configuring
+[INFO] [1758710032.646945135] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[INFO] [1758710032.650520615] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors::BackUp
+[INFO] [1758710032.652614295] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[INFO] [1758710032.657517195] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors::AssistedTeleop
+[INFO] [1758710032.661310746] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[INFO] [1758710032.664143586] [behavior_server]: Configuring spin
+[WARN] [1758710032.665074026] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758710032.670033746] [behavior_server]: Configuring backup
+[INFO] [1758710032.672438336] [behavior_server]: Configuring drive_on_heading
+[INFO] [1758710032.675467356] [behavior_server]: Configuring assisted_teleop
+[INFO] [1758710032.683096846] [behavior_server]: Configuring wait
+[INFO] [1758710032.694189027] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[INFO] [1758710032.694508897] [velocity_smoother]: Configuring velocity smoother
+[INFO] [1758710032.701936317] [lifecycle_manager_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[INFO] [1758710032.702181837] [collision_monitor]: Configuring
+[INFO] [1758710032.712902097] [collision_monitor]: [scan]: Creating Scan
+[INFO] [1758710032.714436617] [collision_monitor]: [FootprintApproach]: Creating Polygon
+[INFO] [1758710032.714828248] [collision_monitor]: [FootprintApproach]: Polygon points are not defined. Using dynamic subscription instead.
+[INFO] [1758710032.717410228] [collision_monitor]: [FootprintApproach]: Making footprint subscriber on /local_costmap/published_footprint topic
+[INFO] [1758710032.722288058] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[INFO] [1758710032.722614018] [bt_navigator]: Configuring
+[INFO] [1758710032.726553458] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[INFO] [1758710032.790351290] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[INFO] [1758710032.817084921] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[INFO] [1758710032.822305812] [waypoint_follower]: Configuring
+[INFO] [1758710032.855616163] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[INFO] [1758710032.857356153] [lifecycle_manager_navigation]: [34m[1mConfiguring docking_server[0m[0m
+[INFO] [1758710032.858441493] [docking_server]: Configuring docking_server
+[INFO] [1758710032.858559733] [docking_server]: Controller frequency set to 50.0000Hz
+[INFO] [1758710032.895367604] [docking_server]: Created charging dock plugin simple_charging_dock of type opennav_docking::SimpleChargingDock
+[WARN] [1758710032.908242945] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758710032.908391875] [docking_server]: Docking Server has 1 dock types and 0 dock instances available.
+[INFO] [1758710032.911456085] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[INFO] [1758710032.911852755] [controller_server]: Activating
+[INFO] [1758710032.911916825] [local_costmap.local_costmap]: Activating
+[INFO] [1758710032.911934155] [local_costmap.local_costmap]: Checking transform
+[INFO] [1758710032.911994515] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710033.412048004] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710033.912034193] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710034.412068072] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710034.912422941] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710034.913401071] [amcl]: initialPoseReceived
+[INFO] [1758710034.913781251] [amcl]: Setting pose (0.006000): 6.679 8.738 2.396
+[INFO] [1758710035.412073910] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710035.912070039] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710036.412082539] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710036.912065168] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710037.412058587] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710037.912022916] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710038.412054266] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710038.912075255] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758710039.412332934] [local_costmap.local_costmap]: start
+[WARN] [1758710039.663843564] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758710039.665771094] [controller_server]: Optimizer reset
+[INFO] [1758710039.666131894] [MPPIController]: Activated MPPI Controller: FollowPath
+[INFO] [1758710039.666195364] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[INFO] [1758710039.768977588] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[INFO] [1758710039.769034528] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[INFO] [1758710039.769711018] [smoother_server]: Activating
+[INFO] [1758710039.769772168] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[INFO] [1758710039.771262728] [amcl]: createLaserObject
+[INFO] [1758710039.875492682] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[INFO] [1758710039.875587942] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[INFO] [1758710039.876243802] [planner_server]: Activating
+[INFO] [1758710039.876383182] [global_costmap.global_costmap]: Activating
+[INFO] [1758710039.876406032] [global_costmap.global_costmap]: Checking transform
+[INFO] [1758710039.876469182] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation at time 0.288000, but only time 1.102000 is in the buffer, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758710040.376563032] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.576000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758710040.876561311] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.900000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758710041.023945567] [amcl]: Message Filter dropping message: frame 'rplidar_link' at time 0.006 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758710041.376551101] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1.080000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758710041.876514180] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1.080000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758710042.376618330] [global_costmap.global_costmap]: start
+[INFO] [1758710043.427570841] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[INFO] [1758710043.429501361] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[INFO] [1758710043.535424166] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[INFO] [1758710043.535535586] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[INFO] [1758710043.536618706] [behavior_server]: Activating
+[INFO] [1758710043.536674036] [behavior_server]: Activating spin
+[INFO] [1758710043.536752046] [behavior_server]: Activating backup
+[INFO] [1758710043.536783546] [behavior_server]: Activating drive_on_heading
+[INFO] [1758710043.536803446] [behavior_server]: Activating assisted_teleop
+[INFO] [1758710043.536819366] [behavior_server]: Activating wait
+[INFO] [1758710043.536847286] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[INFO] [1758710043.641803010] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[INFO] [1758710043.642819090] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[INFO] [1758710043.643382310] [velocity_smoother]: Activating
+[INFO] [1758710043.644086630] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758710043.749177454] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[INFO] [1758710043.749286784] [lifecycle_manager_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[INFO] [1758710043.751929254] [collision_monitor]: Activating
+[INFO] [1758710043.752511364] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1758710043.859670158] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
+[INFO] [1758710043.859772908] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[INFO] [1758710043.860775018] [bt_navigator]: Activating
+[INFO] [1758710043.920958421] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[INFO] [1758710044.023901895] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[INFO] [1758710044.023988535] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[INFO] [1758710044.024863605] [waypoint_follower]: Activating
+[INFO] [1758710044.025002595] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758710044.132550819] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[INFO] [1758710044.132666539] [lifecycle_manager_navigation]: [34m[1mActivating docking_server[0m[0m
+[INFO] [1758710044.133469749] [docking_server]: Activating docking_server
+[INFO] [1758710044.143286829] [docking_server]: Creating bond (docking_server) to lifecycle manager.
+[INFO] [1758710044.247459274] [lifecycle_manager_navigation]: Server docking_server connected with bond.
+[INFO] [1758710044.247554304] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1758710044.247569484] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1758710044.911808240] [bt_navigator]: Begin navigating from current location through 1 poses to (11.74, 5.13)
+[INFO] [1758710044.933952691] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758710044.934064101] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[WARN] [1758710044.934085491] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758710047.985634902] [controller_server]: Passing new path to controller.
+[INFO] [1758710050.987007363] [controller_server]: Passing new path to controller.
+[INFO] [1758710054.034344666] [controller_server]: Passing new path to controller.
+[INFO] [1758710057.084412501] [controller_server]: Passing new path to controller.
+[INFO] [1758710060.085279055] [controller_server]: Passing new path to controller.
+[INFO] [1758710063.084328261] [controller_server]: Passing new path to controller.
+[INFO] [1758710066.134352309] [controller_server]: Passing new path to controller.
+[INFO] [1758710069.134355877] [controller_server]: Passing new path to controller.
+[INFO] [1758710072.184353828] [controller_server]: Passing new path to controller.
+[INFO] [1758710075.184344578] [controller_server]: Passing new path to controller.
+[INFO] [1758710078.234367921] [controller_server]: Passing new path to controller.
+[INFO] [1758710081.284334395] [controller_server]: Passing new path to controller.
+[INFO] [1758710084.284333938] [controller_server]: Passing new path to controller.
+[INFO] [1758710087.334341415] [controller_server]: Passing new path to controller.
+[INFO] [1758710090.334830981] [controller_server]: Passing new path to controller.
+[INFO] [1758710093.384317510] [controller_server]: Passing new path to controller.
+[ERROR] [1758710095.534485779] [controller_server]: Failed to make progress
+[INFO] [1758710095.540422639] [controller_server]: Optimizer reset
+[WARN] [1758710095.540481409] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758710095.555350830] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758710095.556844620] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758710095.632984543] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 13.3333 Hz.
+[INFO] [1758710096.407050519] [controller_server]: Passing new path to controller.
+[INFO] [1758710099.407045148] [controller_server]: Passing new path to controller.
+[INFO] [1758710102.457060580] [controller_server]: Passing new path to controller.
+[INFO] [1758710105.457058141] [controller_server]: Passing new path to controller.
+[ERROR] [1758710106.357061434] [controller_server]: Failed to make progress
+[INFO] [1758710106.357747074] [controller_server]: Optimizer reset
+[WARN] [1758710106.357768644] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758710106.372593925] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758710106.373610435] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[INFO] [1758710106.402918096] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758710109.453186091] [controller_server]: Passing new path to controller.
+[INFO] [1758710112.453158045] [controller_server]: Passing new path to controller.
+[INFO] [1758710115.503170122] [controller_server]: Passing new path to controller.
+[ERROR] [1758710117.153260122] [controller_server]: Failed to make progress
+[INFO] [1758710117.154626132] [controller_server]: Optimizer reset
+[WARN] [1758710117.154669072] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758710117.172752513] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758710117.175161733] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758710117.237491546] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 16.6667 Hz.
+[INFO] [1758710118.525408559] [controller_server]: Passing new path to controller.
+[INFO] [1758710121.575391828] [controller_server]: Passing new path to controller.
+[INFO] [1758710124.575451846] [controller_server]: Passing new path to controller.
+[INFO] [1758710127.625401967] [controller_server]: Passing new path to controller.
+[ERROR] [1758710128.075507150] [controller_server]: Failed to make progress
+[INFO] [1758710128.077643260] [controller_server]: Optimizer reset
+[WARN] [1758710128.077683270] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758710128.093007850] [behavior_server]: Running spin
+[INFO] [1758710128.093205640] [behavior_server]: Turning 1.57 for spin behavior.
+[INFO] [1758710130.093394620] [behavior_server]: spin completed successfully
+[INFO] [1758710130.132826542] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758710133.182999946] [controller_server]: Passing new path to controller.
+[INFO] [1758710134.242992269] [controller_server]: Reached the goal!
+[INFO] [1758710134.244167889] [controller_server]: Optimizer reset
+[INFO] [1758710134.273995441] [bt_navigator]: Goal succeeded
+[INFO] [1758710134.315671763] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758710134.315824743] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1758710134.316057383] [controller_server]: Deactivating
+[INFO] [1758710134.316164493] [MPPIController]: Deactivated MPPI Controller: FollowPath
+[INFO] [1758710134.316211723] [local_costmap.local_costmap]: Deactivating
+[INFO] [1758710134.412576558] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1758710134.422883568] [controller_server]: Cleaning up
+[INFO] [1758710134.426348529] [MPPIController]: Cleaned up MPPI Controller: FollowPath
+[INFO] [1758710134.427051919] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1758710134.447661140] [lifecycle_manager_navigation]: [34m[1mHave not received a heartbeat from controller_server.[0m[0m
+[ERROR] [1758710134.447705320] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758710134.447812510] [lifecycle_manager_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1758710134.447838510] [lifecycle_manager_navigation]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1758710134.447848570] [lifecycle_manager_navigation]: [34m[1mDeactivating docking_server[0m[0m
+[INFO] [1758710134.448689940] [docking_server]: Deactivating docking_server
+[INFO] [1758710134.466131231] [docking_server]: Destroying bond (docking_server) to lifecycle manager.
+[INFO] [1758710134.470327351] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1758710134.470404371] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1758710134.470448461] [map_server]: Deactivating
+[INFO] [1758710134.470478761] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1758710134.480842301] [map_server]: Cleaning up
+[INFO] [1758710134.480912641] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1758710134.480924641] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1758710134.480945891] [amcl]: Deactivating
+[INFO] [1758710134.481009071] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1758710134.491362482] [amcl]: Cleaning up
+[INFO] [1758710134.497115182] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1758710134.497162802] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[INFO] [1758710134.497181482] [smoother_server]: Deactivating
+[INFO] [1758710134.497196622] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1758710134.507427453] [smoother_server]: Cleaning up
+[INFO] [1758710134.525164734] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1758710134.525203664] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[INFO] [1758710134.525220974] [lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1758710134.551487195] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1758710134.551569555] [planner_server]: Deactivating
+[INFO] [1758710134.551612345] [global_costmap.global_costmap]: Deactivating
+[INFO] [1758710134.581795096] [lifecycle_manager_navigation]: [34m[1mDeactivating waypoint_follower[0m[0m
+[INFO] [1758710134.582392196] [waypoint_follower]: Deactivating
+[INFO] [1758710134.582480247] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758710134.694842072] [lifecycle_manager_navigation]: [34m[1mDeactivating bt_navigator[0m[0m
+[INFO] [1758710134.695255202] [bt_navigator]: Deactivating
+[INFO] [1758710134.695383432] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1758710134.808636198] [lifecycle_manager_navigation]: [34m[1mDeactivating collision_monitor[0m[0m
+[INFO] [1758710135.376928957] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[INFO] [1758710135.377082237] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1758710135.387388507] [planner_server]: Cleaning up
+[INFO] [1758710135.404166168] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1758710135.410143348] [planner_server]: Cleaning up plugin GridBased of type NavfnPlanner
+[INFO] [1758710135.410266308] [planner_server]: Destroying plugin GridBased of type NavfnPlanner
+[INFO] [1758710135.437801400] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1758710135.437869330] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[INFO] [1758710135.437899220] [behavior_server]: Deactivating
+[INFO] [1758710135.437966270] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[INFO] [1758710135.448144920] [behavior_server]: Cleaning up
+[INFO] [1758710135.454520101] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[INFO] [1758710135.454546531] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1758710135.454631691] [bt_navigator]: Cleaning up
+[INFO] [1758710135.571545087] [bt_navigator]: Completed Cleaning up
+[INFO] [1758710135.571610697] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1758710135.571627317] [waypoint_follower]: Running Nav2 LifecycleNode rcl preshutdown (waypoint_follower)
+[INFO] [1758710135.571662907] [waypoint_follower]: Cleaning up
+[INFO] [1758710135.578011827] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758710135.578040447] [velocity_smoother]: Running Nav2 LifecycleNode rcl preshutdown (velocity_smoother)
+[INFO] [1758710135.578060947] [velocity_smoother]: Deactivating
+[INFO] [1758710135.578106707] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758710135.588274557] [velocity_smoother]: Cleaning up
+[INFO] [1758710135.588308377] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758710135.588318567] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[INFO] [1758710135.588339787] [collision_monitor]: Deactivating
+[INFO] [1758710135.588394977] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1758710135.611878289] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758710135.689985183] [collision_monitor]: Cleaning up

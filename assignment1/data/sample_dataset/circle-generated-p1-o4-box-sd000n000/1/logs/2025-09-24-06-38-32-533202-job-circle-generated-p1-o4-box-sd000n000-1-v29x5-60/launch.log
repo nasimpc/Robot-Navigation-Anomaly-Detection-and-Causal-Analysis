@@ -1,0 +1,64 @@
+1758695912.5340934 [INFO] [launch]: All log files can be found below /out/logs/2025-09-24-06-38-32-533202-job-circle-generated-p1-o4-box-sd000n000-1-v29x5-60
+1758695912.5342309 [INFO] [launch]: Default logging verbosity is set to INFO
+1758695913.7229176 [INFO] [xacro-1]: process started with pid [175]
+1758695913.7231843 [INFO] [parameter_bridge-2]: process started with pid [176]
+1758695913.7232633 [INFO] [image_bridge-3]: process started with pid [177]
+1758695913.7233353 [INFO] [image_bridge-4]: process started with pid [178]
+1758695913.7234530 [INFO] [create-5]: process started with pid [179]
+1758695913.7235289 [INFO] [gz-6]: process started with pid [180]
+1758695913.7235875 [INFO] [robot_state_publisher-7]: process started with pid [181]
+1758695913.7236433 [INFO] [rviz2-8]: process started with pid [182]
+1758695913.7237093 [INFO] [component_container_isolated-9]: process started with pid [183]
+1758695913.7237699 [INFO] [gazebo_tf_publisher_node-10]: process started with pid [184]
+1758695913.7238257 [INFO] [scenario_status_node-11]: process started with pid [185]
+1758695913.7238877 [INFO] [gazebo_stats_publisher-12]: process started with pid [186]
+1758695913.7239428 [INFO] [sys_stats_publisher-13]: process started with pid [189]
+1758695913.7239923 [INFO] [laserscan_modification-14]: process started with pid [190]
+1758695913.7240462 [INFO] [parameter_bridge-15]: process started with pid [191]
+1758695913.7240975 [INFO] [create-16]: process started with pid [192]
+1758695913.7241569 [INFO] [static_transform_publisher-17]: process started with pid [193]
+1758695913.7242119 [INFO] [static_transform_publisher-18]: process started with pid [194]
+1758695913.8056731 [static_transform_publisher-17] [INFO] [1758695913.805318503] [static_camera_transform]: Spinning until stopped - publishing transform
+1758695913.8111503 [static_transform_publisher-17] translation: ('5.505000', '5.785000', '16.384608')
+1758695913.8112869 [static_transform_publisher-17] rotation: ('-0.499602', '0.500000', '0.500000', '0.500398')
+1758695913.8113379 [static_transform_publisher-17] from '/map' to 'static_camera'
+1758695913.8148642 [static_transform_publisher-18] [INFO] [1758695913.814192966] [static_camera_transform_2]: Spinning until stopped - publishing transform
+1758695913.8174856 [static_transform_publisher-18] translation: ('0.000000', '0.000000', '0.000000')
+1758695913.8175859 [static_transform_publisher-18] rotation: ('-0.500000', '0.499602', '-0.500000', '0.500398')
+1758695913.8176453 [static_transform_publisher-18] from 'static_camera' to 'static_camera_optical_frame'
+1758695913.9034317 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container '/nav2_container'
+1758695913.9276671 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container '/nav2_container'
+1758695914.0088537 [INFO] [xacro-1]: process has finished cleanly [pid 175]
+1758695914.0192537 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/nav2_container'
+1758695914.0342448 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_localization' in container '/nav2_container'
+1758695914.0997899 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container '/nav2_container'
+1758695914.1332138 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container '/nav2_container'
+1758695914.1961761 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container '/nav2_container'
+1758695914.2125559 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container '/nav2_container'
+1758695914.2336230 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/waypoint_follower' in container '/nav2_container'
+1758695914.2830954 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container '/nav2_container'
+1758695914.3040080 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/collision_monitor' in container '/nav2_container'
+1758695914.3224576 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/docking_server' in container '/nav2_container'
+1758695914.3376298 [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_navigation' in container '/nav2_container'
+1758695914.9180889 [INFO] [create-5]: process has finished cleanly [pid 179]
+1758695914.9244280 [INFO] [create-16]: process has finished cleanly [pid 192]
+1758696007.7223535 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1758696009.4425206 [static_transform_publisher-18] [INFO] [1758696007.721987912] [rclcpp]: signal_handler(signum=2)
+1758696009.4429040 [INFO] [parameter_bridge-15]: process has finished cleanly [pid 191]
+1758696009.4430094 [INFO] [parameter_bridge-2]: process has finished cleanly [pid 176]
+1758696009.4430933 [ERROR] [gazebo_tf_publisher_node-10]: process has died [pid 184, exit code -11, cmd '/ws/install/gazebo_tf_publisher/lib/gazebo_tf_publisher/gazebo_tf_publisher_node --ros-args -r __node:=gazebo_tf_publisher --params-file /tmp/launch_params_16nplx8v --params-file /tmp/launch_params_o64rloek'].
+1758696009.4431622 [INFO] [gz-6]: process has finished cleanly [pid 180]
+1758696009.4432316 [ERROR] [rviz2-8]: process has died [pid 182, exit code -6, cmd '/opt/ros/jazzy/lib/rviz2/rviz2 -d /config/common/view.rviz --ros-args --params-file /tmp/launch_params_z6adn50s'].
+1758696009.4432969 [INFO] [static_transform_publisher-17]: process has finished cleanly [pid 193]
+1758696009.4433522 [INFO] [static_transform_publisher-18]: process has finished cleanly [pid 194]
+1758696009.4434180 [INFO] [gazebo_stats_publisher-12]: process has finished cleanly [pid 186]
+1758696009.4434896 [INFO] [image_bridge-4]: process has finished cleanly [pid 178]
+1758696009.4435587 [INFO] [image_bridge-3]: process has finished cleanly [pid 177]
+1758696009.4436302 [INFO] [scenario_status_node-11]: process has finished cleanly [pid 185]
+1758696009.4436932 [ERROR] [sys_stats_publisher-13]: process has died [pid 189, exit code 1, cmd '/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher --ros-args -r __node:=sys_stats_publisher'].
+1758696009.4437473 [ERROR] [laserscan_modification-14]: process has died [pid 190, exit code 1, cmd '/ws/install/message_modification/lib/message_modification/laserscan_modification --ros-args -r __node:=laserscan_modification --params-file /tmp/launch_params_l4sbquyy -r /in:=/scan_sim -r /out:=/scan'].
+1758696009.4437940 [INFO] [robot_state_publisher-7]: process has finished cleanly [pid 181]
+1758696009.4439702 [static_transform_publisher-17] [INFO] [1758696007.721995063] [rclcpp]: signal_handler(signum=2)
+1758696009.4566500 [INFO] [component_container_isolated-9]: sending signal 'SIGINT' to process[component_container_isolated-9]
+1758696009.4670348 [gazebo_tf_publisher_node-10] [INFO] [1758696007.722028513] [rclcpp]: signal_handler(signum=2)
+1758696009.4720280 [ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running

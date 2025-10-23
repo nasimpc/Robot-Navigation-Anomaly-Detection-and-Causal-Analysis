@@ -1,0 +1,50 @@
+[INFO] [1758692742.290740607] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758692742.290846566] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[INFO] [1758692742.347576343] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758692742.501373559] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758692742.503311641] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758692742.528141401] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+
+[INFO] [1758692742.550825391] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+
+[INFO] [1758692742.589465214] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758692742.596075300] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+
+[INFO] [1758692742.601972993] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+
+[INFO] [1758692742.674345975] [nav2_rviz_selector_node]: Trying to load plugins...
+[INFO] [1758692742.766847571] [nav2_rviz_docking_panel_node]: Loading dock plugins
+[INFO] [1758692742.869259435] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758692742.938852791] [rviz2]: Trying to create a map of size 343 x 273 using 1 swatches
+[ERROR] [1758692742.972376301] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+rviz/glsl120/indexed_8bit_image.frag
+ GLSL link result : 
+active samplers with a different type refer to the same texture image unit
+[INFO] [1758692749.720483170] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.006 for reason 'discarding message because the queue is full'
+[INFO] [1758692749.783918701] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.102 for reason 'discarding message because the queue is full'
+[INFO] [1758692749.834647566] [rviz2]: Trying to create a map of size 60 x 60 using 1 swatches
+[INFO] [1758692749.893938789] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.201 for reason 'discarding message because the queue is full'
+[INFO] [1758692751.236906301] [rviz2]: Trying to create a map of size 343 x 273 using 1 swatches
+[INFO] [1758692762.090790446] [rviz]: Message Filter dropping message: frame 'odom' at time 0.252 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692762.351884880] [rviz]: Message Filter dropping message: frame 'odom' at time 0.468 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692762.643318863] [rviz]: Message Filter dropping message: frame 'odom' at time 0.672 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692762.643500379] [rviz]: Message Filter dropping message: frame 'odom' at time 0.648 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692762.909303560] [rviz]: Message Filter dropping message: frame 'odom' at time 0.828 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.347969789] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.348040585] [rviz]: Message Filter dropping message: frame 'odom' at time 1.044 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.348081169] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.348098680] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.348120802] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.502729311] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.627128594] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.402 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.778390477] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.501 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692763.936488565] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692764.100486786] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.702 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692764.246258873] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.801 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692764.353428148] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692764.500299282] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 1.002 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692764.810654331] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 1.101 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758692790.237589366] [rclcpp]: signal_handler(signum=2)

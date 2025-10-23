@@ -1,0 +1,945 @@
+[INFO] [1758715669.642076439] [scenario_execution_ros]: Executing scenario 'nav_scenario'
+[INFO] [1758715669.649622779] [scenario_execution_ros]: Parsing xacro: /ws/install/gazebo_scenario_models/share/gazebo_scenario_models/models/box.sdf.xacro, args: diameter:=0.5, height:=1.5
+[INFO] [1758715669.777154296] [scenario_execution_ros]: Parsing xacro: /ws/install/gazebo_scenario_models/share/gazebo_scenario_models/models/box.sdf.xacro, args: diameter:=0.5, height:=1.5
+[INFO] [1758715669.889815673] [scenario_execution_ros]: Parsing xacro: /ws/install/gazebo_scenario_models/share/gazebo_scenario_models/models/box.sdf.xacro, args: diameter:=0.5, height:=1.5
+[INFO] [1758715670.017628460] [scenario_execution_ros]: Parsing xacro: /ws/install/gazebo_scenario_models/share/gazebo_scenario_models/models/box.sdf.xacro, args: diameter:=0.5, height:=1.5
+[INFO] [1758715670.414323763] [scenario_execution_ros]: Command: ros2 launch /config/common/nav2_launch.py world:=/tmp/tmpudenfr1e.sdf map:=/config/maps/large_room.yaml x_pose:=-2.3061061526567754 y_pose:=1.8248179468880812 yaw:=-1.6837895380843795 headless:=True laserscan_gaussian_noise_std_deviation:=0.0 laserscan_random_drop_percentage:=0.0
+[INFO] [1758715670.740706171] [scenario_execution_ros]: [INFO] [launch]: All log files can be found below /out/logs/2025-09-24-12-07-50-738467-job-large-room-generated-7060-p1-o4-box-sd000n000-2-cvxmj-61
+[INFO] [1758715670.741076501] [scenario_execution_ros]: [INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [1758715671.931932570] [scenario_execution_ros]: Calculated map center: x=0.00, y=0.00
+[INFO] [1758715671.932417840] [scenario_execution_ros]: Map dimensions: 8.50x8.50m, camera height: 9.57m
+[INFO] [1758715672.129675772] [scenario_execution_ros]: [INFO] [xacro-1]: process started with pid [176]
+[INFO] [1758715672.135826942] [scenario_execution_ros]: [INFO] [parameter_bridge-2]: process started with pid [177]
+[INFO] [1758715672.137884122] [scenario_execution_ros]: [INFO] [image_bridge-3]: process started with pid [178]
+[INFO] [1758715672.140412862] [scenario_execution_ros]: [INFO] [image_bridge-4]: process started with pid [179]
+[INFO] [1758715672.166502054] [scenario_execution_ros]: [INFO] [create-5]: process started with pid [180]
+[INFO] [1758715672.167362184] [scenario_execution_ros]: [INFO] [gz-6]: process started with pid [181]
+[INFO] [1758715672.168715094] [scenario_execution_ros]: [INFO] [robot_state_publisher-7]: process started with pid [182]
+[INFO] [1758715672.169878484] [scenario_execution_ros]: [INFO] [rviz2-8]: process started with pid [183]
+[INFO] [1758715672.170848404] [scenario_execution_ros]: [INFO] [component_container_isolated-9]: process started with pid [184]
+[INFO] [1758715672.171503844] [scenario_execution_ros]: [INFO] [gazebo_tf_publisher_node-10]: process started with pid [185]
+[INFO] [1758715672.171976444] [scenario_execution_ros]: [INFO] [scenario_status_node-11]: process started with pid [186]
+[INFO] [1758715672.172690134] [scenario_execution_ros]: [INFO] [gazebo_stats_publisher-12]: process started with pid [192]
+[INFO] [1758715672.173223924] [scenario_execution_ros]: [INFO] [sys_stats_publisher-13]: process started with pid [195]
+[INFO] [1758715672.173767794] [scenario_execution_ros]: [INFO] [laserscan_modification-14]: process started with pid [198]
+[INFO] [1758715672.174280944] [scenario_execution_ros]: [INFO] [parameter_bridge-15]: process started with pid [204]
+[INFO] [1758715672.175176734] [scenario_execution_ros]: [INFO] [create-16]: process started with pid [212]
+[INFO] [1758715672.201319056] [scenario_execution_ros]: [INFO] [static_transform_publisher-17]: process started with pid [213]
+[INFO] [1758715672.203346466] [scenario_execution_ros]: [INFO] [static_transform_publisher-18]: process started with pid [214]
+[INFO] [1758715672.207597846] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.123517811] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libamcl_core.so
+[INFO] [1758715672.208507956] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.168755004] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1758715672.209599036] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.168804494] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[INFO] [1758715672.210379146] [scenario_execution_ros]: [robot_state_publisher-7] [WARN] [1758715672.171900234] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[INFO] [1758715672.211140416] [scenario_execution_ros]: [robot_state_publisher-7] [INFO] [1758715672.172183544] [robot_state_publisher]: Robot initialized
+[INFO] [1758715672.212506846] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.176844194] [amcl]:
+[INFO] [1758715672.212948236] [scenario_execution_ros]: [component_container_isolated-9] 	amcl lifecycle node launched.
+[INFO] [1758715672.213594706] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.214234766] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.214811086] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.178332644] [amcl]: Creating
+[INFO] [1758715672.221785767] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.182184695] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libcontroller_server_core.so
+[INFO] [1758715672.223211417] [scenario_execution_ros]: [create-5] [INFO] [1758715672.182007745] [ros_gz_sim]: Requesting list of world names.
+[INFO] [1758715672.223831697] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container '/nav2_container'
+[INFO] [1758715672.224434797] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.208951206] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1758715672.225614517] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.209011346] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[INFO] [1758715672.226174717] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.218984207] [controller_server]:
+[INFO] [1758715672.266636859] [scenario_execution_ros]: [component_container_isolated-9] 	controller_server lifecycle node launched.
+[INFO] [1758715672.270059150] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.272306560] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.273058940] [scenario_execution_ros]: [static_transform_publisher-18] [INFO] [1758715672.223293777] [static_camera_transform_2]: Spinning until stopped - publishing transform
+[INFO] [1758715672.274193740] [scenario_execution_ros]: [static_transform_publisher-18] translation: ('0.000000', '0.000000', '0.000000')
+[INFO] [1758715672.275217660] [scenario_execution_ros]: [static_transform_publisher-18] rotation: ('-0.500000', '0.499602', '-0.500000', '0.500398')
+[INFO] [1758715672.275602120] [scenario_execution_ros]: [static_transform_publisher-18] from 'static_camera' to 'static_camera_optical_frame'
+[INFO] [1758715672.276016470] [scenario_execution_ros]: [static_transform_publisher-17] [INFO] [1758715672.224543997] [static_camera_transform]: Spinning until stopped - publishing transform
+[INFO] [1758715672.276560210] [scenario_execution_ros]: [static_transform_publisher-17] translation: ('0.000000', '0.000000', '9.571764')
+[INFO] [1758715672.277151980] [scenario_execution_ros]: [static_transform_publisher-17] rotation: ('-0.499602', '0.500000', '0.500000', '0.500398')
+[INFO] [1758715672.278114360] [scenario_execution_ros]: [static_transform_publisher-17] from '/map' to 'static_camera'
+[INFO] [1758715672.305884452] [scenario_execution_ros]: [create-16] [INFO] [1758715672.284252480] [ros_gz_sim]: Requesting list of world names.
+[INFO] [1758715672.307677502] [scenario_execution_ros]: [parameter_bridge-15] [INFO] [1758715672.306723262] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/default/model/static_camera/link/link/sensor/camera/image (gz.msgs.Image) -> /world/default/model/static_camera/link/link/sensor/camera/image (sensor_msgs/msg/Image)] (Lazy 0)
+[INFO] [1758715672.312848422] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.307890352] [controller_server]: Creating controller server
+[INFO] [1758715672.315474582] [scenario_execution_ros]: [parameter_bridge-15] [INFO] [1758715672.310421262] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/default/model/static_camera/link/link/sensor/camera/camera_info (gz.msgs.CameraInfo) -> /world/default/model/static_camera/link/link/sensor/camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[INFO] [1758715672.319301232] [scenario_execution_ros]: [gazebo_stats_publisher-12] [INFO] [1758715672.315151902] [gazebo_stats_publisher]: Subscribed to Gazebo topic: /world/default/stats
+[INFO] [1758715672.324880553] [scenario_execution_ros]: [gazebo_stats_publisher-12] [INFO] [1758715672.315245332] [gazebo_stats_publisher]: Gazebo Stats Publisher is running...
+[INFO] [1758715672.326964853] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.325131603] [local_costmap.local_costmap]:
+[INFO] [1758715672.327439023] [scenario_execution_ros]: [component_container_isolated-9] 	local_costmap lifecycle node launched.
+[INFO] [1758715672.327765073] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.328232553] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.330744023] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.328452143] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1758715672.332716953] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/nav2_container'
+[INFO] [1758715672.369081285] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.330940373] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libnav2_lifecycle_manager_core.so
+[INFO] [1758715672.370112365] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.368373465] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758715672.371743526] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.368697455] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758715672.379239706] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.377764856] [lifecycle_manager_localization]: Creating
+[INFO] [1758715672.390668317] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.388415116] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libmap_server_core.so
+[INFO] [1758715672.404075177] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_localization' in container '/nav2_container'
+[INFO] [1758715672.406458788] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.401442877] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1758715672.418849878] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.416774678] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[INFO] [1758715672.421157708] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.417906788] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[INFO] [1758715672.421513528] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.417932938] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1758715672.421873818] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.417942248] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[INFO] [1758715672.438098469] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.436476939] [map_server]:
+[INFO] [1758715672.438551919] [scenario_execution_ros]: [component_container_isolated-9] 	map_server lifecycle node launched.
+[INFO] [1758715672.438942139] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.466584071] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.467013341] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.436570549] [map_server]: Creating
+[INFO] [1758715672.468864101] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.438159209] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libsmoother_server_core.so
+[INFO] [1758715672.471973271] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container '/nav2_container'
+[INFO] [1758715672.473692781] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.467822501] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1758715672.474435221] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.467903501] [lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1758715672.477496042] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.467934881] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[INFO] [1758715672.478205052] [scenario_execution_ros]: [INFO] [xacro-1]: process has finished cleanly [pid 176]
+[INFO] [1758715672.478944672] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.467991401] [lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[INFO] [1758715672.479594172] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.470682011] [map_server]: Configuring
+[INFO] [1758715672.481567092] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.470777871] [map_io]: Loading yaml file: /config/maps/large_room.yaml
+[INFO] [1758715672.483112522] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471111611] [map_io]: resolution: 0.05
+[INFO] [1758715672.485291502] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471124991] [map_io]: origin[0]: -4.25
+[INFO] [1758715672.486870132] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471128691] [map_io]: origin[1]: -4.25
+[INFO] [1758715672.487695472] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471132771] [map_io]: origin[2]: 0
+[INFO] [1758715672.489267072] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471159501] [map_io]: free_thresh: 0.196
+[INFO] [1758715672.490069853] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471191711] [map_io]: occupied_thresh: 0.65
+[INFO] [1758715672.491147262] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471200151] [map_io]: mode: trinary
+[INFO] [1758715672.501640383] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471205411] [map_io]: negate: 0
+[INFO] [1758715672.504098933] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.471499681] [map_io]: Loading image_file: /config/maps/large_room.pgm
+[INFO] [1758715672.508606264] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.473408871] [map_io]: Read map /config/maps/large_room.pgm: 170 X 170 map @ 0.05 m/cell
+[INFO] [1758715672.512668744] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.482413722] [lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[INFO] [1758715672.516620324] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.482928012] [amcl]: Configuring
+[INFO] [1758715672.517292244] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.483059962] [smoother_server]:
+[INFO] [1758715672.517868034] [scenario_execution_ros]: [component_container_isolated-9] 	smoother_server lifecycle node launched.
+[INFO] [1758715672.518435324] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.518936214] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.519399784] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.483248072] [amcl]: initTransforms
+[INFO] [1758715672.519791894] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.490500282] [smoother_server]: Creating smoother server
+[INFO] [1758715672.520360754] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container '/nav2_container'
+[INFO] [1758715672.520757084] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.506645543] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libplanner_server_core.so
+[INFO] [1758715672.521155414] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.510608764] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1758715672.521738894] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.510653104] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[INFO] [1758715672.522182024] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.515330194] [amcl]: initPubSub
+[INFO] [1758715672.522744584] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.518173474] [amcl]: Subscribed to map topic.
+[INFO] [1758715672.527177815] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.524685934] [lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[INFO] [1758715672.527456425] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.524960424] [map_server]: Activating
+[INFO] [1758715672.527978685] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.525112694] [map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1758715672.528445065] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.525370304] [amcl]: Received a 170 X 170 map @ 0.050 m/pix
+[INFO] [1758715672.533215415] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.531456065] [planner_server]:
+[INFO] [1758715672.533710365] [scenario_execution_ros]: [component_container_isolated-9] 	planner_server lifecycle node launched.
+[INFO] [1758715672.534653525] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.535740615] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.567076177] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.539587355] [planner_server]: Creating
+[INFO] [1758715672.581276448] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.579370538] [global_costmap.global_costmap]:
+[INFO] [1758715672.581714078] [scenario_execution_ros]: [component_container_isolated-9] 	global_costmap lifecycle node launched.
+[INFO] [1758715672.583266048] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.583771238] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.584312878] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.580962808] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1758715672.586599768] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container '/nav2_container'
+[INFO] [1758715672.589075578] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.587651288] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libbehavior_server_core.so
+[INFO] [1758715672.589929848] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.589413548] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1758715672.591242188] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.589448548] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[INFO] [1758715672.609008169] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.607343919] [behavior_server]:
+[INFO] [1758715672.609709469] [scenario_execution_ros]: [component_container_isolated-9] 	behavior_server lifecycle node launched.
+[INFO] [1758715672.610053089] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.610410669] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.623120390] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container '/nav2_container'
+[INFO] [1758715672.625807450] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.624251360] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libbt_navigator_core.so
+[INFO] [1758715672.626478290] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.625914050] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[INFO] [1758715672.626923270] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.625939940] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[INFO] [1758715672.634911111] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.633820541] [lifecycle_manager_localization]: Server map_server connected with bond.
+[INFO] [1758715672.635792701] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.633861421] [lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[INFO] [1758715672.637291471] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.634130951] [amcl]: Activating
+[INFO] [1758715672.637721761] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.634190771] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1758715672.638196961] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.635477671] [bt_navigator]:
+[INFO] [1758715672.638565231] [scenario_execution_ros]: [component_container_isolated-9] 	bt_navigator lifecycle node launched.
+[INFO] [1758715672.638888941] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.639289811] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.641659621] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.640451031] [bt_navigator]: Creating
+[INFO] [1758715672.669839483] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container '/nav2_container'
+[INFO] [1758715672.674062283] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.672639403] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libwaypoint_follower_core.so
+[INFO] [1758715672.676739843] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.675256993] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[INFO] [1758715672.677392653] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.675318483] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_waypoint_follower::WaypointFollower>
+[INFO] [1758715672.687094524] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715672.683093604] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758715672.687557284] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715672.683240454] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[INFO] [1758715672.687980194] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.685166144] [waypoint_follower]:
+[INFO] [1758715672.688443094] [scenario_execution_ros]: [component_container_isolated-9] 	waypoint_follower lifecycle node launched.
+[INFO] [1758715672.689401214] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.692895984] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.693374784] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.687149204] [waypoint_follower]: Creating
+[INFO] [1758715672.698559794] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/waypoint_follower' in container '/nav2_container'
+[INFO] [1758715672.701267275] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.696515284] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libvelocity_smoother_core.so
+[INFO] [1758715672.702046805] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.698696075] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[INFO] [1758715672.702684415] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.698735095] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[INFO] [1758715672.715201405] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.711928095] [velocity_smoother]:
+[INFO] [1758715672.716239166] [scenario_execution_ros]: [component_container_isolated-9] 	velocity_smoother lifecycle node launched.
+[INFO] [1758715672.716957956] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.717647756] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.718433956] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.9.0[0m[1;32m[0m
+[INFO] [1758715672.720446946] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/tmp/nav2_8bqi023c.sdf[0m[1;32m].[0m
+[INFO] [1758715672.722085266] [scenario_execution_ros]: [gz-6] [1;33mWarning [Utils.cc:132][0m [/sdf/world[@name="default"]/model[@name="obstacles"]/link[@name="wall"]/static:/tmp/nav2_8bqi023c.sdf:L92]: XML Element[static], child of element[link], not defined in SDF. Copying[static] as children of [link].
+[INFO] [1758715672.723046796] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container '/nav2_container'
+[INFO] [1758715672.723386296] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.719356806] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libcollision_monitor_core.so
+[INFO] [1758715672.731633416] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.727279396] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[INFO] [1758715672.732964987] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.727348716] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[INFO] [1758715672.738210407] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.736939297] [lifecycle_manager_localization]: Server amcl connected with bond.
+[INFO] [1758715672.739382117] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.736993197] [lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1758715672.739812057] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.737018777] [lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1758715672.768011359] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/collision_monitor' in container '/nav2_container'
+[INFO] [1758715672.768728109] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715672.739599587] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758715672.769658049] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.739694137] [collision_monitor]:
+[INFO] [1758715672.771091419] [scenario_execution_ros]: [component_container_isolated-9] 	collision_monitor lifecycle node launched.
+[INFO] [1758715672.771506699] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.771874149] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.775841599] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.774723529] [nav2_container]: Load Library: /opt/ros/jazzy/lib/libopennav_docking_core.so
+[INFO] [1758715672.779406239] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.778583609] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<opennav_docking::DockingServer>
+[INFO] [1758715672.779798579] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.778640309] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<opennav_docking::DockingServer>
+[INFO] [1758715672.789560790] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.788866670] [docking_server]:
+[INFO] [1758715672.789991980] [scenario_execution_ros]: [component_container_isolated-9] 	docking_server lifecycle node launched.
+[INFO] [1758715672.790399700] [scenario_execution_ros]: [component_container_isolated-9] 	Waiting on external lifecycle transitions to activate
+[INFO] [1758715672.790953510] [scenario_execution_ros]: [component_container_isolated-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1758715672.791310340] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.788934430] [docking_server]: Creating docking_server
+[INFO] [1758715672.792190580] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/docking_server' in container '/nav2_container'
+[INFO] [1758715672.794892840] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.793778500] [nav2_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758715672.806080421] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.793815430] [nav2_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_lifecycle_manager::LifecycleManager>
+[INFO] [1758715672.807283901] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.806606311] [lifecycle_manager_navigation]: Creating
+[INFO] [1758715672.809734531] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.808610121] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[INFO] [1758715672.810584291] [scenario_execution_ros]: [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/lifecycle_manager_navigation' in container '/nav2_container'
+[INFO] [1758715672.817668301] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.816819441] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[INFO] [1758715672.818256241] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.816866071] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[INFO] [1758715672.818900641] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.817381721] [controller_server]: Configuring controller interface
+[INFO] [1758715672.819509311] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.817420421] [controller_server]: getting progress checker plugins..
+[INFO] [1758715672.820393792] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.817839971] [controller_server]: getting goal checker plugins..
+[INFO] [1758715672.821523222] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.817995671] [controller_server]: Controller frequency set to 20.0000Hz
+[INFO] [1758715672.821959952] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.818061701] [local_costmap.local_costmap]: Configuring
+[INFO] [1758715672.823072792] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.822072302] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[INFO] [1758715672.825062842] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:75] [0m[1;33mTrying to load deprecated plugin [[0m[1;33mignition-gazebo-physics-system[0m[1;33m]. Using [[0m[1;33mgz-sim-physics-system[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.827646202] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.826694512] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1758715672.831263622] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.830460002] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[INFO] [1758715672.831606602] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.830500332] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1758715672.832015922] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.831184832] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1758715672.868878354] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.839931373] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1758715672.869433514] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.841458003] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[INFO] [1758715672.870858625] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.869043934] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758715672.871707475] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.869844144] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758715672.874044235] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.873295885] [controller_server]: Created controller : FollowPath of type nav2_mppi_controller::MPPIController
+[INFO] [1758715672.877741765] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.877149635] [controller_server]: Controller period is equal to model dt. Control sequence shifting is ON
+[INFO] [1758715672.880399335] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.879783405] [controller_server]: ConstraintCritic instantiated with 1 power and 4.000000 weight.
+[INFO] [1758715672.880797005] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.879807505] [controller_server]: Critic loaded : mppi::critics::ConstraintCritic
+[INFO] [1758715672.881481345] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.880943105] [controller_server]: InflationCostCritic instantiated with 1 power and 300.000000 / 0.015000 weights. Critic will collision check based on circular cost.
+[INFO] [1758715672.881870905] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.880966815] [controller_server]: Critic loaded : mppi::critics::CostCritic
+[INFO] [1758715672.882220535] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.881468435] [controller_server]: GoalCritic instantiated with 1 power and 5.000000 weight.
+[INFO] [1758715672.882654315] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.881487385] [controller_server]: Critic loaded : mppi::critics::GoalCritic
+[INFO] [1758715672.883008495] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.881954545] [controller_server]: GoalAngleCritic instantiated with 1 power, 3.000000 weight, and 0.500000 angular threshold.
+[INFO] [1758715672.883345155] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.882008505] [controller_server]: Critic loaded : mppi::critics::GoalAngleCritic
+[INFO] [1758715672.883658135] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.883022715] [controller_server]: ReferenceTrajectoryCritic instantiated with 1 power and 14.000000 weight
+[INFO] [1758715672.883966765] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.883040215] [controller_server]: Critic loaded : mppi::critics::PathAlignCritic
+[INFO] [1758715672.884316975] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.883532875] [controller_server]: Critic loaded : mppi::critics::PathFollowCritic
+[INFO] [1758715672.884770125] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.884296645] [controller_server]: PathAngleCritic instantiated with 1 power and 2.000000 weight. Mode set to: Forward Preference
+[INFO] [1758715672.885087185] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.884311185] [controller_server]: Critic loaded : mppi::critics::PathAngleCritic
+[INFO] [1758715672.885364535] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.884755625] [controller_server]: PreferForwardCritic instantiated with 1 power and 5.000000 weight.
+[INFO] [1758715672.885585525] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.884773585] [controller_server]: Critic loaded : mppi::critics::PreferForwardCritic
+[INFO] [1758715672.886171245] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715672.885826325] [sys_stats_publisher]: System Stats Publisher node started
+[INFO] [1758715672.887649216] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.887167905] [controller_server]: Optimizer reset
+[INFO] [1758715672.890383266] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.889635436] [MPPIController]: Configured MPPI Controller: FollowPath
+[INFO] [1758715672.890931856] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.889653586] [controller_server]: Controller Server has FollowPath  controllers available.
+[INFO] [1758715672.902768126] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:136] [0m[1;33mTrying to load deprecated plugin name [[0m[1;33mignition::gazebo::systems::Physics[0m[1;33m]. Using [[0m[1;33mgz::sim::systems::Physics[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.903744866] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.894640376] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[INFO] [1758715672.904461316] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.894753576] [smoother_server]: Configuring smoother server
+[INFO] [1758715672.911238767] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.909767337] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[INFO] [1758715672.912301527] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.910902037] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[INFO] [1758715672.915192567] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.914497357] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[INFO] [1758715672.915569557] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.914642387] [planner_server]: Configuring
+[INFO] [1758715672.916001667] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.914686387] [global_costmap.global_costmap]: Configuring
+[INFO] [1758715672.918013807] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.917468287] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1758715672.919091157] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.918466627] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[INFO] [1758715672.919446097] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.918802997] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1758715672.919745477] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.918814727] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1758715672.920224177] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.919493447] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1758715672.924252838] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.923128148] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1758715672.924549708] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.923163408] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1758715672.924923108] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.924422028] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1758715672.926927648] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:75] [0m[1;33mTrying to load deprecated plugin [[0m[1;33mignition-gazebo-user-commands-system[0m[1;33m]. Using [[0m[1;33mgz-sim-user-commands-system[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.927726028] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:136] [0m[1;33mTrying to load deprecated plugin name [[0m[1;33mignition::gazebo::systems::UserCommands[0m[1;33m]. Using [[0m[1;33mgz::sim::systems::UserCommands[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.930564398] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:75] [0m[1;33mTrying to load deprecated plugin [[0m[1;33mignition-gazebo-scene-broadcaster-system[0m[1;33m]. Using [[0m[1;33mgz-sim-scene-broadcaster-system[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.933549388] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:136] [0m[1;33mTrying to load deprecated plugin name [[0m[1;33mignition::gazebo::systems::SceneBroadcaster[0m[1;33m]. Using [[0m[1;33mgz::sim::systems::SceneBroadcaster[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.933978408] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:75] [0m[1;33mTrying to load deprecated plugin [[0m[1;33mignition-gazebo-contact-system[0m[1;33m]. Using [[0m[1;33mgz-sim-contact-system[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.934371468] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:136] [0m[1;33mTrying to load deprecated plugin name [[0m[1;33mignition::gazebo::systems::Contact[0m[1;33m]. Using [[0m[1;33mgz::sim::systems::Contact[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.934826248] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:75] [0m[1;33mTrying to load deprecated plugin [[0m[1;33mignition-gazebo-sensors-system[0m[1;33m]. Using [[0m[1;33mgz-sim-sensors-system[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.935212188] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.932829748] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 170 X 170 at 0.050000 m/pix
+[INFO] [1758715672.935601628] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.933648328] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner::NavfnPlanner
+[INFO] [1758715672.936001528] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.933682748] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[INFO] [1758715672.936390658] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.934518638] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1758715672.942673129] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.941450479] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[INFO] [1758715672.942958989] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.941754139] [behavior_server]: Configuring
+[INFO] [1758715672.943226949] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SystemLoader.cc:136] [0m[1;33mTrying to load deprecated plugin name [[0m[1;33mignition::gazebo::systems::Sensors[0m[1;33m]. Using [[0m[1;33mgz::sim::systems::Sensors[0m[1;33m] instead.[0m[1;33m[0m
+[INFO] [1758715672.968043520] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.968794400] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Physics.cc:883] [0m[1;36mLoaded [[0m[1;36mgz::physics::dartsim::Plugin[0m[1;36m] from library [[0m[1;36m/opt/ros/jazzy/opt/gz_physics_vendor/lib/gz-physics-7/engine-plugins/libgz-physics-dartsim-plugin.so[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.969553670] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mignition::gazebo::systems::Physics[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.969949730] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mCreate service on [[0m[1;32m/world/default/create[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.970261210] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mRemove service on [[0m[1;32m/world/default/remove[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.970584190] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPose service on [[0m[1;32m/world/default/set_pose[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.971021580] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPose service on [[0m[1;32m/world/default/set_pose_vector[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.971481010] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mLight configuration service on [[0m[1;32m/world/default/light_config[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.972329530] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPhysics service on [[0m[1;32m/world/default/set_physics[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.972726910] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mSphericalCoordinates service on [[0m[1;32m/world/default/set_spherical_coordinates[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.973041620] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mEnable collision service on [[0m[1;32m/world/default/enable_collision[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.973403340] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mDisable collision service on [[0m[1;32m/world/default/disable_collision[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.973905240] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mMaterial service on [[0m[1;32m/world/default/visual_config[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.974250660] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mMaterial service on [[0m[1;32m/world/default/wheel_slip[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.974514810] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mignition::gazebo::systems::UserCommands[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.974781040] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mignition::gazebo::systems::SceneBroadcaster[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.975080591] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mignition::gazebo::systems::Contact[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.975371801] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:697] [0m[1;36mConfiguring Sensors system[0m[1;36m[0m
+[INFO] [1758715672.975853701] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:557] [0m[1;36mSensorsPrivate::Run[0m[1;36m[0m
+[INFO] [1758715672.976658021] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mignition::gazebo::systems::Sensors[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715672.977046721] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:532] [0m[1;36mSensorsPrivate::RenderThread started[0m[1;36m[0m
+[INFO] [1758715672.977314721] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:337] [0m[1;36mWaiting for init[0m[1;36m[0m
+[INFO] [1758715672.977672831] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.977999791] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/default[0m[1;32m/control], [[0m[1;32m/world/default[0m[1;32m/control/state] and [[0m[1;32m/world/default[0m[1;32m/playback/control][0m[1;32m[0m
+[INFO] [1758715672.978538211] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.978807031] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32mdefault[0m[1;32m] initialized with [[0m[1;32m1ms[0m[1;32m] physics profile.[0m[1;32m[0m
+[INFO] [1758715672.979144281] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.979607971] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715672.979903401] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[INFO] [1758715672.980285871] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[INFO] [1758715672.980582371] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[INFO] [1758715672.981830041] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.944861329] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[INFO] [1758715672.982287301] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.946064029] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors::BackUp
+[INFO] [1758715672.982596511] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.969498950] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[INFO] [1758715672.982902561] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.971083740] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors::AssistedTeleop
+[INFO] [1758715672.983231991] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.973988440] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[INFO] [1758715672.983639241] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715672.975672391] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+[INFO] [1758715672.984000141] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715672.984321961] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715672.976636241] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+[INFO] [1758715672.984635701] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715672.984941891] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.976780741] [behavior_server]: Configuring spin
+[INFO] [1758715672.985221061] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.981646031] [behavior_server]: Configuring backup
+[INFO] [1758715672.985514521] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.984313461] [behavior_server]: Configuring drive_on_heading
+[INFO] [1758715672.986847921] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.986387301] [behavior_server]: Configuring assisted_teleop
+[INFO] [1758715672.991467481] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.990661051] [behavior_server]: Configuring wait
+[INFO] [1758715672.992621972] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715672.991822642] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758715672.993638122] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.993013652] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[INFO] [1758715672.995496252] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.993178582] [velocity_smoother]: Configuring velocity smoother
+[INFO] [1758715673.003927422] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.002628142] [lifecycle_manager_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[INFO] [1758715673.004653112] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.003070142] [collision_monitor]: Configuring
+[INFO] [1758715673.011822913] [scenario_execution_ros]: [laserscan_modification-14] [WARN] [1758715673.010410053] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758715673.014869783] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.013840033] [collision_monitor]: [scan]: Creating Scan
+[INFO] [1758715673.016047453] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.015342053] [collision_monitor]: [FootprintApproach]: Creating Polygon
+[INFO] [1758715673.016446193] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.015765903] [collision_monitor]: [FootprintApproach]: Polygon points are not defined. Using dynamic subscription instead.
+[INFO] [1758715673.017587603] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.017034843] [collision_monitor]: [FootprintApproach]: Making footprint subscriber on /local_costmap/published_footprint topic
+[INFO] [1758715673.019233033] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.018491393] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+[INFO] [1758715673.019501233] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715673.020009773] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.019507143] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[INFO] [1758715673.020403363] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.019630123] [bt_navigator]: Configuring
+[INFO] [1758715673.023112573] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.022630793] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[INFO] [1758715673.026056114] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.025583274] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+[INFO] [1758715673.026529194] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715673.048311155] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.047371105] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+[INFO] [1758715673.049036985] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715673.076254246] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.073568726] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+[INFO] [1758715673.076678746] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715673.077877087] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.077362596] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+[INFO] [1758715673.078224027] [scenario_execution_ros]: [rviz2-8]
+[INFO] [1758715673.100087228] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.098533248] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[INFO] [1758715673.121390309] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.118947919] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[INFO] [1758715673.122891639] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.119150889] [waypoint_follower]: Configuring
+[INFO] [1758715673.124568469] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.123921859] [nav2_rviz_selector_node]: Trying to load plugins...
+[INFO] [1758715673.128661080] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.128068189] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[INFO] [1758715673.129961860] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.129174260] [lifecycle_manager_navigation]: [34m[1mConfiguring docking_server[0m[0m
+[INFO] [1758715673.130862270] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.129591420] [docking_server]: Configuring docking_server
+[INFO] [1758715673.131254500] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.129667620] [docking_server]: Controller frequency set to 50.0000Hz
+[INFO] [1758715673.143662950] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.143063040] [docking_server]: Created charging dock plugin simple_charging_dock of type opennav_docking::SimpleChargingDock
+[INFO] [1758715673.170302922] [scenario_execution_ros]: [create-16] [INFO] [1758715673.168527072] [ros_gz_sim]: Entity creation successful.
+[INFO] [1758715673.170825162] [scenario_execution_ros]: [create-5] [INFO] [1758715673.169944762] [ros_gz_sim]: Waiting messages on topic [robot_description].
+[INFO] [1758715673.173021822] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715673.170522472] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758715673.173618222] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.170638282] [docking_server]: Docking Server has 1 dock types and 0 dock instances available.
+[INFO] [1758715673.174043042] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.171990612] [nav2_rviz_docking_panel_node]: Loading dock plugins
+[INFO] [1758715673.174465992] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.172355882] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[INFO] [1758715673.174856522] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.172798122] [controller_server]: Activating
+[INFO] [1758715673.175143682] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.172852272] [local_costmap.local_costmap]: Activating
+[INFO] [1758715673.175546542] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.172869112] [local_costmap.local_costmap]: Checking transform
+[INFO] [1758715673.176431202] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.172917562] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715673.176751842] [scenario_execution_ros]: [create-5] [INFO] [1758715673.175018192] [ros_gz_sim]: Entity creation successful.
+[INFO] [1758715673.216784625] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.215346155] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[INFO] [1758715673.217872105] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.217055915] [bridge_ros_gz]: Creating GZ->ROS Bridge: [joint_states (gz.msgs.Model) -> joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[INFO] [1758715673.219700425] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.219177855] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[INFO] [1758715673.220925395] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.220308175] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[INFO] [1758715673.222293865] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.221636735] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/imu (gz.msgs.IMU) -> imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[INFO] [1758715673.222973305] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.222313015] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/scan (gz.msgs.LaserScan) -> scan_sim (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[INFO] [1758715673.223480835] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.223016715] [bridge_ros_gz]: Creating ROS->GZ Bridge: [cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[INFO] [1758715673.224937555] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715673.223876405] [bridge_ros_gz]: Creating GZ->ROS Bridge: [/rgbd_camera/camera_info (gz.msgs.CameraInfo) -> /rgbd_camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[INFO] [1758715673.324569601] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.323619961] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758715673.393527575] [scenario_execution_ros]: [INFO] [create-5]: process has finished cleanly [pid 180]
+[INFO] [1758715673.396177515] [scenario_execution_ros]: [INFO] [create-16]: process has finished cleanly [pid 212]
+[INFO] [1758715673.397352405] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715673.396851175] [rviz2]: Trying to create a map of size 170 x 170 using 1 swatches
+[INFO] [1758715673.403678976] [scenario_execution_ros]: [rviz2-8] [ERROR] [1758715673.402438306] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[INFO] [1758715673.404074876] [scenario_execution_ros]: [rviz2-8] rviz/glsl120/indexed_8bit_image.frag
+[INFO] [1758715673.404392846] [scenario_execution_ros]: [rviz2-8]  GLSL link result :
+[INFO] [1758715673.404764526] [scenario_execution_ros]: [rviz2-8] active samplers with a different type refer to the same texture image unit
+[INFO] [1758715673.449015928] [scenario_execution_ros]: [rviz2-8] Subscribing to "/scenario_execution/snapshots"
+[INFO] [1758715673.453529708] [scenario_execution_ros]: [rviz2-8] Subscribing to "/scenario_execution/snapshots"
+[INFO] [1758715673.674286311] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715673.672969811] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715673.969525369] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715673.968698259] [sys_stats_publisher]: Published stats - CPU: 41.30%, Memory: 23.90%
+[INFO] [1758715674.174523831] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715674.172988181] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715674.673901530] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715674.672963160] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715674.798425007] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[INFO] [1758715674.798789707] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[INFO] [1758715674.799039267] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[INFO] [1758715674.799324277] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[INFO] [1758715674.799565237] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:533] [0m[1;36mCreating PostUpdate worker threads: [0m[1;36m4[0m[1;36m[0m
+[INFO] [1758715674.799858527] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m0[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715674.800199967] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715674.800452987] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m2[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715674.800700828] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m14[0m[1;36m] named [[0m[1;36mstatic_camera[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715674.800934338] [scenario_execution_ros]: [gz-6] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="turtlebot4"]/link[@name="rplidar_link"]/sensor[@name="rplidar"]/gz_frame_id:<urdf-string>:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[INFO] [1758715674.806513158] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[INFO] [1758715674.806773538] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[INFO] [1758715674.807056308] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[INFO] [1758715674.807483448] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[INFO] [1758715674.807874318] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:933] [0m[1;33mGazebo does not support Ogre material scripts. See [0m[1;33mhttps://gazebosim.org/api/sim/8/migrationsdf.html#:~:text=Materials [0m[1;33mfor details.[0m[1;33m[0m
+[INFO] [1758715674.808178468] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [SdfEntityCreator.cc:949] [0m[1;33mUsing an internal gazebo.material to parse [0m[1;33mGazebo/DarkGrey[0m[1;33m[0m
+[INFO] [1758715674.969699768] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715674.968691617] [sys_stats_publisher]: Published stats - CPU: 60.10%, Memory: 25.40%
+[INFO] [1758715675.061529963] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mDiffDrive subscribing to twist messages on [[0m[1;32m/cmd_vel[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.061848323] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::DiffDrive[0m[1;36m] for entity [[0m[1;36m18[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715675.062249343] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::JointStatePublisher[0m[1;36m] for entity [[0m[1;36m18[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715675.062691133] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m18[0m[1;36m] named [[0m[1;36mnav2_turtlebot4[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715675.062995943] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:332] [0m[1;36mMesh construction from an SDF has not been implemented yet for [0m[1;36mdartsim. Use AttachMeshShapeFeature to use mesh shapes.[0m
+[INFO] [1758715675.063279683] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:864] [0m[1;36mThe geometry element of collision [[0m[1;36mwall_collision[0m[1;36m] [0m[1;36mcouldn't be created[0m
+[INFO] [1758715675.063534083] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:332] [0m[1;36mMesh construction from an SDF has not been implemented yet for [0m[1;36mdartsim. Use AttachMeshShapeFeature to use mesh shapes.[0m
+[INFO] [1758715675.065726793] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:864] [0m[1;36mThe geometry element of collision [[0m[1;36mbase_link_fixed_joint_lump__bumper_collision_1[0m[1;36m] [0m[1;36mcouldn't be created[0m
+[INFO] [1758715675.066360663] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:332] [0m[1;36mMesh construction from an SDF has not been implemented yet for [0m[1;36mdartsim. Use AttachMeshShapeFeature to use mesh shapes.[0m
+[INFO] [1758715675.066672963] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SDFFeatures.cc:864] [0m[1;36mThe geometry element of collision [[0m[1;36mbase_link_fixed_joint_lump__shell_collision_collision_2[0m[1;36m] [0m[1;36mcouldn't be created[0m
+[INFO] [1758715675.067036573] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationFeatures.cc:90] [0m[1;36mSimulation timestep set to: [0m[1;36m0.003[0m[1;36m[0m
+[INFO] [1758715675.067371443] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:953] [0m[1;36mInitialization needed[0m[1;36m[0m
+[INFO] [1758715675.067724563] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:349] [0m[1;36mInitializing render context[0m[1;36m[0m
+[INFO] [1758715675.068245083] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mLoading plugin [[0m[1;32mgz-rendering-ogre2[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.068588453] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.068923973] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.069424143] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.069695563] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.069934933] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/default/scene/info[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.070206083] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/default/scene/deletion[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.070458123] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/default/state[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.070759243] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.071066884] [scenario_execution_ros]: [gz-6] [1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/default[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m
+[INFO] [1758715675.071331754] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([0m[1;36m0[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715675.071646103] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([0m[1;36m2[0m[1;36mExiting postupdate worker thread ([0m[1;36m)[0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715675.071951793] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:533] [0m[1;36mCreating PostUpdate worker threads: [0m[1;36m6[0m[1;36m[0m
+[INFO] [1758715675.072192803] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m0[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715675.072465764] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715675.173843880] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715675.172992420] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715675.298383557] [basic_nav_init_nav2]: Publishing Initial Pose
+[INFO] [1758715675.300561297] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715675.299164977] [amcl]: initialPoseReceived
+[INFO] [1758715675.300896317] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715675.299432397] [amcl]: Setting pose (0.006000): -2.306 1.825 -1.684
+[INFO] [1758715675.485790138] [scenario_execution_ros]: data: true
+[INFO] [1758715675.486386968] [scenario_execution_ros]: 
+[INFO] [1758715675.585349624] [scenario_execution_ros]: data: true
+[INFO] [1758715675.585863204] [scenario_execution_ros]: 
+[INFO] [1758715675.674582199] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715675.673490699] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715675.685467250] [scenario_execution_ros]: data: true
+[INFO] [1758715675.686080480] [scenario_execution_ros]: 
+[INFO] [1758715675.785441176] [scenario_execution_ros]: data: true
+[INFO] [1758715675.785870916] [scenario_execution_ros]: 
+[INFO] [1758715675.968857027] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715675.968019536] [sys_stats_publisher]: Published stats - CPU: 63.40%, Memory: 26.90%
+[INFO] [1758715676.174387349] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715676.173001329] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715676.673923829] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715676.672971158] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715676.970025106] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715676.968707256] [sys_stats_publisher]: Published stats - CPU: 61.60%, Memory: 27.60%
+[INFO] [1758715677.090373913] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [Ogre2Camera.cc:421] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[INFO] [1758715677.096334264] [scenario_execution_ros]: [gz-6] [1;33m[Wrn] [Ogre2RenderTarget.cc:668] [0m[1;33mAnti-aliasing level of '[0m[1;33m[0m[1;33m' [0m[1;33mis not supported; valid FSAA levels are: [0m[1;33m[ 0 ][0m[1;33m. Setting to 1[0m[1;33m[0m
+[INFO] [1758715677.174205418] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715677.172985698] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715677.674715588] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715677.672980668] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715677.969872366] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715677.968689206] [sys_stats_publisher]: Published stats - CPU: 76.90%, Memory: 27.90%
+[INFO] [1758715678.174634588] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715678.173006258] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[INFO] [1758715678.674198029] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715678.673164279] [local_costmap.local_costmap]: start
+[INFO] [1758715678.926228604] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715678.924439594] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758715678.937315635] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715678.929015174] [controller_server]: Optimizer reset
+[INFO] [1758715678.938073584] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715678.929709134] [MPPIController]: Activated MPPI Controller: FollowPath
+[INFO] [1758715678.938411835] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715678.929804684] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[INFO] [1758715678.970131686] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715678.968509426] [sys_stats_publisher]: Published stats - CPU: 78.30%, Memory: 28.10%
+[INFO] [1758715679.038745151] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.036684460] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[INFO] [1758715679.039118341] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.036855630] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[INFO] [1758715679.039482171] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.037663851] [smoother_server]: Activating
+[INFO] [1758715679.039800511] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.037763881] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[INFO] [1758715679.142761267] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.141026067] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[INFO] [1758715679.143248087] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.141118007] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[INFO] [1758715679.143501047] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.142252757] [planner_server]: Activating
+[INFO] [1758715679.143747517] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.142390927] [global_costmap.global_costmap]: Activating
+[INFO] [1758715679.143979047] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.142417007] [global_costmap.global_costmap]: Checking transform
+[INFO] [1758715679.144242827] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.142474027] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[INFO] [1758715679.372314271] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.369351071] [amcl]: createLaserObject
+[INFO] [1758715679.644387627] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715679.642533697] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.468000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758715679.971348217] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715679.968781337] [sys_stats_publisher]: Published stats - CPU: 83.10%, Memory: 27.90%
+[INFO] [1758715680.144035648] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715680.142524658] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.936000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758715680.218708152] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715680.217401462] [amcl]: Message Filter dropping message: frame 'rplidar_link' at time 0.006 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715680.644379898] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715680.642506018] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1.080000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758715680.889408913] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715680.888129813] [rviz]: Message Filter dropping message: frame 'odom' at time 0.180 for reason 'discarding message because the queue is full'
+[INFO] [1758715680.971629148] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715680.968729788] [sys_stats_publisher]: Published stats - CPU: 72.50%, Memory: 28.30%
+[INFO] [1758715681.080944765] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.080069925] [rviz]: Message Filter dropping message: frame 'odom' at time 0.180 for reason 'discarding message because the queue is full'
+[INFO] [1758715681.143495789] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715681.142522879] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1.080000 but the earliest data is at time 1.102000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1758715681.177340041] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.175992651] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.006 for reason 'discarding message because the queue is full'
+[INFO] [1758715681.272792657] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.271735027] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.102 for reason 'discarding message because the queue is full'
+[INFO] [1758715681.306331179] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.304748589] [rviz]: Message Filter dropping message: frame 'odom' at time 0.180 for reason 'discarding message because the queue is full'
+[INFO] [1758715681.319465310] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.317648450] [rviz2]: Trying to create a map of size 60 x 60 using 1 swatches
+[INFO] [1758715681.393779404] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715681.390320614] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.201 for reason 'discarding message because the queue is full'
+[INFO] [1758715681.645032660] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715681.643098070] [global_costmap.global_costmap]: start
+[INFO] [1758715681.969253380] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715681.968330870] [sys_stats_publisher]: Published stats - CPU: 83.80%, Memory: 28.80%
+[INFO] [1758715682.676179253] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715682.674314903] [rviz2]: Trying to create a map of size 170 x 170 using 1 swatches
+[INFO] [1758715682.700203735] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.694674094] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[INFO] [1758715682.701028675] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.696215095] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[INFO] [1758715682.803997761] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.801978781] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[INFO] [1758715682.804581581] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802054671] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[INFO] [1758715682.806943772] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802630701] [behavior_server]: Activating
+[INFO] [1758715682.807594912] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802665451] [behavior_server]: Activating spin
+[INFO] [1758715682.807968402] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802708901] [behavior_server]: Activating backup
+[INFO] [1758715682.808337182] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802724241] [behavior_server]: Activating drive_on_heading
+[INFO] [1758715682.808682532] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802740071] [behavior_server]: Activating assisted_teleop
+[INFO] [1758715682.809043832] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802756161] [behavior_server]: Activating wait
+[INFO] [1758715682.809382022] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.802779651] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[INFO] [1758715682.908001088] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.906718518] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[INFO] [1758715682.908446708] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.906789338] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[INFO] [1758715682.908792458] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.907411728] [velocity_smoother]: Activating
+[INFO] [1758715682.909277208] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715682.907566718] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758715682.972633552] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715682.970228592] [sys_stats_publisher]: Published stats - CPU: 83.10%, Memory: 29.10%
+[INFO] [1758715683.016510564] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.011711674] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[INFO] [1758715683.017143274] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.011801354] [lifecycle_manager_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[INFO] [1758715683.017494024] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.012482524] [collision_monitor]: Activating
+[INFO] [1758715683.017890975] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.012703924] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1758715683.123810791] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.117177071] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
+[INFO] [1758715683.124617571] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.117300561] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[INFO] [1758715683.125259101] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.118891761] [bt_navigator]: Activating
+[INFO] [1758715683.171036594] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.167313454] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[INFO] [1758715683.275125361] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.270372650] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[INFO] [1758715683.277353261] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.270473300] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[INFO] [1758715683.277834161] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.271358430] [waypoint_follower]: Activating
+[INFO] [1758715683.278264391] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.271500090] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758715683.380295377] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.378646767] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[INFO] [1758715683.382537647] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.378844417] [lifecycle_manager_navigation]: [34m[1mActivating docking_server[0m[0m
+[INFO] [1758715683.383207347] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.382123377] [docking_server]: Activating docking_server
+[INFO] [1758715683.392446348] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.390554648] [docking_server]: Creating bond (docking_server) to lifecycle manager.
+[INFO] [1758715683.501605125] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.496172134] [lifecycle_manager_navigation]: Server docking_server connected with bond.
+[INFO] [1758715683.502180505] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.496268304] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[INFO] [1758715683.502486805] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715683.496284114] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[INFO] [1758715683.970811414] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715683.969065014] [sys_stats_publisher]: Published stats - CPU: 85.70%, Memory: 29.50%
+[INFO] [1758715683.971124334] [scenario_execution_ros]: [WARN] [ros2bag]: Positional "topics" argument deprecated. Please use optional "--topics" argument instead.
+[INFO] [1758715683.988323005] [scenario_execution_ros]: stdin is not a terminal device. Keyboard handling disabled.[INFO] [1758715683.987332275] [rosbag2_recorder]: Press SPACE for pausing/resuming
+[INFO] [1758715683.999367376] [scenario_execution_ros]: [INFO] [1758715683.997401586] [rosbag2_recorder]: Listening for topics...
+[INFO] [1758715683.999742156] [scenario_execution_ros]: [INFO] [1758715683.997449016] [rosbag2_recorder]: Event publisher thread: Starting
+[INFO] [1758715684.002412666] [scenario_execution_ros]: [INFO] [1758715683.997657106] [rosbag2_recorder]: use_sim_time set, waiting for /clock before starting recording...
+[INFO] [1758715684.003125966] [scenario_execution_ros]: [INFO] [1758715683.997569066] [rosbag2_recorder]: Recording...
+[INFO] [1758715684.038803558] [scenario_execution_ros]: [INFO] [1758715684.038144888] [rosbag2_recorder]: Sim time /clock found, starting recording.
+[INFO] [1758715684.056834959] [scenario_execution_ros]: [INFO] [1758715684.053936999] [rosbag2_recorder]: Subscribed to topic '/amcl_pose'
+[INFO] [1758715684.058198149] [scenario_execution_ros]: [INFO] [1758715684.057671869] [rosbag2_recorder]: Subscribed to topic '/map'
+[INFO] [1758715684.060583899] [scenario_execution_ros]: [INFO] [1758715684.059769369] [rosbag2_recorder]: Subscribed to topic '/system/cpu_usage'
+[INFO] [1758715684.061937690] [scenario_execution_ros]: [INFO] [1758715684.060689239] [rosbag2_recorder]: Subscribed to topic '/gazebo/real_time_factor'
+[INFO] [1758715684.062348070] [scenario_execution_ros]: [INFO] [1758715684.061415069] [rosbag2_recorder]: Subscribed to topic '/local_costmap/costmap'
+[INFO] [1758715684.075262970] [scenario_execution_ros]: [INFO] [1758715684.068286830] [rosbag2_recorder]: Subscribed to topic '/scenario_execution/snapshots'
+[INFO] [1758715684.075740420] [scenario_execution_ros]: [INFO] [1758715684.074588760] [rosbag2_recorder]: Subscribed to topic '/scenario_status'
+[INFO] [1758715684.080393861] [scenario_execution_ros]: [INFO] [1758715684.079857381] [rosbag2_recorder]: Subscribed to topic '/tf'
+[INFO] [1758715684.082191441] [scenario_execution_ros]: [INFO] [1758715684.081666981] [rosbag2_recorder]: Subscribed to topic '/system/memory_usage'
+[INFO] [1758715684.083659771] [scenario_execution_ros]: [INFO] [1758715684.083241251] [rosbag2_recorder]: Subscribed to topic '/tf_static'
+[INFO] [1758715684.184347007] [scenario_execution_ros]: [INFO] [1758715684.183439117] [rosbag2_recorder]: All requested topics are subscribed. Stopping discovery...
+[INFO] [1758715684.309056785] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715684.302778255] [bt_navigator]: Begin navigating from current location through 1 poses to (2.71, -1.97)
+[INFO] [1758715684.327382446] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715684.324343156] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715684.327910796] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715684.324412476] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[INFO] [1758715684.328421566] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715684.324427596] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758715684.416924422] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715684.409821631] [bridge_ros_gz]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[INFO] [1758715684.970828076] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715684.968860326] [sys_stats_publisher]: Published stats - CPU: 87.80%, Memory: 29.90%
+[INFO] [1758715685.303169587] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.299296687] [controller_server]: Optimizer reset
+[INFO] [1758715685.315441308] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.312551788] [controller_server]: Optimizer reset
+[INFO] [1758715685.316375208] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.312766618] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.333885659] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.331693009] [controller_server]: Optimizer reset
+[INFO] [1758715685.341738400] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.339693880] [controller_server]: Optimizer reset
+[INFO] [1758715685.342444970] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.340548000] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.387604353] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.384427663] [controller_server]: Optimizer reset
+[INFO] [1758715685.402325754] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.395589243] [controller_server]: Optimizer reset
+[INFO] [1758715685.409375244] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.395744903] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.445298466] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.440532596] [controller_server]: Optimizer reset
+[INFO] [1758715685.458568867] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.453976897] [controller_server]: Optimizer reset
+[INFO] [1758715685.459022497] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.454157937] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.487386829] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.484966169] [controller_server]: Optimizer reset
+[INFO] [1758715685.493477559] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.491628279] [controller_server]: Optimizer reset
+[INFO] [1758715685.500274900] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.491762009] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.540434312] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.535195102] [controller_server]: Optimizer reset
+[INFO] [1758715685.546770973] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.544859663] [controller_server]: Optimizer reset
+[INFO] [1758715685.547191623] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.545123753] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.588784815] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.583235045] [controller_server]: Optimizer reset
+[INFO] [1758715685.599859846] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.596816146] [controller_server]: Optimizer reset
+[INFO] [1758715685.602181116] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.596915036] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.638155629] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.632811688] [controller_server]: Optimizer reset
+[INFO] [1758715685.644711549] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.642986929] [controller_server]: Optimizer reset
+[INFO] [1758715685.646168979] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.643088039] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.647171119] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715685.643146369] [controller_server]: Controller patience exceeded
+[INFO] [1758715685.647733199] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.646192989] [controller_server]: Optimizer reset
+[INFO] [1758715685.648153559] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.646225929] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715685.665872910] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.663799550] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758715685.670036121] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.666022470] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715685.700900082] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.690942072] [controller_server]: Optimizer reset
+[INFO] [1758715685.708180553] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.702685933] [controller_server]: Optimizer reset
+[INFO] [1758715685.708610423] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.702855433] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.726151854] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.724592434] [controller_server]: Optimizer reset
+[INFO] [1758715685.738297845] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.733761795] [controller_server]: Optimizer reset
+[INFO] [1758715685.738904555] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.733926965] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.776686097] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.773387557] [controller_server]: Optimizer reset
+[INFO] [1758715685.777985157] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.776430137] [controller_server]: Optimizer reset
+[INFO] [1758715685.779304127] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.777558967] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.827919521] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.824406660] [controller_server]: Optimizer reset
+[INFO] [1758715685.832669111] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.829388871] [controller_server]: Optimizer reset
+[INFO] [1758715685.833153011] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.829508711] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.881217434] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.877463614] [controller_server]: Optimizer reset
+[INFO] [1758715685.889171664] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.885118394] [controller_server]: Optimizer reset
+[INFO] [1758715685.889672714] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.885294234] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.936062197] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.929628297] [controller_server]: Optimizer reset
+[INFO] [1758715685.956816559] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.954414518] [controller_server]: Optimizer reset
+[INFO] [1758715685.957669819] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.954636308] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.973578980] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715685.969231639] [sys_stats_publisher]: Published stats - CPU: 85.80%, Memory: 30.20%
+[INFO] [1758715685.979306060] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.974763980] [controller_server]: Optimizer reset
+[INFO] [1758715686.001158151] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.992789651] [controller_server]: Optimizer reset
+[INFO] [1758715686.001597081] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.993050351] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.026469713] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.023228053] [controller_server]: Optimizer reset
+[INFO] [1758715686.028421573] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.027639103] [controller_server]: Optimizer reset
+[INFO] [1758715686.028823533] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.027752093] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.077336526] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.074946006] [controller_server]: Optimizer reset
+[INFO] [1758715686.085603027] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.081673886] [controller_server]: Optimizer reset
+[INFO] [1758715686.086087967] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.081839166] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.086593937] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715686.081887696] [controller_server]: Controller patience exceeded
+[INFO] [1758715686.092813667] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.086351167] [controller_server]: Optimizer reset
+[INFO] [1758715686.096605847] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.086456617] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715686.098545488] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.093653677] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758715686.098843328] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.094460767] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[INFO] [1758715686.650748603] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.648100622] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.0581 Hz
+[INFO] [1758715686.666450543] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.664182793] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715686.673490514] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.670183224] [controller_server]: Optimizer reset
+[INFO] [1758715686.687696105] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.680149044] [controller_server]: Optimizer reset
+[INFO] [1758715686.688297385] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.680283614] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.727407007] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.722595547] [controller_server]: Optimizer reset
+[INFO] [1758715686.738458468] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.734856928] [controller_server]: Optimizer reset
+[INFO] [1758715686.739017228] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.735017528] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.785949661] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.773492370] [controller_server]: Optimizer reset
+[INFO] [1758715686.789755811] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.785862631] [controller_server]: Optimizer reset
+[INFO] [1758715686.790226271] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.786089081] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.826527484] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.824827314] [controller_server]: Optimizer reset
+[INFO] [1758715686.834376174] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.832703034] [controller_server]: Optimizer reset
+[INFO] [1758715686.834815854] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.832867344] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.881773377] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.879699737] [controller_server]: Optimizer reset
+[INFO] [1758715686.892389858] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.889283238] [controller_server]: Optimizer reset
+[INFO] [1758715686.892886728] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.889531538] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.929796340] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.924507400] [controller_server]: Optimizer reset
+[INFO] [1758715686.934367200] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.932107580] [controller_server]: Optimizer reset
+[INFO] [1758715686.936435981] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.932251150] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.971195813] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715686.969278743] [sys_stats_publisher]: Published stats - CPU: 84.60%, Memory: 30.50%
+[INFO] [1758715686.981636424] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.976725653] [controller_server]: Optimizer reset
+[INFO] [1758715686.993470094] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.991342494] [controller_server]: Optimizer reset
+[INFO] [1758715686.994511094] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.991558384] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.021688266] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.020243896] [controller_server]: Optimizer reset
+[INFO] [1758715687.032920667] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.028769956] [controller_server]: Optimizer reset
+[INFO] [1758715687.034942467] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.028956326] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.072165719] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.070569219] [controller_server]: Optimizer reset
+[INFO] [1758715687.081804240] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.079803030] [controller_server]: Optimizer reset
+[INFO] [1758715687.082400720] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.080089480] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.131739923] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.127480003] [controller_server]: Optimizer reset
+[INFO] [1758715687.141821024] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.138302253] [controller_server]: Optimizer reset
+[INFO] [1758715687.147615644] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.138447873] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.148104804] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715687.138503593] [controller_server]: Controller patience exceeded
+[INFO] [1758715687.148491844] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.140594654] [controller_server]: Optimizer reset
+[INFO] [1758715687.148947414] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.140640284] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715687.155496055] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.153842604] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[INFO] [1758715687.156422445] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.155263595] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715687.287702463] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.284633143] [controller_server]: Optimizer reset
+[INFO] [1758715687.301940794] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.293997023] [controller_server]: Optimizer reset
+[INFO] [1758715687.302405364] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.294116013] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.302809534] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.295986144] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 8.3333 Hz.
+[INFO] [1758715687.303247834] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.301390194] [controller_server]: Optimizer reset
+[INFO] [1758715687.310820674] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.309745034] [controller_server]: Optimizer reset
+[INFO] [1758715687.311272975] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.309863664] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.379622059] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.376611699] [controller_server]: Optimizer reset
+[INFO] [1758715687.389961720] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.384088699] [controller_server]: Optimizer reset
+[INFO] [1758715687.390852689] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.384309369] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.449765253] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.446335073] [controller_server]: Optimizer reset
+[INFO] [1758715687.467326144] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.463065214] [controller_server]: Optimizer reset
+[INFO] [1758715687.468548464] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.463364614] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.520003728] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.515854138] [controller_server]: Optimizer reset
+[INFO] [1758715687.526933988] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.525087348] [controller_server]: Optimizer reset
+[INFO] [1758715687.527746018] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.525219798] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.552756030] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.551653770] [controller_server]: Optimizer reset
+[INFO] [1758715687.557564250] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.556680940] [controller_server]: Optimizer reset
+[INFO] [1758715687.560839950] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.556847200] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.561386550] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715687.556878750] [controller_server]: Controller patience exceeded
+[INFO] [1758715687.561783491] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.559219860] [controller_server]: Optimizer reset
+[INFO] [1758715687.562269401] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.559274040] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715687.579047982] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.574901371] [behavior_server]: Running spin
+[INFO] [1758715687.579473222] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.575164581] [behavior_server]: Turning 1.57 for spin behavior.
+[INFO] [1758715687.971247027] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715687.969013226] [sys_stats_publisher]: Published stats - CPU: 85.60%, Memory: 30.80%
+[INFO] [1758715688.177698130] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175563270] [behavior_server]: Collision Ahead - Exiting Spin
+[INFO] [1758715688.178790040] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175668990] [behavior_server]: spin failed
+[INFO] [1758715688.180080620] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175711960] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[INFO] [1758715688.199722521] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715688.194636821] [behavior_server]: Running wait
+[INFO] [1758715688.974776841] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715688.969067381] [sys_stats_publisher]: Published stats - CPU: 83.50%, Memory: 31.10%
+[INFO] [1758715689.972484065] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715689.969802745] [sys_stats_publisher]: Published stats - CPU: 85.70%, Memory: 31.40%
+[INFO] [1758715690.970831010] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715690.968753920] [sys_stats_publisher]: Published stats - CPU: 83.70%, Memory: 31.70%
+[INFO] [1758715691.969575535] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715691.968431145] [sys_stats_publisher]: Published stats - CPU: 83.00%, Memory: 32.00%
+[INFO] [1758715692.358826221] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715692.356419051] [rviz]: Message Filter dropping message: frame 'odom' at time 0.288 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715692.610109837] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715692.604714787] [rviz]: Message Filter dropping message: frame 'odom' at time 0.468 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715692.845513313] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715692.843418603] [rviz]: Message Filter dropping message: frame 'odom' at time 0.684 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715692.846479213] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715692.843520913] [rviz]: Message Filter dropping message: frame 'odom' at time 0.693 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715692.970500621] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715692.969068791] [sys_stats_publisher]: Published stats - CPU: 85.40%, Memory: 32.30%
+[INFO] [1758715693.072207078] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.070071247] [rviz]: Message Filter dropping message: frame 'odom' at time 0.864 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.469960564] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.465920904] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.470476044] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.466516654] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.470773494] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.466763234] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.471085004] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.466882124] [rviz]: Message Filter dropping message: frame 'odom' at time 1.044 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.471370024] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.466925274] [rviz]: Message Filter dropping message: frame 'odom' at time 1.080 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.607580563] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.606223903] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.300 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.704756419] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.697439619] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.402 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.833592178] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.830799708] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.501 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.968410417] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715693.963178026] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.600 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715693.973054197] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715693.970210427] [sys_stats_publisher]: Published stats - CPU: 82.70%, Memory: 32.60%
+[INFO] [1758715694.096025005] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715694.092287515] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.702 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715694.224890984] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715694.216667653] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.801 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715694.299270699] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715694.297030569] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.900 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715694.413322886] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715694.409406686] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 1.002 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715694.714152266] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715694.711883016] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 1.101 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1758715694.971278773] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715694.968715013] [sys_stats_publisher]: Published stats - CPU: 84.70%, Memory: 32.90%
+[INFO] [1758715695.096499732] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715695.094906262] [behavior_server]: wait completed successfully
+[INFO] [1758715695.140510775] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715695.135358074] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715695.970750890] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715695.968906800] [sys_stats_publisher]: Published stats - CPU: 85.50%, Memory: 33.10%
+[INFO] [1758715696.969873517] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715696.968768507] [sys_stats_publisher]: Published stats - CPU: 85.10%, Memory: 33.20%
+[INFO] [1758715697.969679444] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715697.968368254] [sys_stats_publisher]: Published stats - CPU: 81.90%, Memory: 33.30%
+[INFO] [1758715698.191196780] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715698.185714369] [controller_server]: Passing new path to controller.
+[INFO] [1758715698.972903213] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715698.971251853] [sys_stats_publisher]: Published stats - CPU: 81.80%, Memory: 33.40%
+[INFO] [1758715699.973853981] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715699.971554461] [sys_stats_publisher]: Published stats - CPU: 81.40%, Memory: 33.40%
+[INFO] [1758715700.969926089] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715700.969023049] [sys_stats_publisher]: Published stats - CPU: 76.30%, Memory: 28.50%
+[INFO] [1758715701.237892608] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715701.235912197] [controller_server]: Passing new path to controller.
+[INFO] [1758715701.969620048] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715701.968627398] [sys_stats_publisher]: Published stats - CPU: 73.10%, Memory: 28.00%
+[INFO] [1758715702.971597128] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715702.968231897] [sys_stats_publisher]: Published stats - CPU: 58.60%, Memory: 27.90%
+[INFO] [1758715703.969549277] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715703.968244987] [sys_stats_publisher]: Published stats - CPU: 65.00%, Memory: 27.90%
+[INFO] [1758715704.237341406] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715704.235684296] [controller_server]: Passing new path to controller.
+[INFO] [1758715704.969299307] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715704.968425357] [sys_stats_publisher]: Published stats - CPU: 69.70%, Memory: 27.50%
+[INFO] [1758715705.969272577] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715705.968321147] [sys_stats_publisher]: Published stats - CPU: 69.30%, Memory: 27.60%
+[INFO] [1758715706.970817428] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715706.968514998] [sys_stats_publisher]: Published stats - CPU: 64.10%, Memory: 27.70%
+[INFO] [1758715707.286464311] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715707.285681741] [controller_server]: Passing new path to controller.
+[INFO] [1758715707.972381720] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715707.969764189] [sys_stats_publisher]: Published stats - CPU: 66.60%, Memory: 27.80%
+[INFO] [1758715708.969267201] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715708.968333881] [sys_stats_publisher]: Published stats - CPU: 67.40%, Memory: 27.90%
+[INFO] [1758715709.969414003] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715709.967914823] [sys_stats_publisher]: Published stats - CPU: 58.80%, Memory: 26.60%
+[INFO] [1758715710.288650786] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715710.285680326] [controller_server]: Passing new path to controller.
+[INFO] [1758715710.969850495] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715710.968532225] [sys_stats_publisher]: Published stats - CPU: 47.40%, Memory: 22.30%
+[INFO] [1758715711.968502737] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715711.967863007] [sys_stats_publisher]: Published stats - CPU: 44.30%, Memory: 21.90%
+[INFO] [1758715712.969122340] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715712.968197210] [sys_stats_publisher]: Published stats - CPU: 44.60%, Memory: 22.00%
+[INFO] [1758715713.336551847] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715713.335679117] [controller_server]: Passing new path to controller.
+[INFO] [1758715713.969819594] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715713.968588974] [sys_stats_publisher]: Published stats - CPU: 47.30%, Memory: 22.00%
+[INFO] [1758715714.968930127] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715714.968177227] [sys_stats_publisher]: Published stats - CPU: 49.80%, Memory: 22.20%
+[INFO] [1758715715.968697321] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715715.967998071] [sys_stats_publisher]: Published stats - CPU: 43.70%, Memory: 22.60%
+[INFO] [1758715716.386359282] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715716.385676382] [controller_server]: Passing new path to controller.
+[INFO] [1758715716.969594076] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715716.968579556] [sys_stats_publisher]: Published stats - CPU: 75.10%, Memory: 23.30%
+[INFO] [1758715717.968952841] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715717.968012710] [sys_stats_publisher]: Published stats - CPU: 49.80%, Memory: 23.70%
+[INFO] [1758715718.969861776] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715718.968602886] [sys_stats_publisher]: Published stats - CPU: 52.90%, Memory: 23.80%
+[INFO] [1758715719.387705417] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715719.385694427] [controller_server]: Passing new path to controller.
+[INFO] [1758715719.968588401] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715719.967841871] [sys_stats_publisher]: Published stats - CPU: 46.10%, Memory: 25.00%
+[INFO] [1758715720.969783997] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715720.968268317] [sys_stats_publisher]: Published stats - CPU: 56.90%, Memory: 25.40%
+[INFO] [1758715721.969856813] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715721.969106593] [sys_stats_publisher]: Published stats - CPU: 52.50%, Memory: 25.70%
+[INFO] [1758715722.438671369] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715722.435719289] [controller_server]: Passing new path to controller.
+[INFO] [1758715722.969842970] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715722.969075160] [sys_stats_publisher]: Published stats - CPU: 68.30%, Memory: 25.70%
+[INFO] [1758715723.968985696] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715723.968122296] [sys_stats_publisher]: Published stats - CPU: 55.50%, Memory: 25.50%
+[INFO] [1758715724.970807114] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715724.969239364] [sys_stats_publisher]: Published stats - CPU: 72.60%, Memory: 25.90%
+[INFO] [1758715725.440541070] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715725.435962320] [controller_server]: Passing new path to controller.
+[INFO] [1758715725.969544431] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715725.968572551] [sys_stats_publisher]: Published stats - CPU: 66.10%, Memory: 26.40%
+[INFO] [1758715726.971563179] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715726.968583059] [sys_stats_publisher]: Published stats - CPU: 84.60%, Memory: 26.80%
+[INFO] [1758715727.973794528] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715727.969764967] [sys_stats_publisher]: Published stats - CPU: 69.70%, Memory: 26.40%
+[INFO] [1758715728.489300348] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715728.485740858] [controller_server]: Passing new path to controller.
+[INFO] [1758715728.969294306] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715728.968192326] [sys_stats_publisher]: Published stats - CPU: 43.70%, Memory: 24.50%
+[INFO] [1758715729.968908835] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715729.968045795] [sys_stats_publisher]: Published stats - CPU: 54.60%, Memory: 25.30%
+[INFO] [1758715730.969279444] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715730.968483504] [sys_stats_publisher]: Published stats - CPU: 46.20%, Memory: 25.70%
+[INFO] [1758715731.486457565] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715731.485678625] [controller_server]: Passing new path to controller.
+[INFO] [1758715731.968662364] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715731.967760623] [sys_stats_publisher]: Published stats - CPU: 41.50%, Memory: 26.10%
+[INFO] [1758715732.968594884] [scenario_execution_ros]: [sys_stats_publisher-13] [INFO] [1758715732.967924964] [sys_stats_publisher]: Published stats - CPU: 41.30%, Memory: 26.20%
+[INFO] [1758715733.398030608] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.397041008] [controller_server]: Reached the goal!
+[INFO] [1758715733.399606658] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.398831178] [controller_server]: Optimizer reset
+[INFO] [1758715733.426253150] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.423710490] [bt_navigator]: Goal succeeded
+[INFO] [1758715733.496275016] [scenario_execution_ros]: Scenario 'nav_scenario' succeeded.
+[INFO] [1758715733.499618566] [scenario_execution_ros]: Shutting down...
+[INFO] [1758715733.500171316] [scenario_execution_ros]: Sending SIGTERM to process...
+[INFO] [1758715733.500510926] [scenario_execution_ros]: Process finished.
+[INFO] [1758715733.500832966] [scenario_execution_ros]: Sending SIGINT to process...
+[INFO] [1758715733.501200656] [scenario_execution_ros]: Process finished.
+[INFO] [1758715733.501529926] [scenario_execution_ros]: Deleting entity 'obstacle_0' from simulation.
+[INFO] [1758715733.502572186] [scenario_execution_ros]: [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [1758715734.692326332] [scenario_execution_ros]: Deleting entity 'obstacle_1' from simulation.
+[INFO] [1758715734.876013247] [scenario_execution_ros]: [static_transform_publisher-18] [INFO] [1758715733.500874276] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.876425127] [scenario_execution_ros]: [INFO] [parameter_bridge-15]: process has finished cleanly [pid 204]
+[INFO] [1758715734.876712957] [scenario_execution_ros]: [INFO] [parameter_bridge-2]: process has finished cleanly [pid 177]
+[INFO] [1758715734.876977917] [scenario_execution_ros]: [INFO] [gz-6]: process has finished cleanly [pid 181]
+[INFO] [1758715734.877250157] [scenario_execution_ros]: [ERROR] [rviz2-8]: process has died [pid 183, exit code -6, cmd '/opt/ros/jazzy/lib/rviz2/rviz2 -d /config/common/view.rviz --ros-args --params-file /tmp/launch_params_7eczmzx2'].
+[INFO] [1758715734.877511207] [scenario_execution_ros]: [INFO] [static_transform_publisher-17]: process has finished cleanly [pid 213]
+[INFO] [1758715734.877806777] [scenario_execution_ros]: [INFO] [static_transform_publisher-18]: process has finished cleanly [pid 214]
+[INFO] [1758715734.878068067] [scenario_execution_ros]: [INFO] [gazebo_stats_publisher-12]: process has finished cleanly [pid 192]
+[INFO] [1758715734.878406067] [scenario_execution_ros]: [INFO] [image_bridge-3]: process has finished cleanly [pid 178]
+[INFO] [1758715734.878694527] [scenario_execution_ros]: [INFO] [image_bridge-4]: process has finished cleanly [pid 179]
+[INFO] [1758715734.878956147] [scenario_execution_ros]: [ERROR] [sys_stats_publisher-13]: process has died [pid 195, exit code 1, cmd '/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher --ros-args -r __node:=sys_stats_publisher'].
+[INFO] [1758715734.879224667] [scenario_execution_ros]: [INFO] [robot_state_publisher-7]: process has finished cleanly [pid 182]
+[INFO] [1758715734.879499387] [scenario_execution_ros]: [INFO] [gazebo_tf_publisher_node-10]: process has finished cleanly [pid 185]
+[INFO] [1758715734.879763897] [scenario_execution_ros]: [ERROR] [laserscan_modification-14]: process has died [pid 198, exit code 1, cmd '/ws/install/message_modification/lib/message_modification/laserscan_modification --ros-args -r __node:=laserscan_modification --params-file /tmp/launch_params_2r9mqpu4 -r /in:=/scan_sim -r /out:=/scan'].
+[INFO] [1758715734.880044747] [scenario_execution_ros]: [INFO] [scenario_status_node-11]: process has finished cleanly [pid 186]
+[INFO] [1758715734.880311197] [scenario_execution_ros]: [parameter_bridge-15] [INFO] [1758715733.500878256] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.880591407] [scenario_execution_ros]: [static_transform_publisher-17] [INFO] [1758715733.500877796] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.880849107] [scenario_execution_ros]: [rviz2-8] [INFO] [1758715733.500891606] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.881113547] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.500891146] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.881426698] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.501023106] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1758715734.881710628] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.501177536] [amcl]: Deactivating
+[INFO] [1758715734.882017228] [scenario_execution_ros]: [gazebo_stats_publisher-12] [INFO] [1758715733.500894936] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.882422338] [scenario_execution_ros]: [robot_state_publisher-7] [INFO] [1758715733.500905196] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.890970838] [scenario_execution_ros]: [INFO] [component_container_isolated-9]: sending signal 'SIGINT' to process[component_container_isolated-9]
+[INFO] [1758715734.898413619] [scenario_execution_ros]: [parameter_bridge-2] [INFO] [1758715733.500928906] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.898743709] [scenario_execution_ros]: [image_bridge-4] [INFO] [1758715733.500926016] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.899016369] [scenario_execution_ros]: [gazebo_tf_publisher_node-10] [INFO] [1758715733.500901796] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.899250449] [scenario_execution_ros]: [image_bridge-3] [INFO] [1758715733.500928806] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.899501399] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.501229746] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1758715734.899711989] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.512725217] [amcl]: Cleaning up
+[INFO] [1758715734.899918149] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.522258558] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1758715734.900120259] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.522307728] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1758715734.900355749] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.522374188] [controller_server]: Deactivating
+[INFO] [1758715734.900569519] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.522410558] [MPPIController]: Deactivated MPPI Controller: FollowPath
+[INFO] [1758715734.900782069] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.522435878] [local_costmap.local_costmap]: Deactivating
+[INFO] [1758715734.900993249] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.537234619] [lifecycle_manager_localization]: [34m[1mHave not received a heartbeat from amcl.[0m[0m
+[INFO] [1758715734.901217299] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.537327989] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER amcl IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758715734.901432669] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.537442689] [lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1758715734.901676559] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.537461459] [lifecycle_manager_localization]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1758715734.901985709] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.537481679] [lifecycle_manager_localization]: [34m[1mDeactivating amcl[0m[0m
+[INFO] [1758715734.902233109] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715733.537881329] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758715734.902465739] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.537901189] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758715734.902705389] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.538118719] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[INFO] [1758715734.902950759] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.538154619] [lifecycle_manager_localization]: [34m[1mDeactivating map_server[0m[0m
+[INFO] [1758715734.903171519] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.538334149] [map_server]: Deactivating
+[INFO] [1758715734.903375409] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.538373349] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1758715734.903578319] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.652227178] [lifecycle_manager_localization]: [34m[1mCleaning up amcl[0m[0m
+[INFO] [1758715734.903803569] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715733.652502148] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758715734.904292179] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.652530208] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758715734.904513339] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.652859549] [lifecycle_manager_localization]: [34m[1mCleaning up map_server[0m[0m
+[INFO] [1758715734.904803499] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.653006699] [map_server]: Cleaning up
+[INFO] [1758715734.905142749] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.656691269] [lifecycle_manager_localization]: [34m[1mManaged nodes have been reset[0m[0m
+[INFO] [1758715734.905400169] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.673415060] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1758715734.905636739] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.683698381] [controller_server]: Cleaning up
+[INFO] [1758715734.905860169] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.685702891] [MPPIController]: Cleaned up MPPI Controller: FollowPath
+[INFO] [1758715734.906078019] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.686271681] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1758715734.906314579] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.696383992] [lifecycle_manager_navigation]: [34m[1mHave not received a heartbeat from controller_server.[0m[0m
+[INFO] [1758715734.906580699] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.696414152] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758715734.906834620] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.696450572] [lifecycle_manager_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[INFO] [1758715734.907061730] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.696459012] [lifecycle_manager_navigation]: [34m[1mResetting managed nodes...[0m[0m
+[INFO] [1758715734.907327340] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.696463832] [lifecycle_manager_navigation]: [34m[1mDeactivating docking_server[0m[0m
+[INFO] [1758715734.907553010] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.696794762] [docking_server]: Deactivating docking_server
+[INFO] [1758715734.907775980] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.712766423] [docking_server]: Destroying bond (docking_server) to lifecycle manager.
+[INFO] [1758715734.908065220] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.723634494] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1758715734.908369890] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.723660654] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[INFO] [1758715734.908641220] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.732172345] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1758715734.908911630] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.732216795] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1758715734.909190000] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.732227145] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[INFO] [1758715734.909461830] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.732254855] [smoother_server]: Deactivating
+[INFO] [1758715734.909728910] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.732286045] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1758715734.909995590] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.742450266] [smoother_server]: Cleaning up
+[INFO] [1758715734.910293220] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.758007727] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[INFO] [1758715734.910562350] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.758039497] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1758715734.910879590] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.758059357] [planner_server]: Deactivating
+[INFO] [1758715734.911224550] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.758090727] [global_costmap.global_costmap]: Deactivating
+[INFO] [1758715734.911509690] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.825148742] [lifecycle_manager_navigation]: [34m[1mDeactivating waypoint_follower[0m[0m
+[INFO] [1758715734.911858550] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.825429782] [waypoint_follower]: Deactivating
+[INFO] [1758715734.912178930] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.825473572] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758715734.912506830] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.937860831] [lifecycle_manager_navigation]: [34m[1mDeactivating bt_navigator[0m[0m
+[INFO] [1758715734.912817690] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.938509341] [bt_navigator]: Deactivating
+[INFO] [1758715734.913076390] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.938630121] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1758715734.913346010] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.051093840] [lifecycle_manager_navigation]: [34m[1mDeactivating collision_monitor[0m[0m
+[INFO] [1758715734.913618150] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.643519318] [planner_server]: Deactivating plugin GridBased of type NavfnPlanner
+[INFO] [1758715734.913897350] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.643645988] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1758715734.914212120] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.653908279] [planner_server]: Cleaning up
+[INFO] [1758715734.914496930] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.668899410] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1758715734.914788110] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.672005061] [planner_server]: Cleaning up plugin GridBased of type NavfnPlanner
+[INFO] [1758715734.915067280] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.672156621] [planner_server]: Destroying plugin GridBased of type NavfnPlanner
+[INFO] [1758715734.915354190] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.698292203] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1758715734.915629130] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.698316683] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[INFO] [1758715734.915894030] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.698335643] [behavior_server]: Deactivating
+[INFO] [1758715734.916162980] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.698370793] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[INFO] [1758715734.916547440] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.708541524] [behavior_server]: Cleaning up
+[INFO] [1758715734.917075400] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.717039754] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[INFO] [1758715734.917399860] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.717056334] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1758715734.917707170] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.717074414] [bt_navigator]: Cleaning up
+[INFO] [1758715734.918082381] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.825493433] [bt_navigator]: Completed Cleaning up
+[INFO] [1758715734.918448291] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.825581493] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1758715734.918718650] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.825597253] [waypoint_follower]: Running Nav2 LifecycleNode rcl preshutdown (waypoint_follower)
+[INFO] [1758715734.918983670] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.825627403] [waypoint_follower]: Cleaning up
+[INFO] [1758715734.919264070] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.831605003] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[INFO] [1758715734.919531021] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.831623133] [velocity_smoother]: Running Nav2 LifecycleNode rcl preshutdown (velocity_smoother)
+[INFO] [1758715734.919794721] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.831637853] [velocity_smoother]: Deactivating
+[INFO] [1758715734.920060521] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.831685383] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758715734.920377391] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.841812644] [velocity_smoother]: Cleaning up
+[INFO] [1758715734.920715761] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.841836454] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[INFO] [1758715734.920986061] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.841846074] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[INFO] [1758715734.921283521] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.841861754] [collision_monitor]: Deactivating
+[INFO] [1758715734.921590141] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.841935634] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1758715734.921862931] [scenario_execution_ros]: [laserscan_modification-14] [INFO] [1758715733.502061986] [laserscan_modification]: User requested shut down.
+[INFO] [1758715734.922128331] [scenario_execution_ros]: [laserscan_modification-14] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:423
+[INFO] [1758715734.922405841] [scenario_execution_ros]: [laserscan_modification-14] Traceback (most recent call last):
+[INFO] [1758715734.922669871] [scenario_execution_ros]: [laserscan_modification-14]   File "/ws/install/message_modification/lib/message_modification/laserscan_modification", line 33, in <module>
+[INFO] [1758715734.922934991] [scenario_execution_ros]: [laserscan_modification-14]     sys.exit(load_entry_point('message-modification==1.3.0', 'console_scripts', 'laserscan_modification')())
+[INFO] [1758715734.923246421] [scenario_execution_ros]: [laserscan_modification-14]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] [1758715734.923585951] [scenario_execution_ros]: [laserscan_modification-14]   File "/ws/install/message_modification/lib/python3.12/site-packages/message_modification/laserscan_modification.py", line 86, in main
+[INFO] [1758715734.923975771] [scenario_execution_ros]: [laserscan_modification-14]     rclpy.shutdown()
+[INFO] [1758715734.924428781] [scenario_execution_ros]: [laserscan_modification-14]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[INFO] [1758715734.924768061] [scenario_execution_ros]: [laserscan_modification-14]     _shutdown(context=context)
+[INFO] [1758715734.925048051] [scenario_execution_ros]: [laserscan_modification-14]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[INFO] [1758715734.925363351] [scenario_execution_ros]: [laserscan_modification-14]     context.shutdown()
+[INFO] [1758715734.925694021] [scenario_execution_ros]: [laserscan_modification-14]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[INFO] [1758715734.925993491] [scenario_execution_ros]: [laserscan_modification-14]     self.__context.shutdown()
+[INFO] [1758715734.926313961] [scenario_execution_ros]: [laserscan_modification-14] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:333
+[INFO] [1758715734.926646021] [scenario_execution_ros]: [rviz2-8] terminate called without an active exception
+[INFO] [1758715734.926928931] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m2[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.927221131] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m3[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.927492661] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:544] [0m[1;36mCreating postupdate worker thread ([0m[1;36m4[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.927761351] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [RenderUtil.cc:2643] [0m[1;36mCreate scene [[0m[1;36mscene[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.928065091] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:953] [0m[1;36mInitialization needed[0m[1;36m[0m
+[INFO] [1758715734.928410011] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:391] [0m[1;36mRendering Thread initialized[0m[1;36m[0m
+[INFO] [1758715734.928711591] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m101[0m[1;36m] named [[0m[1;36mobstacle_0[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.929025431] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m105[0m[1;36m] named [[0m[1;36mobstacle_2[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.929338021] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m109[0m[1;36m] named [[0m[1;36mobstacle_1[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.929647891] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [UserCommands.cc:1318] [0m[1;36mCreated entity [[0m[1;36m113[0m[1;36m] named [[0m[1;36mobstacle_3[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.930019821] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [CameraSensor.cc:405] [0m[1;36mCamera images for [[0m[1;36mstatic_camera::link::camera[0m[1;36m] advertised on [[0m[1;36mworld/default/model/static_camera/link/link/sensor/camera/image[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.930402411] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [CameraSensor.cc:695] [0m[1;36mCamera info for [[0m[1;36mstatic_camera::link::camera[0m[1;36m] advertised on [[0m[1;36m/world/default/model/static_camera/link/link/sensor/camera/camera_info[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.930789072] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [RgbdCameraSensor.cc:210] [0m[1;36mRGB images for [[0m[1;36mnav2_turtlebot4::oakd_rgb_camera_frame::rgbd_camera[0m[1;36m] advertised on [[0m[1;36mrgbd_camera[0m[1;36m/image][0m[1;36m[0m
+[INFO] [1758715734.931226212] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [RgbdCameraSensor.cc:224] [0m[1;36mDepth images for [[0m[1;36mnav2_turtlebot4::oakd_rgb_camera_frame::rgbd_camera[0m[1;36m] advertised on [[0m[1;36mrgbd_camera[0m[1;36m/depth_image][0m[1;36m[0m
+[INFO] [1758715734.931742712] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [RgbdCameraSensor.cc:238] [0m[1;36mPoints for [[0m[1;36mnav2_turtlebot4::oakd_rgb_camera_frame::rgbd_camera[0m[1;36m] advertised on [[0m[1;36mrgbd_camera[0m[1;36m/points][0m[1;36m[0m
+[INFO] [1758715734.932229202] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [CameraSensor.cc:695] [0m[1;36mCamera info for [[0m[1;36mnav2_turtlebot4::oakd_rgb_camera_frame::rgbd_camera[0m[1;36m] advertised on [[0m[1;36mrgbd_camera/camera_info[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.932610212] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Lidar.cc:139] [0m[1;36mLaser scans for [[0m[1;36mnav2_turtlebot4::rplidar_link::rplidar[0m[1;36m] advertised on [[0m[1;36mscan[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.933080332] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [GpuLidarSensor.cc:164] [0m[1;36mLidar points for [[0m[1;36mnav2_turtlebot4::rplidar_link::rplidar[0m[1;36m] advertised on [[0m[1;36mscan/points[0m[1;36m][0m[1;36m[0m
+[INFO] [1758715734.933489322] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [CameraSensor.cc:504] [0m[1;36mEnabling camera sensor: '[0m[1;36mstatic_camera::link::camera[0m[1;36m' data [0m[1;36mgeneration.[0m[1;36m[0m
+[INFO] [1758715734.933759382] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SignalHandler.cc:142] [0m[1;36mReceived signal[[0m[1;36m2[0m[1;36m].[0m
+[INFO] [1758715734.933971192] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [ServerPrivate.cc:122] [0m[1;36mServer received signal[[0m[1;36m2[0m[1;36m][0m
+[INFO] [1758715734.934198192] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:565] [0m[1;36mSensorsPrivate::Stop[0m[1;36m[0m
+[INFO] [1758715734.934405322] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:551] [0m[1;36mSensorsPrivate::RenderThread stopped[0m[1;36m[0m
+[INFO] [1758715734.934628962] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [gz.cc:434] [0m[1;36mShutting down gz-sim-server[0m[1;36m[0m
+[INFO] [1758715734.934836012] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([0m[1;36mExiting postupdate worker thread ([Dbg] [SimulationRunner.cc:560] [Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([0m[1;36m1[0m[1;36m1[Dbg] [SimulationRunner.cc:560] [0m[1;36mExiting postupdate worker thread ([0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.935079902] [scenario_execution_ros]: [gz-6] [1;36mExiting postupdate worker thread ([0m[1;36mExiting postupdate worker thread ([0m[1;36m3[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.935343942] [scenario_execution_ros]: [gz-6] [1;36m)[0m[1;36m[0m
+[INFO] [1758715734.935615122] [scenario_execution_ros]: [gz-6] [1;36m)[0m[1;36mExiting postupdate worker thread ([0m[1;36m4[0m[1;36m)[0m[1;36m[0m
+[INFO] [1758715734.935936622] [scenario_execution_ros]: [gz-6] [1;36m)[0m[1;36m[0m
+[INFO] [1758715734.936260422] [scenario_execution_ros]: [gz-6] [1;36m[Dbg] [Sensors.cc:565] [0m[1;36mSensorsPrivate::Stop[0m[1;36m[0m
+[INFO] [1758715734.936488002] [scenario_execution_ros]: [sys_stats_publisher-13] Traceback (most recent call last):
+[INFO] [1758715734.936747042] [scenario_execution_ros]: [sys_stats_publisher-13]   File "/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher", line 33, in <module>
+[INFO] [1758715734.937038382] [scenario_execution_ros]: [sys_stats_publisher-13]     sys.exit(load_entry_point('sys-stats-publisher==1.3.0', 'console_scripts', 'sys_stats_publisher')())
+[INFO] [1758715734.937305412] [scenario_execution_ros]: [sys_stats_publisher-13]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] [1758715734.937539242] [scenario_execution_ros]: [sys_stats_publisher-13]   File "/ws/install/sys_stats_publisher/lib/python3.12/site-packages/sys_stats_publisher/sys_stats_publisher.py", line 90, in main
+[INFO] [1758715734.937897362] [scenario_execution_ros]: [sys_stats_publisher-13]     rclpy.shutdown()
+[INFO] [1758715734.938299222] [scenario_execution_ros]: [sys_stats_publisher-13]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+[INFO] [1758715734.938595442] [scenario_execution_ros]: [sys_stats_publisher-13]     _shutdown(context=context)
+[INFO] [1758715734.938818162] [scenario_execution_ros]: [sys_stats_publisher-13]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+[INFO] [1758715734.939084882] [scenario_execution_ros]: [sys_stats_publisher-13]     context.shutdown()
+[INFO] [1758715734.939477752] [scenario_execution_ros]: [sys_stats_publisher-13]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+[INFO] [1758715734.939782742] [scenario_execution_ros]: [sys_stats_publisher-13]     self.__context.shutdown()
+[INFO] [1758715734.940016102] [scenario_execution_ros]: [sys_stats_publisher-13] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:333
+[INFO] [1758715734.940248032] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.890693158] [rclcpp]: signal_handler(signum=2)
+[INFO] [1758715734.940460652] [scenario_execution_ros]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running
+[INFO] [1758715734.944280483] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.943594163] [collision_monitor]: Cleaning up
+[INFO] [1758715734.948858523] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.947765193] [collision_monitor]: [FootprintApproach]: Destroying Polygon
+[INFO] [1758715734.952044023] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.951483443] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1758715734.952361503] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.951502463] [docking_server]: Running Nav2 LifecycleNode rcl preshutdown (docking_server)
+[INFO] [1758715734.952702173] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.951519103] [docking_server]: Cleaning up docking_server
+[INFO] [1758715734.968549084] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.967149404] [docking_server]: Destroying bond (docking_server) to lifecycle manager.
+[INFO] [1758715734.968958545] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715734.967203344] [lifecycle_manager_navigation]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_navigation)
+[INFO] [1758715735.815287633] [scenario_execution_ros]: Deleting entity 'obstacle_2' from simulation.
+[INFO] [1758715736.935200684] [scenario_execution_ros]: Deleting entity 'obstacle_3' from simulation.
+[INFO] [1758715738.070308807] [scenario_execution_ros]: Waiting for process to quit...
+[INFO] [1758715738.070918517] [scenario_execution_ros]: [INFO] [1758715738.070544667] [rosbag2_recorder]: Pausing recording.
+[INFO] [1758715738.071291247] [scenario_execution_ros]: [INFO] [1758715738.070610077] [rosbag2_cpp]: Writing remaining messages from cache to the bag. It may take a while
+[INFO] [1758715738.076343407] [scenario_execution_ros]: [INFO] [1758715738.075752627] [rosbag2_recorder]: Event publisher thread: Exiting
+[INFO] [1758715738.076832527] [scenario_execution_ros]: [INFO] [1758715738.075819917] [rosbag2_recorder]: Recording stopped
+[INFO] [1758715739.121809223] [scenario_execution_ros]: Process finished.
+[INFO] [1758715739.164271727] [scenario_execution_ros]: Shutting down finished.

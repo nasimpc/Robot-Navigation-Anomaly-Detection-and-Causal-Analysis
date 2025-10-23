@@ -1,0 +1,3 @@
+[INFO] [1758723843.352732672] [gazebo_stats_publisher]: Subscribed to Gazebo topic: /world/default/stats
+[INFO] [1758723843.352900612] [gazebo_stats_publisher]: Gazebo Stats Publisher is running...
+[INFO] [1758723939.995660080] [rclcpp]: signal_handler(signum=2)

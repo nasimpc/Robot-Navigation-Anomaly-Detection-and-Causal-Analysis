@@ -1,0 +1,35 @@
+[INFO] [1758704853.134913871] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758704853.135001311] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[INFO] [1758704853.215643695] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758704853.394479507] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758704853.394930777] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758704853.408270251] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+
+[INFO] [1758704853.445499472] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+
+[INFO] [1758704853.468569168] [rviz]: Subscribing to: /mobile_base/sensors/bumper_pointcloud
+
+[INFO] [1758704853.494255716] [rviz]: Subscribing to: /local_costmap/voxel_marked_cloud
+
+[INFO] [1758704853.503653818] [rviz]: Subscribing to: /global_costmap/voxel_marked_cloud
+
+[INFO] [1758704853.547310021] [nav2_rviz_selector_node]: Trying to load plugins...
+[INFO] [1758704853.613501300] [nav2_rviz_docking_panel_node]: Loading dock plugins
+[INFO] [1758704853.747321889] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1758704853.840310606] [rviz2]: Trying to create a map of size 192 x 350 using 1 swatches
+[ERROR] [1758704853.864109363] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+rviz/glsl120/indexed_8bit_image.frag
+ GLSL link result : 
+active samplers with a different type refer to the same texture image unit
+[INFO] [1758704861.828300019] [rviz]: Message Filter dropping message: frame 'odom' at time 0.180 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.020089975] [rviz]: Message Filter dropping message: frame 'odom' at time 0.180 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.244589450] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.006 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.244825270] [rviz]: Message Filter dropping message: frame 'odom' at time 0.360 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.340255657] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.102 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.436580505] [rviz]: Message Filter dropping message: frame 'odom' at time 0.540 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.469222555] [rviz]: Message Filter dropping message: frame 'rplidar_link' at time 0.201 for reason 'discarding message because the queue is full'
+[INFO] [1758704862.845216503] [rviz2]: Trying to create a map of size 60 x 60 using 1 swatches
+[INFO] [1758704863.551821758] [rviz2]: Trying to create a map of size 192 x 350 using 1 swatches
+[INFO] [1758704865.280434937] [rclcpp]: signal_handler(signum=2)

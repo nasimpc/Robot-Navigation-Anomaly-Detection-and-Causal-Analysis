@@ -1,0 +1,2 @@
+[WARN] [1758702042.767859582] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758702114.789019435] [laserscan_modification]: User requested shut down.
