@@ -1,0 +1,102 @@
+#logs warns errors and wins
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/circle-generated-p1-o4-box-sd000n000/1/logs/robot_state_publisher_181_1758695913723.log
+[WARN] [1758695913.795781263] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/circle-generated-p1-o4-box-sd000n000/1/logs/python3_190_1758695914240.log
+[WARN] [1758695914.544884349] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/circle-generated-p1-o4-box-sd000n000/1/logs/rviz2_182_1758695913902.log
+[ERROR] [1758695914.926532243] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/circle-generated-p1-o4-box-sd000n000/1/logs/python3_38_1758695908007.log
+[INFO] [1758695913.798083937] [scenario_execution_ros]: [robot_state_publisher-7] [WARN] [1758695913.795781263] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[INFO] [1758695914.348938939] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695914.346202371] [controller_server]: getting goal checker plugins..
+[INFO] [1758695914.400472258] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695914.399888492] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758695914.400995984] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695914.400320177] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758695914.545521506] [scenario_execution_ros]: [laserscan_modification-14] [WARN] [1758695914.544884349] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758695914.548342216] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695914.547571847] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758695914.626299011] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695914.625685565] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758695914.927280800] [scenario_execution_ros]: [rviz2-8] [ERROR] [1758695914.926532243] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[INFO] [1758695920.328738891] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695920.327715221] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758695924.113014252] [scenario_execution_ros]: [WARN] [ros2bag]: Positional "topics" argument deprecated. Please use optional "--topics" argument instead.
+[INFO] [1758695924.540219334] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695924.537965730] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758695924.540655688] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695924.538047231] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[INFO] [1758695924.541002202] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695924.538071191] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758695966.793492097] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758695966.790430833] [controller_server]: Failed to make progress
+[INFO] [1758695966.797301488] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695966.795388497] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758695966.812004817] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695966.809440589] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758695966.948928341] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695966.946693316] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 8.1301 Hz.
+[INFO] [1758695979.549728324] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758695979.546863533] [controller_server]: Failed to make progress
+[INFO] [1758695979.550582834] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695979.549267529] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758695980.058315959] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695980.052324983] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.0030 Hz
+[INFO] [1758695980.070285599] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695980.068299408] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758695991.470253932] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758695991.468694865] [controller_server]: Failed to make progress
+[INFO] [1758695991.472964362] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758695991.471637577] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758695991.490066080] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758695991.487779075] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758696001.939527921] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696001.937990854] [controller_server]: Failed to make progress
+[INFO] [1758696001.940560702] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696001.938917264] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758696003.999255076] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758696003.997485146] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758696007.611366325] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758696007.610145191] [controller_server]: Reached the goal!
+[INFO] [1758696007.723156985] [scenario_execution_ros]: [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [1758696009.444153521] [scenario_execution_ros]: [ERROR] [gazebo_tf_publisher_node-10]: process has died [pid 184, exit code -11, cmd '/ws/install/gazebo_tf_publisher/lib/gazebo_tf_publisher/gazebo_tf_publisher_node --ros-args -r __node:=gazebo_tf_publisher --params-file /tmp/launch_params_16nplx8v --params-file /tmp/launch_params_o64rloek'].
+[INFO] [1758696009.444757378] [scenario_execution_ros]: [ERROR] [rviz2-8]: process has died [pid 182, exit code -6, cmd '/opt/ros/jazzy/lib/rviz2/rviz2 -d /config/common/view.rviz --ros-args --params-file /tmp/launch_params_z6adn50s'].
+[INFO] [1758696009.446375946] [scenario_execution_ros]: [ERROR] [sys_stats_publisher-13]: process has died [pid 189, exit code 1, cmd '/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher --ros-args -r __node:=sys_stats_publisher'].
+[INFO] [1758696009.446648839] [scenario_execution_ros]: [ERROR] [laserscan_modification-14]: process has died [pid 190, exit code 1, cmd '/ws/install/message_modification/lib/message_modification/laserscan_modification --ros-args -r __node:=laserscan_modification --params-file /tmp/launch_params_l4sbquyy -r /in:=/scan_sim -r /out:=/scan'].
+[INFO] [1758696009.472480026] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.908922868] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758696009.473678869] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696007.909255271] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758696009.473924282] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.909279132] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758696009.474171425] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.909507554] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[INFO] [1758696009.474741441] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696007.909616335] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758696009.474965454] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.909626895] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758696009.475194276] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.909774407] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[INFO] [1758696009.475625911] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696007.909862118] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758696009.475894574] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.909869738] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758696009.476407090] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696007.910072300] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758696009.476634602] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696007.910081051] [map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758696009.481236633] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696008.043342970] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758696009.490011341] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758696008.304064786] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758696009.490270314] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696008.304091476] [bt_navigator]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758696009.490530127] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758696008.304331229] [lifecycle_manager_navigation]: Failed to change state for node: bt_navigator
+[INFO] [1758696009.508476036] [scenario_execution_ros]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/circle-generated-p1-o4-box-sd000n000/1/logs/component_container_isolated_183_1758695913726.log
+[INFO] [1758695914.346202371] [controller_server]: getting goal checker plugins..
+[INFO] [1758695914.399888492] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758695914.400320177] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[WARN] [1758695914.547571847] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[WARN] [1758695914.625685565] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[WARN] [1758695920.327715221] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758695924.537965730] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758695924.538047231] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[WARN] [1758695924.538071191] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[ERROR] [1758695966.790430833] [controller_server]: Failed to make progress
+[WARN] [1758695966.795388497] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758695966.809440589] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758695966.946693316] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 8.1301 Hz.
+[ERROR] [1758695979.546863533] [controller_server]: Failed to make progress
+[WARN] [1758695979.549267529] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[WARN] [1758695980.052324983] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.0030 Hz
+[INFO] [1758695980.068299408] [controller_server]: Received a goal, begin computing control effort.
+[ERROR] [1758695991.468694865] [controller_server]: Failed to make progress
+[WARN] [1758695991.471637577] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758695991.487779075] [controller_server]: Received a goal, begin computing control effort.
+[ERROR] [1758696001.937990854] [controller_server]: Failed to make progress
+[WARN] [1758696001.938917264] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758696003.997485146] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758696007.610145191] [controller_server]: Reached the goal!
+[ERROR] [1758696007.908922868] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[WARN] [1758696007.909255271] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758696007.909279132] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758696007.909507554] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[WARN] [1758696007.909616335] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758696007.909626895] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758696007.909774407] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[WARN] [1758696007.909862118] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758696007.909869738] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758696007.910072300] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758696007.910081051] [map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758696008.043342970] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[WARN] [1758696008.304064786] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758696008.304091476] [bt_navigator]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758696008.304331229] [lifecycle_manager_navigation]: Failed to change state for node: bt_navigator
+

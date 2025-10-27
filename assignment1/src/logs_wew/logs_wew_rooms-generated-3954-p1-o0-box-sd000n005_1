@@ -1,0 +1,51 @@
+#logs warns errors and wins
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/rooms-generated-3954-p1-o0-box-sd000n005/1/logs/python3_39_1758729144145.log
+[INFO] [1758729148.550966342] [scenario_execution_ros]: [robot_state_publisher-7] [WARN] [1758729148.539426718] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[INFO] [1758729149.068964245] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758729149.067520783] [controller_server]: getting goal checker plugins..
+[INFO] [1758729149.082902641] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758729149.082560492] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758729149.083146026] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758729149.082822856] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758729149.194752710] [scenario_execution_ros]: [laserscan_modification-14] [WARN] [1758729149.193683385] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758729149.200719404] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758729149.199942572] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758729149.366455092] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758729149.365909276] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758729149.553980195] [scenario_execution_ros]: [rviz2-8] [ERROR] [1758729149.552926770] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[INFO] [1758729154.119674901] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758729154.117875974] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758729157.843921292] [scenario_execution_ros]: [WARN] [ros2bag]: Positional "topics" argument deprecated. Please use optional "--topics" argument instead.
+[INFO] [1758729158.299307801] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758729158.297523748] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758729158.299576666] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758729158.297581245] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[INFO] [1758729158.299837862] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758729158.297596324] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758729185.661328856] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758729185.660312856] [controller_server]: Reached the goal!
+[INFO] [1758729185.781415073] [scenario_execution_ros]: [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/rooms-generated-3954-p1-o0-box-sd000n005/1/logs/rviz2_177_1758729148568.log
+[ERROR] [1758729149.552926770] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/rooms-generated-3954-p1-o0-box-sd000n005/1/logs/robot_state_publisher_176_1758729148482.log
+[WARN] [1758729148.539426718] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/rooms-generated-3954-p1-o0-box-sd000n005/1/logs/component_container_isolated_178_1758729148484.log
+[INFO] [1758729149.067520783] [controller_server]: getting goal checker plugins..
+[INFO] [1758729149.082560492] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758729149.082822856] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[WARN] [1758729149.199942572] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[WARN] [1758729149.365909276] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[WARN] [1758729154.117875974] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758729158.297523748] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758729158.297581245] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[WARN] [1758729158.297596324] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758729185.660312856] [controller_server]: Reached the goal!
+[ERROR] [1758729185.864307940] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[WARN] [1758729185.891401744] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758729185.891420473] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758729185.891779159] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[WARN] [1758729185.891923473] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758729185.891935023] [map_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758729185.892060248] [lifecycle_manager_localization]: Failed to change state for node: map_server
+[WARN] [1758729185.892183203] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758729185.892190333] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758729185.892411844] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758729185.892420254] [map_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758729186.029681614] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/rooms-generated-3954-p1-o0-box-sd000n005/1/logs/python3_187_1758729148953.log
+[WARN] [1758729149.193683385] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+
