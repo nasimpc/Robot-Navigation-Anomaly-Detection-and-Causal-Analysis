@@ -56,13 +56,16 @@ Questions are framed to explore **high-level goals** and **specific data needs**
 
 ## Estimated Time and StructureTotal Duration: ~60 minutes
 
-| **Activity**           | **Description**                             | **Duration** |
-|-------------------------|---------------------------------------------|--------------|
-| Data Familiarization    | Reviewing logs, YAML, and PG files          | 15 min       |
-| Interview Session       | Oral discussion with Mr. Wiest              | 15 min       |
-| Clarification Round     | Follow-up via email                         | 10 min       |
-| Documentation           | Recording and validating insights           | 20 min       |
+| **Activity** | **Description** | **Estimated Duration** |
+|--------------|-----------------|-------------------------|
+| **Data Familiarization** | Review and understand dataset contents (CSV logs, YAML, and map files) to identify relevant parameters for localization and navigation. | 1.5 days |
+| **Question Preparation** | Formulate and refine follow-up questions categorized under organizational, technical, and data-related aspects. | 0.5 day |
+| **Interview Session** | Conduct a short virtual meeting with Mr. Wiest to clarify goals, expectations, and dataset details. | 15 minutes |
+| **Clarification and Feedback Round** | Exchange follow-up emails or messages to resolve pending questions after the interview. | 0.5 day |
+| **Documentation and Analysis** | Compile insights, summarize responses, and prepare preliminary requirements collaboratively as a team. | 2 days |
+| **Validation and Review** | Conduct internal review and finalize the validated requirement document for submission. | 1 day |
 
+**Total Duration:** ~6 days (distributed across the week)
 
 ## Documentation and Verification
 
@@ -100,19 +103,21 @@ After the initial elicitation and documentation of requirements, our team will c
 - Ensures evolving alignment between data findings and research goals.  
 
 # 2. Preliminary Requirements (User Story Format)
+Based on the follow-up questions and stakeholder discussions, the following **preliminary requirements** have been identified.  
+These are expressed in **User Story format**, which clearly defines the user role, action, and purpose behind each requirement.
 
-> Each requirement follows the structure:  
-> **As a [user role], I want to [perform an action] so that [I can achieve a goal].**
+The standard user story structure is:  
+**"As a [user role], I want to [perform an action] so that [I can achieve a goal or benefit]."**
 
-| **ID** | **User Story** | **Acceptance Hint** |
-|--------|----------------|---------------------|
-| R1 | As a researcher, I want to compare the robot’s estimated path to the ground truth trajectory, so that I can measure navigation accuracy. | The system should calculate RMSE and deviation metrics. |
-| R2 | As an analyst, I want to detect irregular or failed runs, so that I can identify causes of instability. | Runs with >20% deviation or timeout are flagged as failed. |
-| R3 | As a researcher, I want to analyze how obstacle size and placement affect navigation accuracy, so that I can assess environment influence. | Correlation plots show performance vs. obstacle metrics. |
-| R4 | As a developer, I want to visualize robot paths on environment maps, so that I can identify navigation patterns. | Overlays of paths on `.pgm` maps are auto-generated. |
-| R5 | As a data analyst, I want to compute summary statistics (deviation, completion time), so that runs can be compared. | Summary table auto-generates after data cleaning. |
-| R6 | As a system designer, I want to merge map, transform, and sensor data, so that unified analysis can be performed. | Data merge completes without NaN or alignment errors. |
-| R7 | As a developer, I want a reusable data analysis pipeline, so that larger datasets can be handled easily. | Script should run automatically across all runs/scenarios. |
+| **ID** | **Heading** | **User Story** |
+|--------|--------------|----------------|
+| R1 | Evaluate Navigation Accuracy | As a researcher, I want to compare the robot’s estimated path to the ground truth trajectory, so that I can measure navigation accuracy. |
+| R2 | Detect Abnormal or Failed Runs | As an analyst, I want to detect irregular or failed runs, so that I can identify possible causes of errors or instability. |
+| R3 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance. |
+| R4 | Visualize Robot Trajectories | As a developer, I want to overlay robot paths on environment maps, so that I can visualize navigation and detect obstacle-related deviations. |
+| R5 | Generate Performance Summaries | As a data analyst, I want to compute key statistics such as deviation and completion time, so that comparisons can be made across multiple runs. |
+| R6 | Integrate Multiple Data Sources | As a system designer, I want to merge map, transform, and sensor data, so that unified insights can be produced efficiently. |
+| R7 | Ensure Scalability and Automation | As a developer, I want an automated and reusable data analysis pipeline, so that the same framework can handle larger datasets in the future. |
 
 
 # 3. Plan for Gathering and Refining Requirements
