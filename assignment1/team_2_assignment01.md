@@ -1,25 +1,25 @@
 # Team Information
 
-Team Number: 2 <br>
-Team Members:  Marina, Keerthi, Nasim , Shariful, Chandrika <br>
-Project Title: Analysis Framework for Evaluating Robot Localization and Navigation Performance in Simulation<br>
-Date: 29 October 2025 <br>
+**Team Number**: 2 <br>
+**Team Members**:  Marina, Keerthi, Nasim , Shariful, Chandrika <br>
+**Project Title**: Analysis Framework for Evaluating Robot Localization and Navigation Performance in Simulation<br>
+**Date**: 29 October 2025 <br>
 
 # 1. Protocol for Requirement Elicitation & Follow-up questions 
 
 ## Participants
 
-Primary Stakeholder: Mr. Samuel Wiest (Researcher and Dataset Owner)
-Student Team Members: Team 2 – Analysts and Developers
-Role: The researcher provides domain knowledge, dataset context, and expected outcomes; the student team is responsible for identifying, defining, and implementing the analysis requirements.
+**Primary Stakeholder**: Mr. Samuel Wiest (Researcher and Dataset Owner) <br>
+**Student Team Members**: Team 2 – Analysts and Developers  <br>
+**Role**: The researcher provides domain knowledge, dataset context, and expected outcomes; the student team is responsible for identifying, defining, and implementing the analysis requirements.
 
 ## Question Format and Purpose
 
 Questions are framed to explore organizational, technical, and data-related aspects of the project. Each aims to derive measurable requirements related to the testing framework.
 
-* Open-ended questions: for understanding goals and expectations.
-* Closed-ended questions: for verification and clarification.
-* Scenario-based questions: for understanding workflow and outcomes.
+* **Open-ended questions**: for understanding goals and expectations.
+* **Closed-ended questions**: for verification and clarification.
+* **Scenario-based questions**: for understanding workflow and outcomes.
 
 
 ## Categorization of Questions
@@ -48,17 +48,19 @@ Questions are framed to explore organizational, technical, and data-related aspe
 
 ## Tools and Methods
 
-Primary Tools: Python (Pandas, NumPy, Matplotlib, Seaborn), Jupyter Notebook
-Supporting Tools: YAML parser, OpenCV, ROS2 bag data utilities
-Version Control: GitHub for tracking requirements and progress
+**Primary Tools**: Python (Pandas, NumPy, Matplotlib, Seaborn), Jupyter Notebook
+**Supporting Tools**: YAML parser, OpenCV, ROS2 bag data utilities
+**Version Control**: GitHub for tracking requirements and progress
 
 ## Estimated Time and StructureTotal Duration: ~60 minutes
 
-Activity,Description,Duration
-Data Familiarization,"Reviewing logs, YAML, and PG files",15 min
-Interview Session,Oral discussion with Mr. Wiest,15 min
-Clarification Round,Follow-up via email,10 min
-Documentation,Recording and validating insights,20 min
+| **Activity**           | **Description**                             | **Duration** |
+|-------------------------|---------------------------------------------|--------------|
+| Data Familiarization    | Reviewing logs, YAML, and PG files          | 15 min       |
+| Interview Session       | Oral discussion with Mr. Wiest              | 15 min       |
+| Clarification Round     | Follow-up via email                         | 10 min       |
+| Documentation           | Recording and validating insights           | 20 min       |
+
 
 ## Documentation and Verification
 
@@ -141,11 +143,11 @@ As a developer, I want an automated and reusable data analysis pipeline, so that
 
 # 3. Plan for Gathering and Refining Requirements
 
-1. Initial Data Exploration: Examine CSV, YAML, and map files to understand relationships among logs, transforms, and maps.
-2. Stakeholder Discussion: Conduct an interview with Mr. Wiest to clarify expected analysis goals.
-3. Iterative Refinement: Convert findings into detailed User Stories and validate through feedback.
-4. Traceability: Maintain a mapping between questions and requirements for transparency.
-5. Validation: Reconfirm final interpretations with Mr. Wiest before implementation.
+1. **Initial Data Exploration**: Examine CSV, YAML, and map files to understand relationships among logs, transforms, and maps.
+2. **Stakeholder Discussion**: Conduct an interview with Mr. Wiest to clarify expected analysis goals.
+3. **Iterative Refinement**: Convert findings into detailed User Stories and validate through feedback.
+4. **Traceability**: Maintain a mapping between questions and requirements for transparency.
+5. **Validation**: Reconfirm final interpretations with Mr. Wiest before implementation.
 
 
 
