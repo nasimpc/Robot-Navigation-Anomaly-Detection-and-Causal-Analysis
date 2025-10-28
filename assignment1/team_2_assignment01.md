@@ -113,31 +113,31 @@ This ensures evolving alignment between analytical findings and project goals.
 
 The standard user story format is "As a [user role], I want to [perform an action] so that [I can achieve a goal/benefit].
 
-## Evaluate Navigation Accuracy
+##### Evaluate Navigation Accuracy
 
 As a researcher, I want to compare the robot’s estimated path to the ground truth trajectory, so that I can measure how accurately the robot navigates.
 
-## Detect Abnormal or Failed Runs
+##### Detect Abnormal or Failed Runs
 
 As an analyst, I want to detect irregular or failed runs, so that we can identify possible causes of errors or instability.
 
-## Analyze Obstacle Impact
+##### Analyze Obstacle Impact
 
 As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance.
 
-## Visualize Robot Trajectories
+##### Visualize Robot Trajectories
 
 As a developer, I want to overlay robot paths on environment maps, so that I can visualize navigation and detect obstacle-related deviations.
 
-## Generate Performance Summaries
+##### Generate Performance Summaries
 
 As a data analyst, I want to compute key statistics (e.g., deviation, completion time), so that comparisons can be made across multiple runs.
 
-## Integrate Multiple Data Sources
+##### Integrate Multiple Data Sources
 
 As a system designer, I want to merge map, transform, and sensor data, so that unified insights can be produced efficiently.
 
-## Ensure Scalability and Automation
+##### Ensure Scalability and Automation
 
 As a developer, I want an automated and reusable data analysis pipeline, so that the same framework can handle larger datasets in the future
 
