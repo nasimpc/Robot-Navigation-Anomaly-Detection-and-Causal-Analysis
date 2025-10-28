@@ -7,6 +7,10 @@
 
 # 1. Protocol for Requirement Elicitation & Follow-up questions 
 
+  This document outlines our team’s structured approach for understanding and defining requirements related to the testing framework for evaluating robot localization and navigation performance in simulation.  
+  Based on the researcher’s initial email, the goal is to identify performance indicators, detect anomalies, and analyze correlations between scenario variations and navigation outcomes.  
+The following sections present our protocol for conducting the follow-up discussion, preliminary requirements, and our plan for gathering and refining requirements.
+
 ## Participants
 | Role | Name / Description |
 |------|--------------------|
