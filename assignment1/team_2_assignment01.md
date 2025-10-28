@@ -1,9 +1,9 @@
 # Team Information
 
-Team Number: 2
-Team Members:  Marina, Keerthi, Nasim , Shariful, Chandrika 
-Project Title: Analysis Framework for Evaluating Robot Localization and Navigation Performance in Simulation
-Date: 29 October 2025
+Team Number: 2 <br>
+Team Members:  Marina, Keerthi, Nasim , Shariful, Chandrika <br>
+Project Title: Analysis Framework for Evaluating Robot Localization and Navigation Performance in Simulation<br>
+Date: 29 October 2025 <br>
 
 # 1. Protocol for Requirement Elicitation & Follow-up questions 
 
