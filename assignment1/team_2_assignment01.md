@@ -2,8 +2,8 @@
 
 **Team Number**: 2 <br>
 **Team Members**:  Marina, Keerthi, Nasim , Shariful, Chandrika <br>
-**Project Title**: *Analysis Framework for Evaluating Robot Localization and Navigation Performance in Simulation*<br>
-**Date**: 29 October 2025 <br>
+**Project Title**: *Evaluating Robot Localization and Navigation Performance in Simulation*<br>
+**Date**: 5 October 2025 <br>
 
 # 1. Protocol for Requirement Elicitation & Follow-up questions 
 
@@ -29,34 +29,41 @@ Questions are framed to explore **high-level goals** and **specific data needs**
 
 ## Categorization of Questions
 
-### **A. Organizational Questions (Goal: Understand expectations and scope)**
-
-1. What are the key deliverables or insights expected from our analysis?
-2. How will our findings contribute to improving the testing framework?
-3. Should we focus on qualitative insights (e.g., anomaly detection) or quantitative results (e.g., performance metrics)?
-4. How should visualizations and reports be structured for integration into future studies?
-
 ### **B. Technical Questions (Goal: Identify performance metrics and tools)**
-
-5. Which metrics best represent localization and navigation performance (e.g., RMSE, completion time, deviation)?
-6. How do you define a failed or abnormal run in the dataset?
-7. Should the analysis include dynamic visualization of trajectories and obstacles?
-8. Are there preferred evaluation benchmarks or reference datasets?
+1. In case localization and navigation perfomance analysis, Which evaluation metrics do you consider most important?
+(For example: total path length, time required to reach the goal, success rate, localization error such as RMSE, number of re-plans, collision count, average cross-track error, cumulative rotation, etc.)
+Please mention any metrics you currently use or prioritize.
+2. Do you have any preferred tolerance values or limits?
+(For instance: acceptable distance-to-goal error in meters, allowable orientation deviation in radians, or maximum collision/contact force thresholds.)
+3. How do you define a successful run?
+(e.g., reaching the goal within tolerance, no collisions, completion within a time limit, or maintaining stable localization.)
+4. Could you specify the coordinate frames and TF tree conventions you use?
+(Please list the frame names and relationships — for example: map, odom, base_link, camera_link, imu_link, etc.)
 
 ### **C. Data-Related Questions (Goal: Clarify data content and structure)**
 
-9. What does the transform column represent — is it the robot’s real-time pose (position and orientation)?
-10. How is sensor noise, dropout rate, or delay recorded in the logs?
-11. Are the PGM and YAML map files used to represent static obstacles or full environment boundaries?
-12. Should we correlate transforms, localization accuracy, and obstacle information together?
+5. Could you please clarify what the information in the “data” column of the /scenario_status topic represents? For instance, entries such as
+bag_record(BEHAVIOUR): RUNNING > SUCCESS or differential_drive_robot.nav_through_poses(BEHAVIOUR): INVALID > RUNNING?
+6. We observe that AMCL pose estimates are much sparser than ground-truth poses. Could you confirm the expected publish/logging rates for AMCL versus ground truth and whether any throttling, downsampling, or event-triggered logging explains this discrepancy ?
+7. In the Hallways scenarios, All 3 rosbag2-derived CSVs show the robot immobile due to initial spawn collisions or overlap between the robot start pose and static obstacles (scenario.variant). For localization performance analysis, should these runs be excluded as invalid, or retained with a distinct label (e.g., “spawn-collision/immobile”)? 
+### **A. Organizational Questions (Goal: Understand expectations and scope)**
+
+8. What is the main research objective or focus you would like students to address in this assignment (e.g., anomaly detection, metric formulation, correlation study, or dashboard development)?
+9. How will these contribute to improving the testing framework?
+10. Should the team adhere to any specific coding standards, repository structure, or CI/CD practices (such as including unit tests for metric calculations)?
+11. Who will serve as the primary contact for data-related questions or clarifications, and what are the preferred communication method and expected response timeframe?
+12. Are there any reference results or benchmark values that students should use for comparison (e.g., baseline success rate or localization RMSE)?
+13. Do you expect students to conduct new simulations with modified parameters, or should they limit their work to analyzing the existing dataset?
+14. Should we focus on qualitative insights (e.g., anomaly detection) or quantitative results (e.g., performance metrics)?
+
 
 ## Tools and Methods
 
 | Category | Tools / Methods |
 |-----------|----------------|
-| **Primary Tools** | Python (Pandas, NumPy, Matplotlib, Seaborn), Jupyter Notebook |
+| **Primary Tools** | Python (Pandas, Matplotlib), Jupyter Notebook |
 | **Supporting Tools** | YAML parser, OpenCV, ROS2 bag data utilities |
-| **Version Control** | GitHub (for requirement tracking and progress management) |
+| **Version Control** | Git (for requirement tracking and progress management) |
 
 ## Estimated Time and StructureTotal Duration: ~60 minutes
 
@@ -107,43 +114,27 @@ After the initial elicitation and documentation of requirements, our team will c
 - Ensures evolving alignment between data findings and research goals.  
 
 # 2. Preliminary Requirements (User Story Format)
-Based on the follow-up questions and stakeholder discussions, the following **preliminary requirements** have been identified.  
-These are expressed in **User Story format**, which clearly defines the user role, action, and purpose behind each requirement.
+Based on the email, the following **preliminary requirements** have been identified and expressed in **User Story format**.
 
-The standard user story structure is:  
-**"As a [user role], I want to [perform an action] so that [I can achieve a goal or benefit]."**
+<!-- The standard user story structure is:  
+**"As a [user role], I want to [perform an action] so that [I can achieve a goal or benefit]."** -->
 
 | **ID** | **Heading** | **User Story** |
 |--------|--------------|----------------|
-| R1 | Evaluate Navigation Accuracy | As a researcher, I want to compare the robot’s estimated path to the ground truth trajectory, so that I can measure navigation accuracy. |
-| R2 | Detect Abnormal or Failed Runs | As an analyst, I want to detect irregular or failed runs, so that I can identify possible causes of errors or instability. |
-| R3 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance. |
-| R4 | Visualize Robot Trajectories | As a developer, I want to overlay robot paths on environment maps, so that I can visualize navigation and detect obstacle-related deviations. |
-| R5 | Generate Performance Summaries | As a data analyst, I want to compute key statistics such as deviation and completion time, so that comparisons can be made across multiple runs. |
-| R6 | Integrate Multiple Data Sources | As a system designer, I want to merge map, transform, and sensor data, so that unified insights can be produced efficiently. |
-| R7 | Ensure Scalability and Automation | As a developer, I want an automated and reusable data analysis pipeline, so that the same framework can handle larger datasets in the future. |
+| R1 | Data Cleaning & Overview| As a data analyst, I want to clean and preprocess the robot navigation dataset so that I can obtain a consistent and accurate basis for further analysis.
+| R2 | Visualization | As a data explorer, I want to create visualizations (plots and graphs) that summarize key factors so that I can visually interpret trends and anomalies in robot navigation.
+| R3 | Statistical Summary | As a researcher, I want to generate a statistical overview (e.g., means, variances, missing values) so that I can understand the overall characteristics of the data.
+| R4 | Behavioral Analysis Across cenarios| As a robotics researcher, I want to compare robot behavior across different scenarios (circle, hallways, large room, rooms) and multiple runs so that I can identify how environment and layout affect performance.
+| R5 | Sensor Variation Impact | As a system analyst, I want to study how sensor disturbances and data drop rates influence localization and navigation accuracy so that I can assess robustness under imperfect sensing.
+| R6 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance. |
+| R7 | Failure Detection | As an experiment evaluator, I want to identify and classify unusual or failed runs so that I can isolate performance outliers and sources of error.
+| R8 | Scenario–Performance Correlation | As a data scientist, I want to correlate scenario variations (e.g., map layout, obstacle placement, start/goal positions) with performance metrics (e.g., time-to-goal, success rate, localization error) so that I can derive meaningful insights about robot navigation efficiency.
 
 
-# 3. Plan for Gathering and Refining Requirements
 
-### **Step 1 – Initial Data Exploration**
-- Examine the dataset (CSV, YAML, and PGM files) to understand relationships among transforms, logs, and maps.  
-- Identify missing or redundant values, and prepare for data cleaning.  
 
-### **Step 2 – Stakeholder Discussion**
-- Conduct a structured interview with Mr. Wiest to clarify analysis objectives and expected visualizations.  
-- Record all responses in a shared document for consistency.  
 
-### **Step 3 – Iterative Refinement**
-- Convert insights into **User Stories** and refine based on continuous stakeholder feedback.  
-- Maintain change-tracking to record evolution of requirements.  
 
-### **Step 4 – Traceability and Validation**
-- Develop a simple **traceability matrix** mapping questions ↔ requirements ↔ code implementation.  
-
-### **Step 5 – Continuous Review**
-- Review and refine requirements **after each dataset phase or analysis milestone** (e.g., after Run 1–3).  
-- Revalidate updated stories with Mr. Wiest for approval.
 
 
 
