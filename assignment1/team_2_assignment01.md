@@ -122,15 +122,35 @@ Based on the email, the following **preliminary requirements** have been identif
 | **ID** | **Heading** | **User Story** |
 |--------|--------------|----------------|
 | R1 | Data Cleaning & Overview| As a data analyst, I want to clean and preprocess the robot navigation dataset so that I can obtain a consistent and accurate basis for further analysis.
-| R2 | Visualization | As a data explorer, I want to create visualizations (plots and graphs) that summarize key factors so that I can visually interpret trends and anomalies in robot navigation.
-| R3 | Statistical Summary | As a researcher, I want to generate a statistical overview (e.g., means, variances, missing values) so that I can understand the overall characteristics of the data.
-| R4 | Behavioral Analysis Across cenarios| As a robotics researcher, I want to compare robot behavior across different scenarios (circle, hallways, large room, rooms) and multiple runs so that I can identify how environment and layout affect performance.
-| R5 | Sensor Variation Impact | As a system analyst, I want to study how sensor disturbances and data drop rates influence localization and navigation accuracy so that I can assess robustness under imperfect sensing.
-| R6 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance. |
-| R7 | Failure Detection | As an experiment evaluator, I want to identify and classify unusual or failed runs so that I can isolate performance outliers and sources of error.
-| R8 | Scenario–Performance Correlation | As a data scientist, I want to correlate scenario variations (e.g., map layout, obstacle placement, start/goal positions) with performance metrics (e.g., time-to-goal, success rate, localization error) so that I can derive meaningful insights about robot navigation efficiency.
+| R2 | Behavioral Analysis Across cenarios| As a robotics researcher, I want to compare robot behavior across different scenarios (circle, hallways, large room, rooms) and multiple runs so that I can identify how environment and layout affect performance.
+| R3 | Sensor Variation Impact | As a system analyst, I want to study how sensor disturbances and data drop rates influence localization and navigation accuracy so that I can assess robustness under imperfect sensing.
+| R4 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation accuracy, so that I can relate physical variations to robot performance. |
+| R5 | Failure Detection | As an experiment evaluator, I want to identify and classify unusual or failed runs so that I can isolate performance outliers and sources of error.
+| R6 | Scenario–Performance Correlation | As a data scientist, I want to correlate scenario variations (e.g., map layout, obstacle placement, start/goal positions) with performance metrics (e.g., time-to-goal, success rate, localization error) so that I can derive meaningful insights about robot navigation efficiency.
+| R7 | Visualization | As a data explorer, I want to create visualizations (plots and graphs) that summarize key factors so that I can visually interpret trends and anomalies in robot navigation.
+| R8 | Statistical Summary | As a researcher, I want to generate a statistical overview (e.g., means, variances, missing values) so that I can understand the overall characteristics of the data.
 
 
+# 3. Plan for Gathering and Refining Requirements
+
+### **Step 1 – Initial Data Exploration**
+- Examine the dataset (CSV, YAML, and PGM files) to understand relationships among transforms, logs, and maps.  
+- Identify missing or redundant values, and prepare for data cleaning.  
+
+### **Step 2 – Stakeholder Discussion**
+- Conduct a structured interview with Mr. Wiest to clarify analysis objectives and expected visualizations.  
+- Record all responses in a shared document for consistency.  
+
+### **Step 3 – Iterative Refinement**
+- Convert insights into **User Stories** and refine based on continuous stakeholder feedback.  
+- Maintain change-tracking to record evolution of requirements.  
+
+### **Step 4 – Traceability and Validation**
+- Develop a simple **traceability matrix** mapping questions ↔ requirements ↔ code implementation.  
+
+### **Step 5 – Continuous Review**
+- Review and refine requirements **after each dataset phase or analysis milestone** (e.g., after Run 1–3).  
+- Revalidate updated stories with Mr. Wiest for approval.
 
 
 
