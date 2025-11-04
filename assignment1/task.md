@@ -28,7 +28,7 @@ You are also encouraged to explore additional resources and blogs for a deeper u
 > 1. Differences in map structures and layouts
 > 2. Location and size of obstacles
 > 3. Variations or disturbances in sensor data and its drop rate
-> 4. Changes in starting and goal positions, including varying waypoints
+> 4. Changes in starting and goal positions, including varying way points
 > 
 > I have collected a substantial dataset from multiple simulated TurtleBot runs that cover these kinds of variations. The dataset includes scenario-related information and various logs recorded during each run.
 > 
