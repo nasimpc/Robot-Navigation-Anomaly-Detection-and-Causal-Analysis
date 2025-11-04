@@ -1,0 +1,104 @@
+#logs warns errors and wins
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/hallways-generated-2542-p2-o4-box-sd010n005/2/logs/robot_state_publisher_184_1758736509642.log
+[WARN] [1758736509.688644024] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/hallways-generated-2542-p2-o4-box-sd010n005/2/logs/python3_39_1758736502523.log
+[INFO] [1758736509.714820422] [scenario_execution_ros]: [robot_state_publisher-7] [WARN] [1758736509.688644024] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[INFO] [1758736510.396839892] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758736510.394337406] [controller_server]: getting goal checker plugins..
+[INFO] [1758736510.450952507] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758736510.449303002] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758736510.452343071] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758736510.450643009] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758736510.574293491] [scenario_execution_ros]: [laserscan_modification-14] [WARN] [1758736510.572652175] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758736510.616349721] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736510.615225328] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758736510.788222326] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736510.785595187] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758736511.122524759] [scenario_execution_ros]: [rviz2-8] [ERROR] [1758736511.121576024] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[INFO] [1758736516.992671717] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736516.991860824] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758736521.256056022] [scenario_execution_ros]: [WARN] [ros2bag]: Positional "topics" argument deprecated. Please use optional "--topics" argument instead.
+[INFO] [1758736521.609432713] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736521.608117534] [planner_server]: GridBased plugin failed to plan from (4.01, 4.78) to (5.29, -5.01): "Failed to create plan with tolerance of: 0.500000"
+[INFO] [1758736521.610054290] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736521.608238605] [planner_server]: [compute_path_through_poses] [ActionServer] Aborting handle.
+[INFO] [1758736521.638031202] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736521.636009492] [bt_navigator]: [navigate_through_poses] [ActionServer] Aborting handle.
+[INFO] [1758736521.639796820] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736521.636280474] [bt_navigator]: Goal failed
+[ERROR] [1758736521.705823878] [scenario_execution_ros]: Invalid state ActionCallActionState.ERROR
+[ERROR] [1758736521.706766333] [scenario_execution_ros]: nav_scenario: execution failed. -^- nav_scenario [✕] -- child finished before timeout triggered
+[INFO] [1758736521.715257175] [scenario_execution_ros]: [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [1758736523.430292340] [scenario_execution_ros]: [ERROR] [rviz2-8]: process has died [pid 185, exit code -6, cmd '/opt/ros/jazzy/lib/rviz2/rviz2 -d /config/common/view.rviz --ros-args --params-file /tmp/launch_params__cx80l8p'].
+[INFO] [1758736523.431877001] [scenario_execution_ros]: [ERROR] [sys_stats_publisher-13]: process has died [pid 190, exit code 1, cmd '/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher --ros-args -r __node:=sys_stats_publisher'].
+[INFO] [1758736523.432334709] [scenario_execution_ros]: [ERROR] [laserscan_modification-14]: process has died [pid 195, exit code 1, cmd '/ws/install/message_modification/lib/message_modification/laserscan_modification --ros-args -r __node:=laserscan_modification --params-file /tmp/launch_params_ytiyz6xw -r /in:=/scan_sim -r /out:=/scan'].
+[INFO] [1758736523.454456297] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736521.819784007] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758736523.470171189] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.409214630] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758736523.470593129] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.409240148] [behavior_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.471058237] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.409485241] [lifecycle_manager_navigation]: Failed to change state for node: behavior_server
+[INFO] [1758736523.471755009] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.409667379] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758736523.472165321] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.410517100] [planner_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.472952796] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.410715326] [lifecycle_manager_navigation]: Failed to change state for node: planner_server
+[INFO] [1758736523.474439753] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.410859676] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758736523.474859564] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.410876095] [smoother_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.475247537] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.411031644] [lifecycle_manager_navigation]: Failed to change state for node: smoother_server
+[INFO] [1758736523.475778570] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.415508164] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758736523.476079220] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.415535622] [controller_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.476454474] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.415780255] [lifecycle_manager_navigation]: Failed to change state for node: controller_server
+[INFO] [1758736523.481390972] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.462266436] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.481661593] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.462296464] [waypoint_follower]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.482265451] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736522.492014926] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.482533643] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736522.492036185] [bt_navigator]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.503577505] [scenario_execution_ros]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running
+[INFO] [1758736523.503809099] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.495996810] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.504030814] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.496084464] [collision_monitor]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.504511811] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.498815265] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.504745144] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.498849813] [velocity_smoother]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.505346463] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.499466570] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.505578307] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.499483209] [behavior_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.506034405] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.499757190] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.506355683] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.499768799] [planner_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.506903905] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.500017932] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.507234872] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.500029231] [smoother_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.507835450] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758736523.500280504] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758736523.508168367] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758736523.500290743] [controller_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758736523.738623898] [scenario_execution_ros]: [ERROR] [component_container_isolated-9]: process has died [pid 186, exit code -6, cmd '/opt/ros/jazzy/lib/rclcpp_components/component_container_isolated --ros-args --log-level info --ros-args -r __node:=nav2_container --params-file /tmp/launch_params_9z8xzs24 --params-file /tmp/launch_params_kbc83d2w -r /tf:=tf -r /tf_static:=tf_static'].
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/hallways-generated-2542-p2-o4-box-sd010n005/2/logs/component_container_isolated_186_1758736509642.log
+[INFO] [1758736510.394337406] [controller_server]: getting goal checker plugins..
+[INFO] [1758736510.449303002] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758736510.450643009] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[WARN] [1758736510.615225328] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[WARN] [1758736510.785595187] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[WARN] [1758736516.991860824] [controller_server]: Parameter controller_server.verbose not found
+[WARN] [1758736521.608117534] [planner_server]: GridBased plugin failed to plan from (4.01, 4.78) to (5.29, -5.01): "Failed to create plan with tolerance of: 0.500000"
+[WARN] [1758736521.608238605] [planner_server]: [compute_path_through_poses] [ActionServer] Aborting handle.
+[WARN] [1758736521.636009492] [bt_navigator]: [navigate_through_poses] [ActionServer] Aborting handle.
+[ERROR] [1758736521.636280474] [bt_navigator]: Goal failed
+[ERROR] [1758736521.819784007] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[WARN] [1758736522.409214630] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758736522.409240148] [behavior_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758736522.409485241] [lifecycle_manager_navigation]: Failed to change state for node: behavior_server
+[WARN] [1758736522.409667379] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758736522.410517100] [planner_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758736522.410715326] [lifecycle_manager_navigation]: Failed to change state for node: planner_server
+[WARN] [1758736522.410859676] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758736522.410876095] [smoother_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758736522.411031644] [lifecycle_manager_navigation]: Failed to change state for node: smoother_server
+[WARN] [1758736522.415508164] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758736522.415535622] [controller_server]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758736522.415780255] [lifecycle_manager_navigation]: Failed to change state for node: controller_server
+[WARN] [1758736522.462266436] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736522.462296464] [waypoint_follower]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736522.492014926] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736522.492036185] [bt_navigator]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.495996810] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.496084464] [collision_monitor]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.498815265] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.498849813] [velocity_smoother]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.499466570] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.499483209] [behavior_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.499757190] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.499768799] [planner_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.500017932] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.500029231] [smoother_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[WARN] [1758736523.500280504] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758736523.500290743] [controller_server]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/hallways-generated-2542-p2-o4-box-sd010n005/2/logs/rviz2_185_1758736509795.log
+[ERROR] [1758736511.121576024] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/hallways-generated-2542-p2-o4-box-sd010n005/2/logs/python3_195_1758736510231.log
+[WARN] [1758736510.572652175] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+

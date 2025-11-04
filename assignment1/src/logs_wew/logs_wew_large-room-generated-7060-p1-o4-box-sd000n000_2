@@ -1,0 +1,157 @@
+#logs warns errors and wins
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/large-room-generated-7060-p1-o4-box-sd000n000/2/logs/rviz2_183_1758715672277.log
+[ERROR] [1758715673.402438306] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/large-room-generated-7060-p1-o4-box-sd000n000/2/logs/robot_state_publisher_182_1758715672102.log
+[WARN] [1758715672.171900234] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/large-room-generated-7060-p1-o4-box-sd000n000/2/logs/python3_198_1758715672715.log
+[WARN] [1758715673.010410053] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/large-room-generated-7060-p1-o4-box-sd000n000/2/logs/python3_39_1758715665879.log
+[INFO] [1758715672.210379146] [scenario_execution_ros]: [robot_state_publisher-7] [WARN] [1758715672.171900234] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[INFO] [1758715672.820393792] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.817839971] [controller_server]: getting goal checker plugins..
+[INFO] [1758715672.870858625] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.869043934] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758715672.871707475] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715672.869844144] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[INFO] [1758715672.992621972] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715672.991822642] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[INFO] [1758715673.011822913] [scenario_execution_ros]: [laserscan_modification-14] [WARN] [1758715673.010410053] [laserscan_modification]: New subscription discovered on topic 'out', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY
+[INFO] [1758715673.173021822] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715673.170522472] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[INFO] [1758715673.403678976] [scenario_execution_ros]: [rviz2-8] [ERROR] [1758715673.402438306] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+[INFO] [1758715678.926228604] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715678.924439594] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758715683.971124334] [scenario_execution_ros]: [WARN] [ros2bag]: Positional "topics" argument deprecated. Please use optional "--topics" argument instead.
+[INFO] [1758715684.327382446] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715684.324343156] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715684.327910796] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715684.324412476] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[INFO] [1758715684.328421566] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715684.324427596] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[INFO] [1758715685.316375208] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.312766618] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.342444970] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.340548000] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.409375244] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.395744903] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.459022497] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.454157937] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.500274900] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.491762009] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.547191623] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.545123753] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.602181116] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.596915036] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.646168979] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.643088039] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.647171119] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715685.643146369] [controller_server]: Controller patience exceeded
+[INFO] [1758715685.648153559] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.646225929] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715685.670036121] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715685.666022470] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715685.708610423] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.702855433] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.738904555] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.733926965] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.779304127] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.777558967] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.833153011] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.829508711] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.889672714] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.885294234] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715685.957669819] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.954636308] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.001597081] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715685.993050351] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.028823533] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.027752093] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.086087967] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.081839166] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.086593937] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715686.081887696] [controller_server]: Controller patience exceeded
+[INFO] [1758715686.096605847] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.086456617] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715686.650748603] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.648100622] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.0581 Hz
+[INFO] [1758715686.666450543] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715686.664182793] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715686.688297385] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.680283614] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.739017228] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.735017528] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.790226271] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.786089081] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.834815854] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.832867344] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.892886728] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.889531538] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.936435981] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.932251150] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715686.994511094] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715686.991558384] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.034942467] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.028956326] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.082400720] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.080089480] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.147615644] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.138447873] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.148104804] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715687.138503593] [controller_server]: Controller patience exceeded
+[INFO] [1758715687.148947414] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.140640284] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715687.156422445] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715687.155263595] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715687.302405364] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.294116013] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.302809534] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.295986144] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 8.3333 Hz.
+[INFO] [1758715687.311272975] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.309863664] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.390852689] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.384309369] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.468548464] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.463364614] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.527746018] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.525219798] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.560839950] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.556847200] [controller_server]: Optimizer fail to compute path
+[INFO] [1758715687.561386550] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715687.556878750] [controller_server]: Controller patience exceeded
+[INFO] [1758715687.562269401] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715687.559274040] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715688.177698130] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175563270] [behavior_server]: Collision Ahead - Exiting Spin
+[INFO] [1758715688.178790040] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175668990] [behavior_server]: spin failed
+[INFO] [1758715688.180080620] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715688.175711960] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[INFO] [1758715695.140510775] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715695.135358074] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715733.398030608] [scenario_execution_ros]: [component_container_isolated-9] [INFO] [1758715733.397041008] [controller_server]: Reached the goal!
+[INFO] [1758715733.502572186] [scenario_execution_ros]: [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [1758715734.877250157] [scenario_execution_ros]: [ERROR] [rviz2-8]: process has died [pid 183, exit code -6, cmd '/opt/ros/jazzy/lib/rviz2/rviz2 -d /config/common/view.rviz --ros-args --params-file /tmp/launch_params_7eczmzx2'].
+[INFO] [1758715734.878956147] [scenario_execution_ros]: [ERROR] [sys_stats_publisher-13]: process has died [pid 195, exit code 1, cmd '/ws/install/sys_stats_publisher/lib/sys_stats_publisher/sys_stats_publisher --ros-args -r __node:=sys_stats_publisher'].
+[INFO] [1758715734.879763897] [scenario_execution_ros]: [ERROR] [laserscan_modification-14]: process has died [pid 198, exit code 1, cmd '/ws/install/message_modification/lib/message_modification/laserscan_modification --ros-args -r __node:=laserscan_modification --params-file /tmp/launch_params_2r9mqpu4 -r /in:=/scan_sim -r /out:=/scan'].
+[INFO] [1758715734.901217299] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.537327989] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER amcl IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758715734.902233109] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715733.537881329] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[INFO] [1758715734.902465739] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.537901189] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758715734.902705389] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.538118719] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[INFO] [1758715734.903803569] [scenario_execution_ros]: [component_container_isolated-9] [WARN] [1758715733.652502148] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[INFO] [1758715734.904292179] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.652530208] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[INFO] [1758715734.906580699] [scenario_execution_ros]: [component_container_isolated-9] [ERROR] [1758715733.696414152] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[INFO] [1758715734.940460652] [scenario_execution_ros]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running
+
+/home/marina/Desktop/ai_algorithms/ws25_aia_e_assignments/assignment1/data/sample_dataset/large-room-generated-7060-p1-o4-box-sd000n000/2/logs/component_container_isolated_184_1758715672104.log
+[INFO] [1758715672.817839971] [controller_server]: getting goal checker plugins..
+[INFO] [1758715672.869043934] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1758715672.869844144] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[WARN] [1758715672.991822642] [amcl]: New subscription discovered on topic '/particle_cloud', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[WARN] [1758715673.170522472] [docking_server]: Dock database filepath nor dock parameters set. Docking actions can only be executed specifying the dock pose via the action request. Or update the dock database via the reload_database service.
+[WARN] [1758715678.924439594] [controller_server]: Parameter controller_server.verbose not found
+[INFO] [1758715684.324343156] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758715684.324412476] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[WARN] [1758715684.324427596] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[WARN] [1758715685.312766618] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.340548000] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.395744903] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.454157937] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.491762009] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.545123753] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.596915036] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.643088039] [controller_server]: Optimizer fail to compute path
+[ERROR] [1758715685.643146369] [controller_server]: Controller patience exceeded
+[WARN] [1758715685.646225929] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715685.666022470] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758715685.702855433] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.733926965] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.777558967] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.829508711] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.885294234] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.954636308] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715685.993050351] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.027752093] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.081839166] [controller_server]: Optimizer fail to compute path
+[ERROR] [1758715686.081887696] [controller_server]: Controller patience exceeded
+[WARN] [1758715686.086456617] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[WARN] [1758715686.648100622] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.0581 Hz
+[INFO] [1758715686.664182793] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758715686.680283614] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.735017528] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.786089081] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.832867344] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.889531538] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.932251150] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715686.991558384] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.028956326] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.080089480] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.138447873] [controller_server]: Optimizer fail to compute path
+[ERROR] [1758715687.138503593] [controller_server]: Controller patience exceeded
+[WARN] [1758715687.140640284] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1758715687.155263595] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1758715687.294116013] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.295986144] [controller_server]: Control loop missed its desired rate of 20.0000 Hz. Current loop rate is 8.3333 Hz.
+[WARN] [1758715687.309863664] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.384309369] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.463364614] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.525219798] [controller_server]: Optimizer fail to compute path
+[WARN] [1758715687.556847200] [controller_server]: Optimizer fail to compute path
+[ERROR] [1758715687.556878750] [controller_server]: Controller patience exceeded
+[WARN] [1758715687.559274040] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[WARN] [1758715688.175563270] [behavior_server]: Collision Ahead - Exiting Spin
+[WARN] [1758715688.175668990] [behavior_server]: spin failed
+[WARN] [1758715688.175711960] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[INFO] [1758715695.135358074] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1758715733.397041008] [controller_server]: Reached the goal!
+[ERROR] [1758715733.537327989] [lifecycle_manager_localization]: CRITICAL FAILURE: SERVER amcl IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[WARN] [1758715733.537881329] [rcl_lifecycle]: No transition matching 4 found for current state unconfigured
+[ERROR] [1758715733.537901189] [amcl]: Unable to start transition 4 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758715733.538118719] [lifecycle_manager_localization]: Failed to change state for node: amcl
+[WARN] [1758715733.652502148] [rcl_lifecycle]: No transition matching 2 found for current state unconfigured
+[ERROR] [1758715733.652530208] [amcl]: Unable to start transition 2 from current state unconfigured: Transition is not registered., at ./src/rcl_lifecycle.c:355
+[ERROR] [1758715733.696414152] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+
