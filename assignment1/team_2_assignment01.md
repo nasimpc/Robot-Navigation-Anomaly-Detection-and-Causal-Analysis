@@ -123,8 +123,8 @@ Based on the email, the following **preliminary requirements** have been identif
 |--------|--------------|----------------|
 | R1 | Data Cleaning & Overview| As a data analyst, I want to clean and preprocess the robot rosbag2 dataset so that I can obtain a consistent and accurate basis for further analysis.
 | R2 | Behavioral Analysis Across cenarios| As a robotics researcher, I want to compare robot behavior across different scenarios (circle, hallways, large room, rooms) and multiple runs so that I can identify how environment and layout affect performance.
-| R3 | Sensor Variation Impact | As a system analyst, I want to study how sensor disturbances and data drop rates influence localization and navigation accuracy so that I can assess robustness under imperfect sensing.
-| R4 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation & localization accuracy, so that I can relate physical variations to robot performance. |
+| R3 | Sensor Variation Impact | As a system analyst, I want to study how sensor disturbances and data drop rates influence localization and navigation accuracy.
+| R4 | Analyze Obstacle Impact | As a researcher, I want to study how obstacle size and position affect navigation & localization accuracy. |
 | R5 | Failure Detection | As an experiment evaluator, I want to identify and classify unusual or failed runs so that I can isolate performance outliers and sources of error.
 | R6 | Scenario–Performance Correlation | As a data scientist, I want to correlate scenario variations (e.g., map layout, obstacle placement, start/goal positions) with performance metrics (e.g., time-to-goal, success rate, localization error) so that I can derive meaningful insights about robot localization & navigation efficiency.
 | R7 | Visualization | As a data explorer, I want to create visualizations (plots and graphs) that summarize key factors so that I can visually interpret trends and anomalies in robot localization and navigation.
