@@ -37,8 +37,7 @@ Please mention any metrics you currently use or prioritize.
 (For instance: acceptable distance-to-goal error in meters, allowable orientation deviation in radians, or maximum collision/contact force thresholds.)
 3. How do you define a successful run?
 (e.g., reaching the goal within tolerance, no collisions, completion within a time limit, or maintaining stable localization.)
-4. Could you specify the coordinate frames and TF tree conventions you use?
-(Please list the frame names and relationships — for example: map, odom, base_link, camera_link, imu_link, etc.)
+4. To better process TFMesssages, please mention TF tree conventions you use? (Please list the frame names and relationships — for example: map, odom, base_link, camera_link, imu_link, etc.)
 
 ### **C. Data-Related Questions (Goal: Clarify data content and structure)**
 
@@ -50,8 +49,8 @@ bag_record(BEHAVIOUR): RUNNING > SUCCESS or differential_drive_robot.nav_through
 
 8. What is the main research objective or focus you would like students to address in this assignment (e.g., anomaly detection, metric formulation, correlation study, or dashboard development)?
 9. How will these contribute to improving the testing framework?
-10. Should the team adhere to any specific coding standards, repository structure, or CI/CD practices (such as including unit tests for metric calculations)?
-11. Who will serve as the primary contact for data-related questions or clarifications, and what are the preferred communication method and expected response timeframe?
+10. Should the team adhere to any specific coding standards or repository structure?
+11. Who will serve as the primary contact for data-related questions or clarifications, and what are the preferred communication method ?
 12. Are there any reference results or benchmark values that students should use for comparison (e.g., baseline success rate or localization RMSE)?
 13. Do you expect students to conduct new simulations with modified parameters, or should they limit their work to analyzing the existing dataset?
 14. Should we focus on qualitative insights (e.g., anomaly detection) or quantitative results (e.g., performance metrics)?
