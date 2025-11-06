@@ -49,7 +49,7 @@ bag_record(BEHAVIOUR): RUNNING > SUCCESS or differential_drive_robot.nav_through
 
 8. What is the main research objective or focus you would like students to address in this assignment (e.g., anomaly detection, metric formulation, correlation study, or dashboard development)?
 9. How will these contribute to improving the testing framework?
-10. Should the team adhere to any specific coding standards or repository structure?
+10. Is there any prefered structure or rules for organizing ipynb data analysis notebooks?
 11. Who will serve as the primary contact for data-related questions or clarifications, and what are the preferred communication method ?
 12. Are there any reference results or benchmark values that students should use for comparison (e.g., baseline success rate or localization RMSE)?
 13. Do you expect students to conduct new simulations with modified parameters, or should they limit their work to analyzing the existing dataset?
