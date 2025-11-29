@@ -1,7 +1,7 @@
 # Team Information
 
 **Team Number**: 2 <br>
-**Team Members**:  Marina, Keerthi, Nasim , Shariful, Chandrika <br>
+**Team Members**:  Marina, Keerthi, Nasim , Shariful<br>
 **Project Title**: *Evaluating Robot Localization and Navigation Performance in Simulation*<br>
 **Date**: 5 October 2025 <br>
 
@@ -15,7 +15,7 @@ The following sections present our protocol for conducting the follow-up discuss
 | Role | Name / Description |
 |------|--------------------|
 | **Primary Stakeholder** | Mr. Samuel Wiest (Researcher and Dataset Owner) |
-| **Student Team** | Team 2 – Marina, Keerthi, Nasim, Shariful, Chandrika |
+| **Student Team** | Team 2 – Marina, Keerthi, Nasim, Shariful |
 | **Responsibilities** | Researcher provides domain knowledge, dataset context, and expected outcomes. The student team identifies, defines, and implements analysis requirements. |
 
 ## Question Format and Purpose
