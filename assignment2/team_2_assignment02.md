@@ -2,22 +2,20 @@
 
 ## 1. Goals
 
-Based on the researcher's email and the project scope, we define the following goals using the abstraction hierarchy from *Machine Learning in Production* [1].
-
 ### User Goals
-1.  **Analyze Performance Factors**: The researcher wants to understand how environmental variations (map layout, obstacles) and sensor disturbances influence robot navigation performance.
+1.  **Analyze Performance Factors**: The researcher wants to understand how environmental variations (map layout, obstacles) and sensor disturbances influence robot localization and navigation performance.
 2.  **Identify Failures**: The researcher needs to automatically identify and classify failed runs or unusual behaviors in the simulation.
-3.  **Correlate Variables**: The researcher aims to find relationships between scenario parameters (e.g., obstacle density) and performance outcomes.
+3.  **Correlate Variables**: The researcher aims to find relationships between scenario parameters (e.g., obstacle density) and localizationa and navigation performance outcomes.
 
 ### System and Feature Goals
 1.  **Automated Log Processing**: The system shall ingest raw ROS 2 logs and CSV files to extract structured data.
-2.  **Metric Calculation**: The system shall compute quantitative metrics for localization accuracy and navigation efficiency.
-3.  **Anomaly Detection**: The system shall automatically flag runs that deviate from expected behavior based on defined thresholds.
+2.  **Metric Calculation**: The system shall compute quantitative metrics for localization accuracy, heading accuracy, and navigation efficiency.
+3.  **Anomaly Detection**: The system shall automatically flag runs that deviate from expected behavior based on defined thresholds and log patterns.
 4.  **Visualization**: The system shall generate plots to visualize trajectory comparisons, error distributions, and anomaly occurrences.
 
 ### Model Goals
 1.  **Accurate Classification**: The anomaly detection model should maximize recall to ensure all failed runs are identified.
-2.  **Predictive Capability**: The model should identify patterns in sensor data (e.g., covariance spikes) that precede navigation failures.
+2.  **Predictive Capability**: The model should identify patterns in sensor data and logs (e.g., collision warnings) that precede navigation failures.
 
 ---
 
@@ -42,24 +40,24 @@ Based on the researcher's email and the project scope, we define the following g
 #### Behavioral Requirements (Functional)
 1.  **R_B1**: The system shall calculate the Euclidean error between the estimated pose and the ground truth pose for every timestamp where both are available.
 2.  **R_B2**: The system shall classify a run as a "Failure" if the robot does not reach the goal within the simulation time limit.
-3.  **R_B3**: The system shall detect "Collision" events by analyzing the minimum distance to obstacles or specific log messages.
+3.  **R_B3**: The system shall detect "Collision" events by analyzing specific log messages indicating proximity warnings.
 4.  **R_B4**: The system shall aggregate performance metrics by scenario type to allow comparison across different map layouts.
-5.  **R_B5**: The system shall generate a time-series plot of localization uncertainty (covariance) for each run.
+5.  **R_B5**: The system shall calculate the Mean Absolute Yaw Error to evaluate the robot's heading accuracy.
 
 #### Quality Requirements (Non-Functional)
 1.  **R_Q1 (Reproducibility)**: The data processing pipeline must produce identical metric values given the same input dataset.
 2.  **R_Q2 (Interpretability)**: The anomaly detection output must provide a reason for the flag (e.g., "High Localization Error" vs "Timeout").
 3.  **R_Q3 (Modularity)**: The code must be structured into reusable functions for loading, cleaning, and analyzing data to support future dataset expansions.
 4.  **R_Q4 (Robustness)**: The system must handle missing or corrupted CSV rows without crashing, using interpolation or dropping invalid data.
-5.  **R_Q5 (Performance)**: The analysis pipeline should process the sample dataset and generate visualizations within a reasonable timeframe (e.g., < 5 minutes) on a standard laptop.
+5.  **R_Q5 (Performance)**: The analysis pipeline should process the sample dataset and generate visualizations within a reasonable timeframe on a standard laptop.
 
 #### Specifications ($S$)
 *Specifications bridge the gap between Machine ($M$) and World ($W$).*
-1.  **S1**: When the Euclidean distance between $M_{csv}.pose$ (estimated) and $M_{csv}.groundtruth$ exceeds 0.5 meters, the machine shall record a "High Error" event.
-2.  **S2**: If the $M_{log}$ contains the string "Goal failed" or "Failed to make progress", the machine shall set the run status to "Failed".
-3.  **S3**: The machine shall compute the path length by summing the Euclidean distances between consecutive $M_{csv}.pose$ coordinates.
+1.  **S1**: When the Euclidean distance between $M_{csv}.pose$ (estimated) and $M_{csv}.groundtruth$ exceeds the statistical threshold ($Mean + 3\sigma$) for 3 consecutive frames, the machine shall record a "Position Error" anomaly.
+2.  **S2**: If the $M_{log}$ contains strings such as "Goal failed", "spin failed", or "FATAL", the machine shall flag the specific anomaly type.
+3.  **S3**: The machine shall compute the run duration ($T_{end} - T_{start}$) based on "Begin navigating" and "Goal succeeded/failed" log timestamps.
 4.  **S4**: The machine shall synchronize $M_{csv}.amcl\_pose$ and $M_{csv}.groundtruth\_pose$ by interpolating ground truth timestamps to match AMCL timestamps.
-5.  **S5**: If the final position in $M_{csv}$ is within 0.5 meters of the goal coordinates defined in the scenario config, the machine shall mark the run as "Success" (unless $M_{log}$ says otherwise).
+5.  **S5**: If the run duration exceeds the median duration of the scenario by more than 3 times the Median Absolute Deviation (MAD), the machine shall mark the run as a "Time Outlier".
 
 #### Assumptions ($A$)
 *Assumptions about the World ($W$) that allow the Specifications ($S$) to satisfy Requirements ($R$).*
@@ -76,60 +74,62 @@ Based on the researcher's email and the project scope, we define the following g
 ### Data Preprocessing Rationale
 To ensure reliable metric calculation, we apply the following preprocessing steps:
 1.  **Timestamp Alignment**: The `amcl_pose` (estimate) and `groundtruth_pose` (truth) are published at different frequencies. We use **linear interpolation** to estimate the ground truth pose at the exact timestamps of the AMCL messages. This allows for a point-to-point error calculation.
-2.  **NaN Handling**: Rows with missing position data are dropped. If a run has insufficient data points (< 10), it is excluded from statistical aggregation to prevent skewing results.
+2.  **NaN Handling**: Rows with missing position data are dropped.
 3.  **Coordinate Transformation**: Quaternion orientation (x, y, z, w) is converted to Euler angles (Yaw) to calculate rotational error.
 
 ### Performance Metrics
 
 #### Localization Metrics
-1.  **Root Mean Square Error (RMSE)**
-    *   *Rationale*: Standard metric to quantify the overall accuracy of the estimated trajectory against the ground truth.
-    *   *Formula*: $RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} ((x_{est,i} - x_{gt,i})^2 + (y_{est,i} - y_{gt,i})^2)}$
+1.  **Euclidean Position Error**
+    *   *Rationale*: Standard metric to quantify the accuracy of the estimated trajectory against the ground truth at each timestep.
+    *   *Formula*: $Error_i = \sqrt{(x_{est,i} - x_{gt,i})^2 + (y_{est,i} - y_{gt,i})^2}$
 2.  **Mean Absolute Yaw Error**
     *   *Rationale*: Measures how well the robot estimates its heading, which is critical for path planning.
     *   *Formula*: $E_{\theta} = \frac{1}{N} \sum_{i=1}^{N} |atan2(sin(\theta_{est}-\theta_{gt}), cos(\theta_{est}-\theta_{gt}))|$
-3.  **Covariance Determinant (Uncertainty)**
-    *   *Rationale*: Represents the volume of the uncertainty ellipse. High values indicate the robot is "unsure" of its position.
-    *   *Formula*: $Det(\Sigma) = \sigma_{xx}\sigma_{yy} - \sigma_{xy}^2$ (for 2D position)
 
 #### Navigation Metrics
+3.  **Run Duration (Time to Goal)**
+    *   *Rationale*: Measures efficiency. Significant deviations in time often indicate navigation struggles (replanning, recovery behaviors).
+    *   *Formula*: $T_{end} - T_{start}$ (derived from logs).
 4.  **Success Rate**
     *   *Rationale*: The most fundamental user goal.
     *   *Formula*: $\frac{\text{Number of Successful Runs}}{\text{Total Runs}}$
-5.  **Time to Goal**
-    *   *Rationale*: Measures efficiency.
-    *   *Formula*: $T_{end} - T_{start}$ (for successful runs only).
-6.  **Path Efficiency (Normalized Path Length)**
-    *   *Rationale*: Indicates if the robot took a direct path or wandered/replanned frequently.
-    *   *Formula*: $\frac{\text{Actual Path Length}}{\text{Euclidean Distance(Start, Goal)}}$
-7.  **Safety Score (Minimum Obstacle Distance)**
-    *   *Rationale*: Proxies for safety. Calculated using the map and robot trajectory.
-    *   *Formula*: $min(\text{Distance}(P_{robot}, P_{obstacle}))$ for all $t$.
 
 ---
 
 ## 4. Anomaly Detection and Prediction
 
 ### Approach and Justification
-We adopt a **hybrid approach** combining **Rule-Based Detection** for hard failures and **Statistical Outlier Detection** for soft failures (performance degradation).
+We adopt a **hybrid approach** combining **Rule-Based Detection** (Log Analysis) for discrete failure events and **Statistical Outlier Detection** for performance degradation.
 
-1.  **Rule-Based (Hard Failures)**:
-    *   *Logic*: Check binary outcomes from logs and basic geometric constraints.
-    *   *Behavior*: Flags runs where "Goal failed" is logged, or where the robot never moves more than 0.5m from the start.
-    *   *Justification*: These are unambiguous failures defined by the system specifications.
+#### 1. Log-Based Anomalies (Rule-Based)
+We parse the ROS logs for specific keywords that indicate system state changes or failures.
+*   **No Initiation**: Absence of logs. The robot never started.
+*   **Fatal Initiation**: Log contains "FATAL". Critical startup failure.
+*   **Planner Failure**: Log contains "Failed to create a plan". Indicates map/goal unreachable.
+*   **No Progress**: Log contains "Failed to make progress". Robot is moving but not advancing.
+*   **Collision**: Log contains "Collision Ahead". Proximity warning.
+*   **Stuck**: Log contains "spin failed" or "backup failed". Recovery behaviors failed.
+*   **Goal Failure**: Log contains "Goal failed".
 
-2.  **Statistical (Soft Failures)**:
-    *   *Logic*: Use the Interquartile Range (IQR) method on the **RMSE** and **Max Uncertainty** metrics.
-    *   *Behavior*: A run is flagged as anomalous if its RMSE > $Q3 + 1.5 \times IQR$.
-    *   *Justification*: This detects runs that "succeeded" but performed poorly (e.g., the robot got lost but luckily recovered, or took a very inefficient path).
+#### 2. Statistical Anomalies (Metric-Based)
+*   **Time Outlier (Temporal Anomaly)**:
+    *   *Logic*: Uses **Median Absolute Deviation (MAD)** because the sample size per scenario is small and robust against outliers.
+    *   *Threshold*: $Duration > Median + 3 \times MAD$.
+    *   *Justification*: Detects runs where the robot struggled significantly but might have eventually succeeded or failed.
+*   **Position Error Anomaly**:
+    *   *Logic*: Uses global statistics (Mean, StdDev) of the position error across all runs.
+    *   *Threshold*: $Error > Mean + 3 \times \sigma$.
+    *   *Consistency Check*: The error must exceed the threshold for **3 consecutive frames** to be flagged. This filters out transient sensor noise.
 
-### Single vs. Multiple Data Sources
-*   **Single Source Limitations**: Relying solely on logs (e.g., "Goal Succeeded") is insufficient because a robot might reach the goal with a dangerously high localization error (false positive success). Relying solely on RMSE is insufficient because a robot might have low error but fail to move (stuck).
-*   **Combination Strategy**:
-    *   **Log + Metric**: If Log = "Success" AND RMSE > Threshold $\rightarrow$ **"Lucky Run"** (Anomaly).
-    *   **Metric + Metric**: If Covariance is High AND RMSE is Low $\rightarrow$ **"Conservative/Lucky"**. If Covariance is Low AND RMSE is High $\rightarrow$ **"Deluded"** (Dangerous Anomaly).
+### Anomaly Relationships and Prediction
+Based on the analysis of the anomaly timeline and correlations:
 
-### Early Prediction of Anomalies
-We identify the following relationships for prediction:
-1.  **Covariance Growth**: A steady increase in the covariance determinant often precedes a "deluded" state where the localization error spikes. Monitoring the *rate of change* of covariance can predict localization loss before the error becomes critical.
-2.  **Replanning Frequency**: A cluster of "Passing new path to controller" log messages often precedes a "Failed to make progress" error. This pattern in the logs serves as an early warning of navigation failure.
+1.  **Fatal vs. Accumulating Anomalies**:
+    *   **"No Initiation"** and **"Fatal Initiation"** are rare but almost always result in immediate run failure.
+    *   **"Planner Failure"** and **"No Progress"** occur frequently and often accumulate within a single run. They are not always immediately fatal but degrade performance.
+
+2.  **Causal Chains (Prediction)**:
+    *   **Collision $\rightarrow$ Stuck**: There is a strong correlation where "Collision Ahead" warnings are followed by "Stuck" (spin/backup failed) events.
+    *   **Stuck $\rightarrow$ No Progress**: Being stuck logically leads to "Failed to make progress".
+    *   **Accumulation $\rightarrow$ Time Outlier**: Runs with repeated "Planner Failures" or "No Progress" warnings tend to become "Time Outliers" before
