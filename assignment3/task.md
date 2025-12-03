@@ -27,6 +27,7 @@ You may use any systematic approach to derive these rules, for example (you are 
 3. Demonstrate that these relations generalize across the dataset by reporting:
     - How frequently each relation appears in all scenarios
     - How often it corresponds to failure vs. success
+    - Whether the correct relation that is the actual cause of failure in each scenario is selected, especially when multiple relations hold simultaneously
 
 4. Provide your own set of scenario files for validating and further refining your derived rules, and justify how your scenarios cover the full range of environment variability
 
@@ -38,7 +39,7 @@ You may use any systematic approach to derive these rules, for example (you are 
   Submit a single markdown file containing:
     - **Feature List** (5 pts): Concise list of all ientified and/or extracted robot, environment, and task features with short relevance notes
     - **Relations & Root Causes** (15 pts): Human-interpretable relations between multiple features and the task that cause failures or anomalies. Describe the procedure used to derive these rules
-    - **Generalization Analysis** (10 pts): Counts of how often each relation appears across scenarios and how often it correctly predicts the outcome
+    - **Generalization Analysis** (10 pts): Counts of how often each relation appears across scenarios and how often it correctly predicts the outcome as well as correct relation
     - **Custom Scenarios** (20 pts): Your own scenario files + short justification of how they cover all environment variability and which rules they validate or help to refine
     - Use the following format of filename format: team_\<number\>_assignment03.md (Example: team_1_assignment03.md)
 
