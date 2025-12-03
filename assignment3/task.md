@@ -47,11 +47,11 @@ You may use any systematic approach to derive these rules, for example (you are 
     - Analysis of relation occurrences across scenarios (20 pts)
     - Store all generated figures in the `images/` folder within your submission directory. This includes visualisation of results for task 2 and confusion matrix for task 3. Please feel free to include any additional plots that helps to present your results based on your approach (10 pts)
 
-**Note**:  
-- Submit all files and folders in the same folder level where *task.md* is located by **17:00 on December 17, 2025**  
-- **Presenting your assignment** during the tutorial session scheduled after the deadline is mandatory to receive a grade for the assignment. Otherwise, the submission will not be graded     
+**Note**:
+- Submit all files and folders in the same folder level where *task.md* is located by **17:00 on December 17, 2025**
+- **Presenting your assignment** during the tutorial session scheduled after the deadline is mandatory to receive a grade for the assignment. Otherwise, the submission will not be graded
 
 ---
 
 ### Resources
-[1] [First order logc](https://en.wikipedia.org/wiki/First-order_logic)
+[1] [First-order logic](https://en.wikipedia.org/wiki/First-order_logic)
