@@ -15,7 +15,6 @@ Please find the geometric coordinate details of all variations of existing maps 
     - Map geometry: walls, door sizes, corridor width
     - Environment variations: obstacle size, shape, and location
     - Sensor-related factors: noise levels
-    - Other geometric elements: window height and placement
 
 2. Using the failure cases and anomalies from Assignment 02, identify the relationships between these features that lead to failure. This may involve evaluating geometric constraints, threshold conditions, or combinations of feature relations that consistently appear in failure cases. These relations can be represented using First-Order Logic (FOL), a standard formalism for expressing structured, interpretable rules [1].
 You may use any systematic approach to derive these rules, for example (you are free to use any justifiable approach of your choice):
