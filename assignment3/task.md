@@ -20,7 +20,7 @@ Please find the geometric coordinate details of all variations of existing maps 
 You may use any systematic approach to derive these rules, for example (you are free to use any justifiable approach of your choice):
     - Enumerating possible relations (e.g., distances, angles, relative positions) and checking which ones hold true in failure cases
     - Comparing the truth values of relations in success vs. failure scenarios
-    - Searching for consistent patterns or minimal sets of relations that leads to failure
+    - Searching for consistent patterns or minimal sets of relations that leads to failure  
     Example: distance(obstacle, wall_id) < X cm AND inbetween(waypoint, obstacle, wall)
 
 3. Demonstrate that these relations generalize across the dataset by reporting:
