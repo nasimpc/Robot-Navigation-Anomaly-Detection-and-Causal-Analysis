@@ -1,3 +1,4 @@
 .vscode/
 .ipynb_checkpoints/
 ws25_aia_complete_data/
+.DS_Store/
