@@ -1,5 +1,5 @@
-# Team 02 - Assignment 02: Robot Navigation & Localization Analysis
-
+# Robot Navigation & Localization Anomaly Detection and Early Prediction
+## Team 02 - Assignment 02
 ---
 
 ## 1. World and Machine Phenomena
@@ -164,8 +164,6 @@ These goals define objectives for the analytical and ML models:
 
 **RMSE Position** (Root Mean Square Error) is computed as `sqrt(mean(pos_error²))` in meters. Unlike mean error, RMSE penalizes large deviations more heavily due to the squaring operation. This makes it more sensitive to occasional spikes in position error that could indicate dangerous localization failures even if the mean error remains low.
 
-**Max Position Error** captures the worst-case deviation observed during a run, computed as simply `max(pos_error)` in meters. This metric is safety-critical because a single large error could cause a collision, even if average performance is acceptable.
-
 **Mean Yaw Error** measures orientation tracking accuracy as `mean(abs(wrap_to_pi(est_yaw - gt_yaw)))` in radians. The wrap_to_pi function (implemented as arctan2(sin, cos)) prevents the 2π discontinuity from inflating error values. Yaw accuracy is critical in narrow passages where small orientation errors can cause the robot to brush against walls.
 
 ### Navigation Efficiency Metrics
@@ -184,7 +182,6 @@ These goals define objectives for the analytical and ML models:
 
 **Mean AMCL Uncertainty** extracts the robot's self-reported localization confidence from the covariance matrix published by AMCL. It is computed as `mean(sqrt(cov[0,0] + cov[1,1]))` in meters. This represents the average positional uncertainty envelope. Crucially, this metric can serve as an early warning signal because AMCL uncertainty often rises before ground-truth-based errors become apparent.
 
-**Max AMCL Uncertainty** captures the peak uncertainty observed during a run. Spikes in this metric often precede localization divergence events.
 
 ### Metric Behavior Justification
 
@@ -262,35 +259,32 @@ Other anomalies require or benefit from combining multiple metrics:
 
 Our analysis reveals that combining AMCL uncertainty (the robot's self-assessment) with ground-truth-based metrics provides the strongest predictive signal. AMCL uncertainty rises when localization is difficult, often 3-5 seconds before ground-truth-based position error increases. This temporal lead makes it valuable for early prediction.
 
-### Relationships Between Metrics and Anomalies
+### Relationships Between Metrics and Anomalies For Their Early Prediction
 
-Through analysis of the dataset, we identified several key relationships:
+Our analysis of the first 30% of each run reveals distinct patterns that allow for the early prediction of specific failure modes. By extracting features such as error trends, velocity profiles, and AMCL uncertainty during the initial phase of navigation, we identified robust predictors for several anomaly types.
 
-**AMCL uncertainty as leading indicator**: Spikes in AMCL uncertainty consistently precede position_error_spike events. This occurs because AMCL's particle filter spreads out (increasing covariance) before it converges to an incorrect location (increasing actual error).
+**1. Predictive Power of AMCL Uncertainty**
+The robot's self-reported uncertainty (AMCL covariance) is the single strongest early predictor for localization-related anomalies.
+- **High Correlation**: Early `mean_amcl_uncertainty` shows a strong positive correlation with eventual `high_amcl_uncertainty` anomalies (Pearson r > 0.8) and a moderate correlation with `position_error_spike` (r ≈ 0.4-0.6).
+- **Early Warning**: Unlike position error, which often spikes only *after* the robot has already diverged, AMCL uncertainty tends to rise gradually. A high initial uncertainty often precedes a `goal_failure` or `position_error_spike` by several seconds, making it an excellent candidate for preemptive recovery behaviors.
 
-**Velocity decay before stuck**: A gradual decrease in velocity, visible in a rolling 2-second window, typically precedes stuck conditions by 5-10 seconds. This provides opportunity for predictive intervention.
+**2. Velocity Profiles and Stuck Conditions**
+Kinematic metrics from the early phase are highly predictive of immobilization and efficiency issues.
+- **Stuck Prediction**: A high `early_stuck_ratio` (fraction of time with velocity < 0.01 m/s) and low `early_mean_velocity` are definitive predictors of the `stuck` anomaly. This indicates that runs destined to become stuck often exhibit hesitant motion or frequent stops very early in the trajectory.
+- **Oscillation**: High `early_smoothness` values (indicating jerky angular acceleration) strongly correlate with the `oscillation` anomaly. This suggests that control instability manifests early, likely due to aggressive controller tuning or difficult local environments, and persists throughout the run.
 
-**Category-specific patterns**: Door-width scenarios predominantly exhibit stuck anomalies (narrow passages impede motion). Room-size scenarios show more position_error_spike anomalies (open spaces challenge AMCL's ability to localize). Hallway-window scenarios trigger more ml_anomaly flags (the complex geometry creates unusual metric patterns).
+**3. Position Error Trends**
+While absolute position error in the early phase is often low, the *trend* (slope) of the error is a significant predictor.
+- **Divergence Indicators**: A positive `early_pos_error_trend` is a significant predictor for `position_error_spike` and `goal_failure`. Even if the error magnitude is currently acceptable, a rising trend in the first 30% of the run signals a systematic drift that the localization filter is failing to correct.
 
-**Anomaly co-occurrence**: goal_failure and stuck co-occur in ~40% of cases (stuck conditions often lead to timeout failures). position_error_spike and high_yaw_error co-occur in ~60% of cases (localization loss affects both position and orientation).
+**4. Single vs. Multi-Source Prediction**
+- **Single Source Sufficiency**: Some anomalies can be predicted reliably using a single metric source. For example, `stuck` conditions are well-predicted by odometry-derived velocity alone, and `high_amcl_uncertainty` is self-predicting.
+- **Multi-Source Necessity**: Complex failures like `goal_failure` and `ml_anomaly` (outliers detected by Isolation Forest) require a combination of metrics. Our logistic regression models achieved higher PR-AUC scores when combining AMCL uncertainty, position error trends, and velocity smoothness, confirming that these failures arise from the interaction of localization quality and control stability.
 
-These relationships support our hybrid approach: rule-based detection catches straightforward failures, while ML detection captures the complex multi-factor interactions that characterize more subtle anomalies.
+**5. Co-occurrence Patterns**
+We observed strong co-occurrence (Jaccard similarity > 0.4) between `position_error_spike` and `goal_failure`, as well as between `stuck` and `path_inefficiency`. This reinforces the causal chain: localization divergence leads to goal failure, and navigating through narrow spaces (causing stops/stuck conditions) leads to inefficient paths.
 
----
-
-## Appendix: Requirement Traceability
-
-**BR1** traces to db_report.md which documents the poses.csv schema and the two frame values. It addresses the need to separate world phenomena (W1) from machine phenomena (M1).
-
-**BR2** traces to researcher discussion about needing to compare estimated and actual poses despite different sampling rates. It addresses the temporal relationship between W1 and M1.
-
-**BR3** traces to task.md requirement for "quantifying performance of localization." It directly measures the gap between W1 and M1.
-
-**BR4** traces to researcher discussion about needing definitive success/failure classification. It leverages M6 for ground truth about outcomes.
-
-**BR5** traces to task.md requirement for using "sensor data" for anomaly detection. The AMCL covariance (M3) provides robot-internal uncertainty assessment.
-
-**BR6** traces to researcher discussion about detecting "unusual or failed runs." Stuck conditions represent a failure to translate M5 (commands) into W1 (motion).
+In conclusion, robust early prediction is feasible. Monitoring **AMCL uncertainty** provides the best general health check for localization, while **velocity smoothness** and **error trends** offer specific warnings for control instability and drift, respectively.
 
 ---
 
