@@ -1,3 +1,4 @@
+
 ## Assignment 02
 
 This assignment builds on the work completed in Assignment 01, where you explored the dataset and developed a protocol for interacting with the researcher. In this phase, you will translate the outcomes of that discussion into a structured set of goals, requirements, specifications, and assumptions, and create a plan for evaluating them.
