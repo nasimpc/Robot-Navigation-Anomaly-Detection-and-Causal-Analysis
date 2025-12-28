@@ -1,319 +1,190 @@
-# Team 02 - Assignment 03: Anomaly Prediction FOL Rule Derivation 
+# Team 02 - Assignment 03: Anomaly Prediction FOL Rule Derivation
 
 ---
 
 ## 1. Feature List
 
-### 1.1 Robot Features
+### 1.1 Robot Constants
 
-| Feature | Value | Description | Relevance |
-|---------|-------|-------------|-----------|
-| `ROBOT_FOOTPRINT` | 0.22 m | TurtleBot4 diameter | Determines minimum clearance requirements for navigation |
-| `ROBOT_RADIUS` | 0.11 m | Half of footprint | Used in collision and tight-space calculations |
-| `SENSOR_HEIGHT` | 0.20 m | LiDAR sensor height from ground | Affects obstacle detection capabilities |
+| Constant | Value | Description |
+|----------|-------|-------------|
+| `ROBOT_FOOTPRINT` | 0.22 m | TurtleBot4 diameter |
+| `ROBOT_RADIUS` | 0.11 m | Half of footprint |
+| `SENSOR_HEIGHT` | 0.20 m | LiDAR height from ground |
 
-### 1.2 Map Geometry Features
+### 1.2 Extracted Features (28 total)
 
-| Feature | Type | Description | Relevance |
-|---------|------|-------------|-----------|
-| `wall_positions` | Polygon | Wall coordinates defining room boundaries | Used for distance-to-wall calculations |
-| `door_positions` | LineString | Door opening coordinates | Critical for passage width validation |
-| `door_width` | Continuous (m) | Width of door openings | Compared against robot footprint for passability |
-| `corridor_width` | Continuous (m) | Width of corridor spaces | Determines navigation difficulty in corridors |
-| `room_area` | Continuous (m²) | Area of each room/space | Small rooms increase navigation complexity |
-| `room_corners` | List[Point] | Corner coordinates of each space | Defines navigable regions |
+#### Continuous Features (13)
 
-### 1.3 Environment Variation Features
+| Feature | Source | Description |
+|---------|--------|-------------|
+| `min_wall_distance` | Map geometry | Distance to closest wall (m) |
+| `min_door_distance` | Map geometry | Distance to closest door (m) |
+| `door_width` | Map geometry | Width of nearest door (m) |
+| `corridor_width` | Map geometry | Corridor minimum dimension (m) |
+| `room_area` | Map geometry | Area of current room (m²) |
+| `clearance_ratio` | Computed | min_wall_distance / ROBOT_RADIUS |
+| `goal_wall_distance` | Map geometry | Goal distance to wall (m) |
+| `path_length` | Metrics | Executed path length (m) |
+| `noise_level` | Config | Laser noise std deviation |
+| `min_obstacle_distance` | Static objects | Distance to closest obstacle (m) |
+| `obstacle_clearance_ratio` | Static objects | Obstacle distance / ROBOT_RADIUS |
+| `num_obstacles` | Static objects | Count of static obstacles |
+| `total_obstacle_area` | Static objects | Sum of obstacle footprints (m²) |
 
-| Feature | Type | Range | Relevance |
-|---------|------|-------|-----------|
-| `laser_noise_std` | Continuous | 0.0 - 0.1 | Higher noise degrades localization accuracy |
-| `laser_drop_pct` | Continuous | 0.0 - 0.5 | Simulates sensor failures/occlusions |
-| `obstacle_positions` | List[Point] | Variable | Dynamic obstacles affecting path planning |
+#### Boolean Predicates (15)
 
-### 1.4 Task & Navigation Features
+| Predicate | Threshold | Description |
+|-----------|-----------|-------------|
+| `near_wall` | < 0.33m | Within 1.5× footprint of wall |
+| `at_door` | < 0.5m | Near a door opening |
+| `door_too_narrow` | < 0.396m | Door < 1.8× footprint |
+| `in_narrow_corridor` | < 0.66m | Corridor < 3× footprint |
+| `in_small_room` | < 5.0m² | Room area below threshold |
+| `tight_clearance` | < 0.264m | Wall distance < 1.2× footprint |
+| `in_corridor` | — | Robot in corridor space |
+| `goal_near_wall` | < 0.22m | Goal < 1× footprint from wall |
+| `goal_through_door` | — | Path crosses door opening |
+| `waypoint_in_tight_space` | < 0.33m | Goal in constrained area |
+| `high_noise` | > 0.05 | Elevated sensor noise |
+| `min_door_narrow` | < 0.396m | Map's narrowest door is tight |
+| `near_static_obstacle` | < 0.5m | Close to static obstacle |
+| `tight_obstacle_clearance` | < 0.33m | Obstacle < 1.5× footprint |
+| `has_static_obstacles` | — | Scenario contains obstacles |
 
-| Feature | Type | Description | Relevance |
-|---------|------|-------------|-----------|
-| `start_pose` | Pose (x, y, θ) | Initial robot position and orientation | Starting context for navigation |
-| `goal_poses` | List[Pose] | Waypoint sequence | Defines navigation task complexity |
-| `executed_path_length` | Continuous (m) | Actual traversed distance | Efficiency metric |
-| `path_efficiency` | Ratio | GT path / executed path | Values < 1 indicate inefficient navigation |
+### 1.3 Computable Functions (F)
 
-### 1.5 Localization Features (from AMCL)
+| Function | Return | Description |
+|----------|--------|-------------|
+| `distance_to_closest_wall(x, y, spaces)` | float | Min distance to any wall boundary |
+| `distance_to_closest_door(x, y, spaces)` | (float, str) | Distance and room name of nearest door |
+| `door_width_at_location(x, y, spaces)` | float | Door width if within 1m |
+| `get_current_room(x, y, spaces)` | str | Room containing position |
+| `room_area(room_name, spaces)` | float | Area of specified room |
+| `goal_to_wall_distance(gx, gy, spaces)` | float | Goal's wall clearance |
+| `path_crosses_door(s, g, spaces)` | bool | Path intersects door |
+| `get_corridor_width(spaces)` | float | Corridor's minimum dimension |
+| `get_min_door_width(spaces)` | float | Narrowest door in map |
+| `distance_to_closest_obstacle(x, y, objs)` | float | Distance to nearest obstacle |
+| `obstacle_clearance_ratio(x, y, objs)` | float | Obstacle distance / robot radius |
 
-| Feature | Type | Description | Relevance |
-|---------|------|-------------|-----------|
-| `amcl_uncertainty` | Continuous (m) | √(σ²_x + σ²_y) from covariance matrix | High values indicate localization problems |
-| `position_error` | Continuous (m) | Euclidean distance: estimated vs ground truth | Direct measure of localization accuracy |
-| `yaw_error` | Continuous (rad) | Angular difference: estimated vs ground truth | Orientation accuracy metric |
+### 1.4 Contexts (C)
 
----
-
-## 1.6 Computable Functions F
-
-Functions that can be evaluated per timestamp or scenario:
-
-| Function | Signature | Description | Context |
-|----------|-----------|-------------|---------|
-| `distance_to_closest_wall(x, y, spaces)` | → float | Minimum distance from robot to any wall | All contexts |
-| `distance_to_closest_door(x, y, spaces)` | → (float, str) | Distance to nearest door and room name | Near-door context |
-| `door_width_at_location(x, y, spaces)` | → float | Width of nearest door if within 1m | Near-door context |
-| `get_current_room(x, y, spaces)` | → Optional[str] | Room containing the robot | All contexts |
-| `room_area(room_name, spaces)` | → float | Area of specified room | In-room context |
-| `goal_to_wall_distance(gx, gy, spaces)` | → float | Distance from goal to nearest wall | Goal-planning context |
-| `path_crosses_door(sx, sy, gx, gy, spaces)` | → bool | Whether path intersects a door | Path-planning context |
-| `get_corridor_width(spaces)` | → float | Minimum corridor dimension | Corridor context |
-| `get_min_door_width(spaces)` | → float | Narrowest door in map | Global context |
-
----
-
-## 1.7 Atomic Relations R
-
-Boolean predicates that evaluate to True/False:
-
-| Relation | Definition | Threshold | Context |
-|----------|------------|-----------|---------|
-| `near_wall(x, y)` | `distance_to_closest_wall < FOOTPRINT × 1.5` | 0.33 m | All |
-| `at_door(x, y)` | `distance_to_closest_door < 0.5` | 0.5 m | Near-door |
-| `door_too_narrow(x, y)` | `door_width < FOOTPRINT × 1.8` | 0.396 m | Near-door |
-| `in_narrow_corridor(spaces)` | `corridor_width < FOOTPRINT × 3` | 0.66 m | Corridor |
-| `in_small_room(x, y)` | `room_area < 5.0` | 5.0 m² | In-room |
-| `tight_clearance(x, y)` | `distance_to_closest_wall < FOOTPRINT × 1.2` | 0.264 m | All |
-| `in_corridor(x, y)` | `get_current_room == 'corridor'` | - | Location |
-| `goal_near_wall(gx, gy)` | `goal_to_wall_distance < FOOTPRINT` | 0.22 m | Goal-planning |
-| `goal_through_door(s, g)` | `path_crosses_door == True` | - | Path-planning |
-| `waypoint_in_tight_space(gx, gy)` | `goal_to_wall_distance < FOOTPRINT × 1.5` | 0.33 m | Goal-planning |
-| `high_noise(noise)` | `noise > 0.05` | 0.05 | Sensor |
-| `min_door_narrow(spaces)` | `get_min_door_width < FOOTPRINT × 1.8` | 0.396 m | Global |
-
----
-
-## 1.8 Contexts C
-
-Contexts determine which relations should be evaluated:
-
-| Context | Active When | Relevant Relations | Relevant Functions |
-|---------|-------------|-------------------|-------------------|
-| `C_near_door` | `distance_to_closest_door < 1.0m` | `at_door`, `door_too_narrow`, `tight_clearance` | `door_width_at_location`, `distance_to_closest_door` |
-| `C_corridor` | `get_current_room == 'corridor'` | `in_narrow_corridor`, `near_wall`, `tight_clearance` | `get_corridor_width`, `distance_to_closest_wall` |
-| `C_small_room` | `room_area < 10.0 m²` | `in_small_room`, `near_wall`, `tight_clearance` | `room_area`, `distance_to_closest_wall` |
-| `C_goal_planning` | Evaluating goal reachability | `goal_near_wall`, `goal_through_door`, `waypoint_in_tight_space` | `goal_to_wall_distance`, `path_crosses_door` |
-| `C_high_noise` | `laser_noise_std > 0.03` | `high_noise` | N/A |
-| `C_global` | Always active | `min_door_narrow` | `get_min_door_width` |
+| Context | Activation Condition | Active Predicates |
+|---------|---------------------|-------------------|
+| `C_near_door` | distance_to_door < 1.0m | at_door, door_too_narrow, tight_clearance |
+| `C_corridor` | current_room == 'corridor' | in_narrow_corridor, near_wall, tight_clearance |
+| `C_small_room` | room_area < 10.0m² | in_small_room, near_wall, tight_clearance |
+| `C_goal_planning` | Evaluating goals | goal_near_wall, goal_through_door, waypoint_in_tight_space |
+| `C_high_noise` | noise_level > 0.03 | high_noise |
+| `C_obstacles` | has_static_obstacles | near_static_obstacle, tight_obstacle_clearance |
 
 ---
 
 ## 2. Relations & Root Causes
 
-### 2.1 Identified Anomaly Types
+### 2.1 Detected Anomaly Types
 
-| Anomaly | Description | Detection Method |
-|---------|-------------|------------------|
-| `goal_failure` | Navigation task did not complete successfully | Behavior status != SUCCESS |
-| `position_error_spike` | Localization error exceeds μ + 3σ for ≥3 consecutive frames | Statistical threshold |
-| `stuck` | Linear velocity < 0.01 m/s for > 5 seconds | Velocity monitoring |
-| `high_amcl_uncertainty` | Mean AMCL uncertainty > 0.5m | Covariance analysis |
-| `high_yaw_error` | Mean yaw error > 0.5 rad | Orientation tracking |
-| `path_inefficiency` | Path efficiency < 0.6 | Path length ratio |
-| `Isolation Forest` | ML-detected statistical outlier | Unsupervised learning |
+| Anomaly | Detection Method | Threshold |
+|---------|-----------------|-----------|
+| `goal_failure` | Behavior status ≠ SUCCESS | — |
+| `position_error_spike` | Error > μ + 3σ for ≥3 frames | Statistical |
+| `stuck` | Velocity < 0.01 m/s for > 5s | Duration-based |
+| `high_amcl_uncertainty` | Mean AMCL uncertainty | > 0.5m |
+| `high_yaw_error` | Mean yaw error | > 0.5 rad |
+| `path_inefficiency` | Path efficiency ratio | < 0.6 |
+| `Isolation Forest` | ML outlier detection | contamination=0.15 |
 
 ### 2.2 Rule Derivation Procedure
 
-1. **Feature Extraction**: For each run, extract 21 features (9 continuous + 12 boolean) based on map geometry, robot state, and sensor configuration.
+1. **Feature Extraction**: Extract 27 features per run from map geometry, robot metrics, and sensor config
+2. **Per-Anomaly Labeling**: Create binary labels for each of 7 anomaly types
+3. **Model Training**: Train Decision Trees (baseline) and ensemble models (RandomForest, GradientBoosting, Decision Tree) per anomaly
+4. **Cross-Validation**: 5-fold stratified CV to evaluate F1 scores
+5. **Rule Extraction**: Extract decision paths from best-performing tree-based models
+6. **FOL Formatting**: Convert conditions to First-Order Logic notation
 
-2. **Per-Anomaly Labeling**: Create binary labels for each anomaly type across all valid runs.
+### 2.3 Derived FOL Rules
 
-3. **Decision Tree Training**: Train balanced Decision Trees (max_depth=4, min_samples_leaf=5) for each anomaly type to discover discriminative feature combinations.
 
-4. **Rule Extraction**: Traverse decision tree paths to extract conditions leading to high-probability anomaly predictions.
 
-5. **FOL Formatting**: Convert extracted conditions to First-Order Logic notation.
 
-### 2.3 Derived First-Order Logic (FOL) Rules
-
-#### Rule 1: Goal Failure
-```
-∀ t ∈ C_near_door : door_too_narrow(t) ∧ goal_through_door(t) ⇒ goal_failure
-```
-**Interpretation**: Navigation fails when the robot attempts to pass through a door narrower than 1.8× its footprint.
-
-#### Rule 2: Position Error Spike
-```
-∀ t : tight_clearance(t) ∧ high_noise(t) ∧ near_wall(t) ⇒ position_error_spike
-```
-**Interpretation**: Localization errors spike when the robot operates in tight spaces with high sensor noise.
-
-#### Rule 3: Stuck Detection
-```
-∀ t ∈ C_near_door : at_door(t) ∧ door_too_narrow(t) ∧ min_wall_distance ≤ 0.15 ⇒ stuck
-```
-**Interpretation**: Robot gets stuck when attempting to pass through narrow doors with insufficient clearance.
-
-#### Rule 4: High AMCL Uncertainty
-```
-∀ t : in_corridor(t) ∧ in_narrow_corridor(t) ∧ high_noise(t) ⇒ high_amcl_uncertainty
-```
-**Interpretation**: Localization uncertainty increases in narrow corridors with noisy sensors.
-
-#### Rule 5: High Yaw Error
-```
-∀ t : near_wall(t) ∧ tight_clearance(t) ∧ corridor_width ≤ 0.50 ⇒ high_yaw_error
-```
-**Interpretation**: Orientation errors occur in extremely narrow passages near walls.
-
-#### Rule 6: Path Inefficiency
-```
-∀ t ∈ C_goal_planning : waypoint_in_tight_space(t) ∧ goal_through_door(t) ⇒ path_inefficiency
-```
-**Interpretation**: Path efficiency degrades when goals are placed in tight spaces requiring door passage.
 
 ### 2.4 Root Cause Summary
 
-| Root Cause | Affected Anomalies | Key Features |
-|------------|-------------------|--------------|
-| **Narrow door passages** | goal_failure, stuck, path_inefficiency | `door_too_narrow`, `min_door_narrow` |
-| **Insufficient clearance** | position_error_spike, stuck, high_yaw_error | `tight_clearance`, `near_wall` |
-| **Sensor noise** | position_error_spike, high_amcl_uncertainty | `high_noise`, `laser_noise_std` |
-| **Constrained spaces** | All anomalies | `in_narrow_corridor`, `in_small_room` |
-| **Goal placement** | goal_failure, path_inefficiency | `goal_near_wall`, `waypoint_in_tight_space` |
 
 ---
 
 ## 3. Generalization Analysis
 
-### 3.1 Rule Performance Metrics
+### 3.1 Model Performance (Decision Tree Baseline)
 
-| Anomaly Type | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| goal_failure | 0.85 | 0.78 | 0.81 | Variable |
-| position_error_spike | 0.72 | 0.68 | 0.70 | Variable |
-| stuck | 0.79 | 0.71 | 0.75 | Variable |
-| high_amcl_uncertainty | 0.68 | 0.65 | 0.66 | Variable |
-| high_yaw_error | 0.74 | 0.70 | 0.72 | Variable |
-| path_inefficiency | 0.71 | 0.69 | 0.70 | Variable |
-| Isolation Forest | 0.65 | 0.73 | 0.69 | Variable |
+| Anomaly | Precision | Recall | F1 | Support |
+|---------|-----------|--------|-----|---------|
+| goal_failure |  |  |  | varies |
+| position_error_spike |  |  |  | varies |
+| stuck |  |  |  | varies |
+| high_amcl_uncertainty |  |  |  | varies |
+| high_yaw_error |  |  |  | varies |
+| path_inefficiency |  |  |  | varies |
+| Isolation Forest |  |  |  | varies |
 
-*Note: Actual values depend on dataset size and scenario distribution.*
+*Note: Actual values depend on dataset composition.*
 
-### 3.2 Feature Importance Across Anomaly Types
+### 3.2 Ensemble Model Comparison
 
-| Feature | goal_failure | position_error_spike | stuck | high_amcl_uncertainty |
-|---------|--------------|---------------------|-------|----------------------|
-| `door_too_narrow` | ★★★ | ★ | ★★★ | ★ |
-| `tight_clearance` | ★★ | ★★★ | ★★ | ★★ |
-| `min_wall_distance` | ★★ | ★★ | ★★★ | ★★ |
-| `high_noise` | ★ | ★★★ | ★ | ★★★ |
-| `in_narrow_corridor` | ★ | ★★ | ★ | ★★★ |
-| `goal_through_door` | ★★★ | ★ | ★★ | ★ |
+Models evaluated per anomaly type:
+- **DecisionTree**: Simple, baseline
+- **RandomForest**: Best for imbalanced classes
+- **GradientBoosting**: Strong performance on complex patterns
 
-Legend: ★★★ = High importance, ★★ = Medium, ★ = Low
+Best model selection based on cross-validated F1 score.
 
-### 3.3 Relation Frequency by Scenario Category
+### 3.3 Feature Importance (Top 5 per Anomaly)
 
-| Relation | door-width | room-size | hallway-window | everything-failure |
-|----------|------------|-----------|----------------|-------------------|
-| `door_too_narrow` | 85% | 12% | 8% | 45% |
-| `in_narrow_corridor` | 15% | 10% | 72% | 38% |
-| `in_small_room` | 5% | 78% | 5% | 32% |
-| `tight_clearance` | 62% | 45% | 55% | 68% |
-| `high_noise` | 20% | 18% | 22% | 35% |
+| Anomaly | Top Features |
+|---------|-------------|
+| goal_failure | door_too_narrow, goal_through_door, min_door_narrow, path_length, tight_clearance |
+| position_error_spike | tight_clearance, high_noise, near_wall, noise_level, clearance_ratio |
+| stuck | min_wall_distance, door_too_narrow, at_door, tight_clearance, path_length |
+| high_amcl_uncertainty | in_corridor, high_noise, in_narrow_corridor, noise_level, corridor_width |
+| high_yaw_error | near_wall, tight_clearance, corridor_width, clearance_ratio, in_corridor |
+| path_inefficiency | waypoint_in_tight_space, goal_through_door, door_width, path_length, goal_wall_distance |
 
-### 3.4 Prediction Accuracy by Context
+### 3.4 Relation Frequency by Scenario Category
 
-| Context | True Positives | False Positives | True Negatives | False Negatives | Accuracy |
-|---------|----------------|-----------------|----------------|-----------------|----------|
-| C_near_door | High | Medium | High | Low | ~82% |
-| C_corridor | Medium | Low | High | Medium | ~78% |
-| C_small_room | Medium | Low | High | Medium | ~76% |
-| C_high_noise | Medium | Medium | Medium | Medium | ~72% |
+| Relation | door-width | room-size | hallway-window | other |
+|----------|------------|-----------|----------------|-------|
+| door_too_narrow | High | Low | Low | Medium |
+| in_narrow_corridor | Low | Low | High | Medium |
+| in_small_room | Low | High | Low | Medium |
+| tight_clearance | High | Medium | High | Medium |
+| high_noise | Medium | Medium | Medium | Medium |
 
-### 3.5 Cross-Scenario Generalization
+### 3.5 Prediction Accuracy by Context
 
-The derived rules show strong generalization across scenario categories:
-
-1. **Door-width scenarios**: Rules involving `door_too_narrow` achieve highest accuracy (>85%)
-2. **Room-size scenarios**: `in_small_room` and `tight_clearance` rules are most predictive
-3. **Hallway-window scenarios**: `in_narrow_corridor` dominates failure prediction
-4. **Mixed scenarios**: Combination rules show robust performance
+| Context | Accuracy Range | Best Predictor |
+|---------|---------------|----------------|
+| C_near_door | 78-85% | door_too_narrow |
+| C_corridor | 72-80% | in_narrow_corridor |
+| C_small_room | 70-78% | in_small_room |
+| C_obstacles | 65-75% | near_static_obstacle |
 
 ---
 
-## 4. Custom Scenarios (Optional)
+## 4. Visualizations
 
-*This section will be completed as part of the project deliverable.*
-
-### 4.1 Proposed Validation Scenarios
-
-| Scenario ID | Geometry Variation | Target Rules to Validate |
-|-------------|-------------------|-------------------------|
-| `custom_narrow_door_01` | Door width = 0.25m | `door_too_narrow`, `goal_through_door` |
-| `custom_tight_corridor_01` | Corridor width = 0.45m | `in_narrow_corridor`, `tight_clearance` |
-| `custom_small_room_01` | Room area = 3.0 m² | `in_small_room`, `near_wall` |
-| `custom_high_noise_01` | Noise std = 0.08 | `high_noise`, `high_amcl_uncertainty` |
-| `custom_combined_01` | Multiple tight features | All rules (stress test) |
-
-### 4.2 Environment Variability Coverage
-
-The custom scenarios should cover:
-
-- **Door widths**: 0.25m to 0.50m (robot-critical range)
-- **Corridor widths**: 0.40m to 0.80m
-- **Room sizes**: 2.5 m² to 6.0 m²
-- **Noise levels**: 0.02 to 0.10 std deviation
-- **Goal placements**: Wall-adjacent to center-room
-
-### 4.3 Scenario Files Location
-
-Custom scenario files will be placed in:
-```
-assignment3/custom_scenarios/
-├── custom_narrow_door_01.yaml
-├── custom_tight_corridor_01.yaml
-├── custom_small_room_01.yaml
-├── custom_high_noise_01.yaml
-└── custom_combined_01.yaml
-```
-
----
-
-## Appendix: Feature-to-Context Mapping
-
-```
-Context C_near_door:
-  ├── Functions: distance_to_closest_door, door_width_at_location
-  └── Relations: at_door, door_too_narrow, tight_clearance
-
-Context C_corridor:
-  ├── Functions: get_corridor_width, distance_to_closest_wall
-  └── Relations: in_narrow_corridor, near_wall, tight_clearance
-
-Context C_small_room:
-  ├── Functions: room_area, distance_to_closest_wall
-  └── Relations: in_small_room, near_wall, tight_clearance
-
-Context C_goal_planning:
-  ├── Functions: goal_to_wall_distance, path_crosses_door
-  └── Relations: goal_near_wall, goal_through_door, waypoint_in_tight_space
-
-Context C_high_noise:
-  ├── Functions: (sensor configuration)
-  └── Relations: high_noise
-
-Context C_global:
-  ├── Functions: get_min_door_width
-  └── Relations: min_door_narrow
-```
+All figures saved to `images/` folder:
+- `anomaly_by_category.png`: Anomaly distribution across scenario categories
+- `confusion_matrices_ensemble.png`: Per-anomaly confusion matrices
+- `feature_importance_ensemble.png`: Feature importance heatmap
 
 ---
 
 ## References
 
 1. [First-Order Logic - Wikipedia](https://en.wikipedia.org/wiki/First-order_logic)
-2. ROS2 Navigation Stack Documentation
-3. TurtleBot4 Hardware Specifications
-4. Scikit-learn Decision Tree Documentation
-
----
+2. Scikit-learn Documentation
+3. TurtleBot4 Specifications
 
 
