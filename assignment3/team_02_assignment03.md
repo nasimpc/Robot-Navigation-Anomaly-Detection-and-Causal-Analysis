@@ -174,10 +174,6 @@ Best model selection based on cross-validated F1 score.
 
 ## 4. Visualizations
 
-All figures saved to `images/` folder:
-- `anomaly_by_category.png`: Anomaly distribution across scenario categories
-- `confusion_matrices_ensemble.png`: Per-anomaly confusion matrices
-- `feature_importance_ensemble.png`: Feature importance heatmap
 
 ---
 
