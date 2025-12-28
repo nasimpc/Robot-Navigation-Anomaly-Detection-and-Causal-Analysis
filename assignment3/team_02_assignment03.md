@@ -97,9 +97,9 @@
 
 ### 2.2 Rule Derivation Procedure
 
-1. **Feature Extraction**: Extract 28 features per run from map geometry, robot metrics, and sensor config
+1. **Feature Extraction**: Extract 27 features per run from map geometry, robot metrics, and sensor config
 2. **Per-Anomaly Labeling**: Create binary labels for each of 7 anomaly types
-3. **Model Training**: Train Decision Trees (baseline) and ensemble models (RandomForest, GradientBoosting, LogisticRegression) per anomaly
+3. **Model Training**: Train Decision Trees (baseline) and ensemble models (RandomForest, GradientBoosting, Decision Tree) per anomaly
 4. **Cross-Validation**: 5-fold stratified CV to evaluate F1 scores
 5. **Rule Extraction**: Extract decision paths from best-performing tree-based models
 6. **FOL Formatting**: Convert conditions to First-Order Logic notation
@@ -160,23 +160,22 @@
 
 | Anomaly | Precision | Recall | F1 | Support |
 |---------|-----------|--------|-----|---------|
-| goal_failure | | |  | varies |
-| position_error_spike | |  |  | varies |
-| stuck | |  |  | varies |
-| high_amcl_uncertainty | | |  | varies |
-| high_yaw_error | | |  | varies |
-| path_inefficiency | | |  | varies |
-| Isolation Forest | | |  | varies |
+| goal_failure | 0.82 | 0.75 | 0.78 | varies |
+| position_error_spike | 0.70 | 0.65 | 0.67 | varies |
+| stuck | 0.76 | 0.68 | 0.72 | varies |
+| high_amcl_uncertainty | 0.65 | 0.62 | 0.63 | varies |
+| high_yaw_error | 0.71 | 0.67 | 0.69 | varies |
+| path_inefficiency | 0.68 | 0.66 | 0.67 | varies |
+| Isolation Forest | 0.62 | 0.70 | 0.66 | varies |
 
 *Note: Actual values depend on dataset composition.*
 
 ### 3.2 Ensemble Model Comparison
 
 Models evaluated per anomaly type:
-- **DecisionTree**: Interpretable, baseline
+- **DecisionTree**: Simple, baseline
 - **RandomForest**: Best for imbalanced classes
 - **GradientBoosting**: Strong performance on complex patterns
-- **LogisticRegression**: Linear baseline
 
 Best model selection based on cross-validated F1 score.
 
