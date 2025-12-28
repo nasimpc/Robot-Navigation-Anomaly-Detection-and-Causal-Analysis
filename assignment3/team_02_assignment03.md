@@ -106,51 +106,12 @@
 
 ### 2.3 Derived FOL Rules
 
-#### Rule 1: Goal Failure
-```
-∀t ∈ C_near_door : door_too_narrow(t) ∧ goal_through_door(t) ⇒ goal_failure
-```
-**Cause**: Robot cannot pass through doors narrower than 1.8× its footprint.
 
-#### Rule 2: Position Error Spike
-```
-∀t : tight_clearance(t) ∧ high_noise(t) ∧ near_wall(t) ⇒ position_error_spike
-```
-**Cause**: Localization degrades in tight spaces with noisy sensors.
 
-#### Rule 3: Stuck Detection
-```
-∀t ∈ C_near_door : at_door(t) ∧ door_too_narrow(t) ∧ min_wall_distance ≤ 0.15m ⇒ stuck
-```
-**Cause**: Robot gets trapped at narrow door passages.
 
-#### Rule 4: High AMCL Uncertainty
-```
-∀t : in_corridor(t) ∧ in_narrow_corridor(t) ∧ high_noise(t) ⇒ high_amcl_uncertainty
-```
-**Cause**: Narrow corridors with noise reduce localization confidence.
-
-#### Rule 5: High Yaw Error
-```
-∀t : near_wall(t) ∧ tight_clearance(t) ∧ corridor_width ≤ 0.50m ⇒ high_yaw_error
-```
-**Cause**: Orientation estimation fails in extremely constrained passages.
-
-#### Rule 6: Path Inefficiency
-```
-∀t ∈ C_goal_planning : waypoint_in_tight_space(t) ∧ goal_through_door(t) ⇒ path_inefficiency
-```
-**Cause**: Suboptimal paths when goals require door traversal in tight areas.
 
 ### 2.4 Root Cause Summary
 
-| Root Cause | Anomalies Affected | Key Features |
-|------------|-------------------|--------------|
-| Narrow doors | goal_failure, stuck, path_inefficiency | door_too_narrow, min_door_narrow |
-| Insufficient clearance | position_error_spike, stuck, high_yaw_error | tight_clearance, near_wall |
-| Sensor noise | position_error_spike, high_amcl_uncertainty | high_noise, noise_level |
-| Constrained spaces | All | in_narrow_corridor, in_small_room |
-| Goal placement | goal_failure, path_inefficiency | goal_near_wall, waypoint_in_tight_space |
 
 ---
 
@@ -160,13 +121,13 @@
 
 | Anomaly | Precision | Recall | F1 | Support |
 |---------|-----------|--------|-----|---------|
-| goal_failure | 0.82 | 0.75 | 0.78 | varies |
-| position_error_spike | 0.70 | 0.65 | 0.67 | varies |
-| stuck | 0.76 | 0.68 | 0.72 | varies |
-| high_amcl_uncertainty | 0.65 | 0.62 | 0.63 | varies |
-| high_yaw_error | 0.71 | 0.67 | 0.69 | varies |
-| path_inefficiency | 0.68 | 0.66 | 0.67 | varies |
-| Isolation Forest | 0.62 | 0.70 | 0.66 | varies |
+| goal_failure |  |  |  | varies |
+| position_error_spike |  |  |  | varies |
+| stuck |  |  |  | varies |
+| high_amcl_uncertainty |  |  |  | varies |
+| high_yaw_error |  |  |  | varies |
+| path_inefficiency |  |  |  | varies |
+| Isolation Forest |  |  |  | varies |
 
 *Note: Actual values depend on dataset composition.*
 
