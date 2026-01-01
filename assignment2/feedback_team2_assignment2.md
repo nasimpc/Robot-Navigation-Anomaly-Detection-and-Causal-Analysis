@@ -24,3 +24,5 @@
 3. Relevance and clarity of visualizations with appropriate labels, headers, units, and legends ( 10/10)
     - All plots are very well represented
     - Some observations from feature importance for early anomaly prediction are interesting, especially most of negative coefficients
+
+Score: /100
