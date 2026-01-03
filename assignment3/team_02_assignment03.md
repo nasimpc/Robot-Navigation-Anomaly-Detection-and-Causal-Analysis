@@ -363,10 +363,10 @@ The best model for each anomaly class was selected using **cross-validated F1 sc
 
 ### Key Conclusions
 
-✔ Gradient Boosting dominates performance for most anomaly types  
-✔ Random Forest performs best when support is very small  
-✔ Extremely high AUC indicates **excellent anomaly separability**  
-✔ Rare classes still achieved strong detection accuracy  
+1. Gradient Boosting dominates performance for most anomaly types  
+2. Random Forest performs best when support is very small  
+3. Extremely high AUC indicates **excellent anomaly separability**  
+4. Rare classes still achieved strong detection accuracy  
 
 ---
 
