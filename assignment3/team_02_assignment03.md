@@ -115,8 +115,6 @@ Contexts activate **subsets of predicates** depending on spatial or operational 
 
 ### 2.3 Derived FOL Rules
 
-### 2.3 Example Derived FOL Rules
-
 The following rules were extracted from the best-performing models for each anomaly type. Each rule is expressed in **First-Order Logic (FOL)** and accompanied by a **natural language (NL) interpretation**, along with confidence and support information. These rules illustrate how combinations of geometric, perceptual, and environmental features lead to specific navigation anomalies.
 
 ---
@@ -288,9 +286,6 @@ The following rules were extracted from the best-performing models for each anom
   IF the obstacle clearance ratio is at most 31.31 AND the minimum door distance is greater than 2.99 AND the minimum door distance is at most 3.23, THEN predict an Isolation Forest anomaly.
 
 
-### 2.4 Root Cause Summary
-
-
 ---
 
 ## 3. Generalization Analysis
@@ -440,16 +435,6 @@ This supports the use of **context-conditioned relational reasoning** rather tha
 The generalization study demonstrates that relational features, when paired with ensemble learning, provide highly accurate and context-aware anomaly prediction for robot navigation. Gradient Boosting achieved near-perfect AUC across anomaly types, while Random Forests excelled in low-support categories. Importantly, predictive power was strongly dependent on scenario context; relations such as *door narrowness* or *corridor confinement* generalized well only within semantically appropriate environments. This confirms the benefit of **structured relational representations** over purely metric features for context-dependent anomaly detection.
 
 ---
-
-
-
-
-
-
-
-
-## 4. Visualizations
-
 
 ---
 
