@@ -115,333 +115,160 @@ Contexts activate **subsets of predicates** depending on spatial or operational 
 
 ### 2.3 Derived FOL Rules
 
-The following rules were extracted from the best-performing models for each anomaly type. Each rule is expressed in **First-Order Logic (FOL)** and accompanied by a **natural language (NL) interpretation**, along with confidence and support information. These rules illustrate how combinations of geometric, perceptual, and environmental features lead to specific navigation anomalies.
+The following rules were extracted from the best-performing models for each anomaly type. Each rule is expressed in **First-Order Logic (FOL)** and accompanied by a **natural language (NL) interpretation**. These rules illustrate how combinations of geometric, perceptual, and environmental features lead to specific navigation anomalies.
 
 ---
 
-#### Goal Failure  
-**Best Model:** Gradient Boosting  
-**F1 Score:** 1.00
+#### goal_failure
 
-**Rule 1** (Confidence = 0.88, n = 6)  
-- **FOL:**  
-  ∀t : NOT_in_corridor(t) ∧ clearance_ratio(t) > 6.71 ∧ noise_level(t) ≤ 0.03 ∧ clearance_ratio(t) ≤ 7.30 → goal_failure  
-- **NL:**  
-  IF the robot is NOT in a corridor AND the clearance ratio is greater than 6.71 AND the noise level is at most 0.03 AND the clearance ratio is at most 7.30, THEN predict goal failure.
+**Rule 1**
+- **FOL:** `∀t : in_corridor(t) ∧ min_wall_distance(t) > 0.737 ∧ obstacle_clearance_ratio(t) <= 17.970 ⇒ goal_failure`
+- **NL:** IF robot is in corridor AND min wall distance > 0.737 AND obstacle clearance ratio ≤ 17.970 THEN goal_failure
 
-**Rule 2** (Confidence = 0.88, n = 51)  
-- **FOL:**  
-  ∀t : in_corridor(t) ∧ min_wall_distance(t) > 0.74 ∧ obstacle_clearance_ratio(t) ≤ 17.97 → goal_failure  
-- **NL:**  
-  IF the robot is in a corridor AND the minimum wall distance is greater than 0.74 AND the obstacle clearance ratio is at most 17.97, THEN predict goal failure.
+**Rule 2**
+- **FOL:** `∀t : ¬in_corridor(t) ∧ min_door_distance(t) <= 3.350 ∧ noise_level(t) > 0.030 ∧ ¬min_door_narrow(t) ⇒ goal_failure`
+- **NL:** IF robot is NOT in corridor AND min door distance ≤ 3.350 AND noise level > 0.030 AND robot is NOT min door narrow THEN goal_failure
 
-**Rule 3** (Confidence = 0.88, n = 14)  
-- **FOL:**  
-  ∀t : NOT_in_corridor(t) ∧ min_door_distance(t) ≤ 3.35 ∧ noise_level(t) > 0.03 ∧ NOT_min_door_narrow(t) → goal_failure  
-- **NL:**  
-  IF the robot is NOT in a corridor AND the minimum door distance is at most 3.35 AND the noise level is greater than 0.03 AND the map does NOT contain a narrow door, THEN predict goal failure.
+**Rule 3**
+- **FOL:** `∀t : in_corridor(t) ∧ min_wall_distance(t) > 0.737 ∧ obstacle_clearance_ratio(t) > 17.970 ∧ min_obstacle_distance(t) > 2.142 ⇒ goal_failure`
+- **NL:** IF robot is in corridor AND min wall distance > 0.737 AND obstacle clearance ratio > 17.970 AND min obstacle distance > 2.142 THEN goal_failure
 
----
+#### position_error_spike
 
-#### Position Error Spike  
-**Best Model:** Gradient Boosting  
-**F1 Score:** 1.00
+**Rule 1**
+- **FOL:** `∀t : has_static_obstacles(t) ∧ total_obstacle_area(t) <= 0.875 ∧ room_area(t) > 12.127 ∧ goal_wall_distance(t) > 0.245 ⇒ position_error_spike`
+- **NL:** IF robot is has static obstacles AND total obstacle area ≤ 0.875 AND room area > 12.127 AND goal wall distance > 0.245 THEN position_error_spike
 
-**Rule 1** (Confidence = 1.00, n = 10)  
-- **FOL:**  
-  ∀t : min_obstacle_distance(t) ≤ 1.18 ∧ total_obstacle_area(t) ≤ 0.62 ∧ NOT_min_door_narrow(t) → position_error_spike  
-- **NL:**  
-  IF the minimum obstacle distance is at most 1.18 AND the total obstacle area is at most 0.62 AND the map does NOT contain a narrow door, THEN predict a position error spike.
+#### stuck
 
-**Rule 2** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : min_obstacle_distance(t) > 1.18 ∧ obstacle_clearance_ratio(t) > 40.83 ∧ clearance_ratio(t) > 7.45 → position_error_spike  
-- **NL:**  
-  IF the minimum obstacle distance is greater than 1.18 AND the obstacle clearance ratio is greater than 40.83 AND the wall clearance ratio is greater than 7.45, THEN predict a position error spike.
+**Rule 1**
+- **FOL:** `∀t : min_door_distance(t) > 1.792 ∧ noise_level(t) <= 0.015 ∧ min_door_distance(t) > 2.104 ∧ room_area(t) <= 25.130 ⇒ stuck`
+- **NL:** IF min door distance > 1.792 AND noise level ≤ 0.015 AND min door distance > 2.104 AND room area ≤ 25.130 THEN stuck
 
-**Rule 3** (Confidence = 0.99, n = 6)  
-- **FOL:**  
-  ∀t : min_obstacle_distance(t) > 1.18 ∧ obstacle_clearance_ratio(t) > 53.79 → position_error_spike  
-- **NL:**  
-  IF the minimum obstacle distance is greater than 1.18 AND the obstacle clearance ratio is greater than 53.79, THEN predict a position error spike.
+**Rule 2**
+- **FOL:** `∀t : min_door_distance(t) > 1.792 ∧ noise_level(t) <= 0.015 ∧ min_door_distance(t) > 2.104 ∧ room_area(t) > 25.130 ⇒ stuck`
+- **NL:** IF min door distance > 1.792 AND noise level ≤ 0.015 AND min door distance > 2.104 AND room area > 25.130 THEN stuck
 
----
+**Rule 3**
+- **FOL:** `∀t : min_door_distance(t) <= 1.792 ∧ min_door_distance(t) > 1.320 ∧ clearance_ratio(t) <= 3.645 ∧ goal_wall_distance(t) > 0.835 ⇒ stuck`
+- **NL:** IF min door distance ≤ 1.792 AND min door distance > 1.320 AND clearance ratio ≤ 3.645 AND goal wall distance > 0.835 THEN stuck
 
-#### Stuck  
-**Best Model:** Gradient Boosting  
-**F1 Score:** 0.98
+#### high_amcl_uncertainty
 
-**Rule 1** (Confidence = 0.93, n = 6)  
-- **FOL:**  
-  ∀t : min_door_distance(t) ≤ 1.79 ∧ min_wall_distance(t) > 0.53 ∧ room_area(t) ≤ 12.04 ∧ clearance_ratio(t) > 6.49 → stuck  
-- **NL:**  
-  IF the minimum door distance is at most 1.79 AND the minimum wall distance is greater than 0.53 AND the room area is at most 12.04 AND the clearance ratio is greater than 6.49, THEN predict stuck.
+**Rule 1**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) > 0.935 ⇒ high_amcl_uncertainty`
+- **NL:** IF obstacle clearance ratio > 31.314 AND total obstacle area ≤ 0.875 AND door width > 0.935 THEN high_amcl_uncertainty
 
-**Rule 2** (Confidence = 0.93, n = 20)  
-- **FOL:**  
-  ∀t : min_door_distance(t) > 2.10 ∧ noise_level(t) ≤ 0.01 ∧ room_area(t) ≤ 25.13 → stuck  
-- **NL:**  
-  IF the minimum door distance is greater than 2.10 AND the noise level is at most 0.01 AND the room area is at most 25.13, THEN predict stuck.
+**Rule 2**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) <= 0.935 ⇒ high_amcl_uncertainty`
+- **NL:** IF obstacle clearance ratio > 31.314 AND total obstacle area ≤ 0.875 AND door width ≤ 0.935 THEN high_amcl_uncertainty
 
-**Rule 3** (Confidence = 0.93, n = 7)  
-- **FOL:**  
-  ∀t : min_door_distance(t) ≤ 2.10 ∧ room_area(t) ≤ 20.74 ∧ num_obstacles(t) > 5.50 ∧ min_wall_distance(t) ≤ 0.25 → stuck  
-- **NL:**  
-  IF the minimum door distance is at most 2.10 AND the room area is at most 20.74 AND the number of obstacles is greater than 5.50 AND the minimum wall distance is at most 0.25, THEN predict stuck.
+**Rule 3**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) <= 31.314 ∧ clearance_ratio(t) > 5.874 ∧ total_obstacle_area(t) <= 0.625 ∧ min_obstacle_distance(t) <= 0.802 ⇒ high_amcl_uncertainty`
+- **NL:** IF obstacle clearance ratio ≤ 31.314 AND clearance ratio > 5.874 AND total obstacle area ≤ 0.625 AND min obstacle distance ≤ 0.802 THEN high_amcl_uncertainty
 
----
+#### high_yaw_error
 
-#### High AMCL Uncertainty  
-**Best Model:** Gradient Boosting  
-**F1 Score:** 1.00
+**Rule 1**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ num_obstacles(t) <= 2.500 ∧ room_area(t) > 21.562 ⇒ high_yaw_error`
+- **NL:** IF obstacle clearance ratio ≤ 8.833 AND num obstacles ≤ 2.500 AND room area > 21.562 THEN high_yaw_error
 
-**Rule 1** (Confidence = 1.00, n = 12)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) > 31.31 ∧ total_obstacle_area(t) ≤ 0.88 ∧ min_obstacle_distance(t) > 4.21 → high_amcl_uncertainty  
-- **NL:**  
-  IF the obstacle clearance ratio is greater than 31.31 AND the total obstacle area is at most 0.88 AND the minimum obstacle distance is greater than 4.21, THEN predict high AMCL uncertainty.
+**Rule 2**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ num_obstacles(t) <= 2.500 ∧ room_area(t) <= 21.562 ⇒ high_yaw_error`
+- **NL:** IF obstacle clearance ratio ≤ 8.833 AND num obstacles ≤ 2.500 AND room area ≤ 21.562 THEN high_yaw_error
 
-**Rule 2** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) > 31.31 ∧ total_obstacle_area(t) ≤ 0.88 ∧ min_obstacle_distance(t) ≤ 4.21 → high_amcl_uncertainty  
-- **NL:**  
-  IF the obstacle clearance ratio is greater than 31.31 AND the total obstacle area is at most 0.88 AND the minimum obstacle distance is at most 4.21, THEN predict high AMCL uncertainty.
+**Rule 3**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) > 8.833 ∧ goal_wall_distance(t) > 1.760 ⇒ high_yaw_error`
+- **NL:** IF obstacle clearance ratio > 8.833 AND goal wall distance > 1.760 THEN high_yaw_error
 
-**Rule 3** (Confidence = 0.99, n = 6)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) > 31.31 ∧ total_obstacle_area(t) ≤ 0.88 ∧ clearance_ratio(t) ≤ 5.38 ∧ obstacle_clearance_ratio(t) ≤ 42.17 → high_amcl_uncertainty  
-- **NL:**  
-  IF the obstacle clearance ratio is greater than 31.31 AND the total obstacle area is at most 0.88 AND the wall clearance ratio is at most 5.38 AND the obstacle clearance ratio is at most 42.17, THEN predict high AMCL uncertainty.
+#### path_inefficiency
 
----
+**Rule 1**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ clearance_ratio(t) > 6.812 ∧ min_door_distance(t) <= 1.349 ⇒ path_inefficiency`
+- **NL:** IF obstacle clearance ratio ≤ 8.833 AND clearance ratio > 6.812 AND min door distance ≤ 1.349 THEN path_inefficiency
 
-#### High Yaw Error  
-**Best Model:** Random Forest  
-**F1 Score:** 0.86
+#### Isolation Forest
 
-**Rule 1** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : has_static_obstacles(t) ∧ obstacle_clearance_ratio(t) ≤ 8.83 ∧ room_area(t) > 20.74 ∧ min_door_distance(t) ≤ 1.25 ∧ clearance_ratio(t) > 6.65 → high_yaw_error  
-- **NL:**  
-  IF the robot has static obstacles AND the obstacle clearance ratio is at most 8.83 AND the room area is greater than 20.74 AND the minimum door distance is at most 1.25 AND the clearance ratio is greater than 6.65, THEN predict high yaw error.
+**Rule 1**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) > 0.935 ⇒ Isolation Forest`
+- **NL:** IF obstacle clearance ratio > 31.314 AND total obstacle area ≤ 0.875 AND door width > 0.935 THEN Isolation Forest
 
-**Rule 2** (Confidence = 0.99, n = 9)  
-- **FOL:**  
-  ∀t : clearance_ratio(t) > 5.60 ∧ num_obstacles(t) ≤ 2.50 ∧ min_wall_distance(t) ≤ 0.83 ∧ num_obstacles(t) > 0.50 ∧ NOT_min_door_narrow(t) ∧ min_door_distance(t) ≤ 1.37 → high_yaw_error  
-- **NL:**  
-  IF the clearance ratio is greater than 5.60 AND the number of obstacles is at most 2.50 AND the minimum wall distance is at most 0.83 AND the number of obstacles is greater than 0.50 AND the map does NOT contain a narrow door AND the minimum door distance is at most 1.37, THEN predict high yaw error.
+**Rule 2**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) <= 0.935 ⇒ Isolation Forest`
+- **NL:** IF obstacle clearance ratio > 31.314 AND total obstacle area ≤ 0.875 AND door width ≤ 0.935 THEN Isolation Forest
 
-**Rule 3** (Confidence = 0.99, n = 8)  
-- **FOL:**  
-  ∀t : min_obstacle_distance(t) ≤ 1.02 ∧ in_corridor(t) ∧ min_obstacle_distance(t) > 0.57 ∧ num_obstacles(t) ≤ 2.50 → high_yaw_error  
-- **NL:**  
-  IF the minimum obstacle distance is at most 1.02 AND the robot is in a corridor AND the minimum obstacle distance is greater than 0.57 AND the number of obstacles is at most 2.50, THEN predict high yaw error.
-
----
-
-#### Path Inefficiency  
-**Best Model:** Random Forest  
-**F1 Score:** 0.93
-
-**Rule 1** (Confidence = 0.99, n = 8)  
-- **FOL:**  
-  ∀t : min_obstacle_distance(t) ≤ 1.02 ∧ in_corridor(t) ∧ min_obstacle_distance(t) > 0.57 ∧ num_obstacles(t) ≤ 2.50 → path_inefficiency  
-- **NL:**  
-  IF the minimum obstacle distance is at most 1.02 AND the robot is in a corridor AND the minimum obstacle distance is greater than 0.57 AND the number of obstacles is at most 2.50, THEN predict path inefficiency.
-
-**Rule 2** (Confidence = 0.98, n = 6)  
-- **FOL:**  
-  ∀t : min_door_distance(t) ≤ 1.25 ∧ obstacle_clearance_ratio(t) ≤ 9.14 ∧ room_area(t) > 20.74 ∧ min_door_distance(t) > 0.99 → path_inefficiency  
-- **NL:**  
-  IF the minimum door distance is at most 1.25 AND the obstacle clearance ratio is at most 9.14 AND the room area is greater than 20.74 AND the minimum door distance is greater than 0.99, THEN predict path inefficiency.
-
-**Rule 3** (Confidence = 0.97, n = 6)  
-- **FOL:**  
-  ∀t : min_door_distance(t) ≤ 1.25 ∧ obstacle_clearance_ratio(t) ≤ 9.14 ∧ room_area(t) > 20.74 ∧ min_door_distance(t) ≤ 0.99 → path_inefficiency  
-- **NL:**  
-  IF the minimum door distance is at most 1.25 AND the obstacle clearance ratio is at most 9.14 AND the room area is greater than 20.74 AND the minimum door distance is at most 0.99, THEN predict path inefficiency.
-
----
-
-#### Isolation Forest (Outlier Detection)  
-**Best Model:** Gradient Boosting  
-**F1 Score:** 1.00
-
-**Rule 1** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) > 31.31 ∧ total_obstacle_area(t) ≤ 0.88 ∧ clearance_ratio(t) ≤ 5.38 ∧ NOT_tight_clearance(t) → Isolation_Forest  
-- **NL:**  
-  IF the obstacle clearance ratio is greater than 31.31 AND the total obstacle area is at most 0.88 AND the clearance ratio is at most 5.38 AND the robot is NOT in tight clearance, THEN predict an Isolation Forest anomaly.
-
-**Rule 2** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) > 31.31 ∧ total_obstacle_area(t) ≤ 0.88 ∧ clearance_ratio(t) ≤ 5.38 ∧ tight_clearance(t) → Isolation_Forest  
-- **NL:**  
-  IF the obstacle clearance ratio is greater than 31.31 AND the total obstacle area is at most 0.88 AND the clearance ratio is at most 5.38 AND the robot is in tight clearance, THEN predict an Isolation Forest anomaly.
-
-**Rule 3** (Confidence = 1.00, n = 6)  
-- **FOL:**  
-  ∀t : obstacle_clearance_ratio(t) ≤ 31.31 ∧ min_door_distance(t) > 2.99 ∧ min_door_distance(t) ≤ 3.23 → Isolation_Forest  
-- **NL:**  
-  IF the obstacle clearance ratio is at most 31.31 AND the minimum door distance is greater than 2.99 AND the minimum door distance is at most 3.23, THEN predict an Isolation Forest anomaly.
-
+**Rule 3**
+- **FOL:** `∀t : obstacle_clearance_ratio(t) <= 31.314 ∧ noise_level(t) <= 0.005 ∧ total_obstacle_area(t) <= 0.625 ∧ ¬goal_near_wall(t) ⇒ Isolation Forest`
+- **NL:** IF obstacle clearance ratio ≤ 31.314 AND noise level ≤ 0.005 AND total obstacle area ≤ 0.625 AND robot is NOT goal near wall THEN Isolation Forest
 
 ---
 
 ## 3. Generalization Analysis
 
-This section evaluates the ability of anomaly detection models to generalize across different navigation contexts and scenario categories. We first present baseline performance using interpretable decision trees, then compare against ensemble methods. We then analyze key relational features driving prediction performance and quantify how well relations transfer across contexts.
+### 3.1 Metric Definitions
 
----
+| Metric | Definition | Interpretation |
+|--------|------------|----------------|
+| **Fidelity** | Accuracy of surrogate tree vs. ensemble model | How well the interpretable rules mimic the complex model |
+| **F1 Score** | Harmonic mean of Precision and Recall | Overall classification performance against ground truth |
+| **Cov (Coverage)** | % of total samples matching the rule condition | How general or specific the rule is |
+| **Prec (Precision)** | TP / (TP + FP) for the rule | Probability that the anomaly exists given the rule triggers |
+| **Rec (Recall)** | TP / (TP + FN) for the rule | Percentage of actual anomalies captured by this rule |
+| **n** | Number of samples matching the rule | Statistical support for the rule |
+| **Scenarios** | Count of unique scenarios where rule triggers | Indicates if rule is scenario-specific or general |
+| **Confusion** | TP, FP, FN, TN counts | Raw breakdown of prediction outcomes |
 
-### 3.1 Model Performance (Decision Tree Baseline)
+### 3.2 Detailed Rule Generalization Analysis
 
-A Decision Tree classifier was first used as a transparent baseline. Performance is reported using cross-validated Precision, Recall and F1 score per anomaly type.
+#### goal_failure (Fidelity=0.84, F1=0.82)
 
-Decision Trees provide:
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 17.0% | 1.00 | 0.34 | 51 | 20 (20.0%) | TP=51, FP=0, FN=99, TN=150 |
+| Rule 2 | 4.7% | 1.00 | 0.09 | 14 | 5 (5.0%) | TP=14, FP=0, FN=136, TN=150 |
+| Rule 3 | 3.3% | 1.00 | 0.07 | 10 | 4 (4.0%) | TP=10, FP=0, FN=140, TN=150 |
 
-- human-interpretable rules  
-- low model complexity  
-- insight into relational feature structure  
+#### position_error_spike (Fidelity=0.86, F1=0.41)
 
-However, they also tend to underperform ensembles on minority anomaly classes.
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 19.3% | 0.26 | 1.00 | 58 | 20 (20.0%) | TP=15, FP=43, FN=0, TN=242 |
 
-| Anomaly | Decision Tree F1 |
-|--------|----------------|
-| goal_failure | 0.747 |
-| position_error_spike | 0.466 |
-| stuck | 0.634 |
-| high_amcl_uncertainty | 0.634 |
-| high_yaw_error | 0.469 |
-| path_inefficiency | 0.533 |
+#### stuck (Fidelity=0.64, F1=0.65)
 
-*Note: Actual values depend on dataset composition.*
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 6.7% | 1.00 | 0.17 | 20 | 9 (9.0%) | TP=20, FP=0, FN=95, TN=185 |
+| Rule 2 | 3.0% | 0.78 | 0.06 | 9 | 3 (3.0%) | TP=7, FP=2, FN=108, TN=183 |
+| Rule 3 | 2.0% | 0.67 | 0.03 | 6 | 4 (4.0%) | TP=4, FP=2, FN=111, TN=183 |
 
-**Observation**
+#### high_amcl_uncertainty (Fidelity=0.97, F1=0.83)
 
-Decision Trees struggle particularly on:
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 4.0% | 1.00 | 0.52 | 12 | 4 (4.0%) | TP=12, FP=0, FN=11, TN=277 |
+| Rule 2 | 2.0% | 0.83 | 0.22 | 6 | 3 (3.0%) | TP=5, FP=1, FN=18, TN=276 |
+| Rule 3 | 2.3% | 0.43 | 0.13 | 7 | 4 (4.0%) | TP=3, FP=4, FN=20, TN=273 |
 
-- rare anomalies  
-- noisy feature combinations  
+#### high_yaw_error (Fidelity=0.96, F1=0.55)
 
-which motivates ensemble learning approaches.
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 2.7% | 0.62 | 0.56 | 8 | 3 (3.0%) | TP=5, FP=3, FN=4, TN=288 |
+| Rule 2 | 2.0% | 0.50 | 0.33 | 6 | 2 (2.0%) | TP=3, FP=3, FN=6, TN=288 |
+| Rule 3 | 3.3% | 0.10 | 0.11 | 10 | 4 (4.0%) | TP=1, FP=9, FN=8, TN=282 |
 
----
+#### path_inefficiency (Fidelity=0.99, F1=0.82)
 
-### 3.2 Ensemble Model Comparison
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 3.3% | 0.70 | 1.00 | 10 | 6 (6.0%) | TP=7, FP=3, FN=0, TN=290 |
 
-Three model families were evaluated for each anomaly type:
+#### Isolation Forest (Fidelity=0.85, F1=0.66)
 
-- **Decision Tree** – interpretable baseline  
-- **Random Forest** – bagging, robust to class imbalance  
-- **Gradient Boosting** – stage-wise additive learner for complex relations  
-
-### Model Selection Criterion
-The best model for each anomaly class was selected using **cross-validated F1 score**, ensuring a balance between precision and recall.
-
-### Final Ensemble Performance Summary
-
-| Anomaly | Best Model | Accuracy | Precision | Recall | F1 | AUC | Support |
-|--------|-----------|---------|---------|--------|-----|-----|--------|
-| goal_failure | GradientBoosting | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 150 |
-| position_error_spike | GradientBoosting | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 15 |
-| stuck | GradientBoosting | 0.983 | 1.000 | 0.957 | 0.978 | 0.9998 | 115 |
-| high_amcl_uncertainty | GradientBoosting | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 23 |
-| high_yaw_error | RandomForest | 0.990 | 0.750 | 1.000 | 0.857 | 0.9992 | 9 |
-| path_inefficiency | RandomForest | 0.997 | 0.875 | 1.000 | 0.933 | 1.000 | 7 |
-| Isolation Forest | GradientBoosting | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 45 |
-
-**Macro-Average Performance**
-
-- **Mean F1 = 0.967**
-- **Mean AUC = 1.000**
-
-### Key Conclusions
-
-1. Gradient Boosting dominates performance for most anomaly types  
-2. Random Forest performs best when support is very small  
-3. Extremely high AUC indicates **excellent anomaly separability**  
-4. Rare classes still achieved strong detection accuracy  
-
----
-
-## 3.3 Feature Importance (Top Predictors per Anomaly)
-
-For each anomaly category, the top predictive relational/context features were extracted from the winning model. These features highlight which environmental or relational cues are most associated with failure events.
-
-| Anomaly | Top Predictive Relations |
-|--------|--------------------------|
-| goal_failure | min_wall_distance, in_corridor, goal_wall_distance, min_door_distance, noise_level |
-| position_error_spike | min_door_distance, clearance_ratio, min_obstacle_distance, room_area, noise_level |
-| stuck | min_wall_distance, door_too_narrow, tight_clearance, path_length |
-| high_amcl_uncertainty | obstacle_clearance_ratio, total_obstacle_area, goal_door_distance, num_obstacles |
-| high_yaw_error | num_obstacles, corridor_width, near_wall |
-| path_inefficiency | path_length, goal_wall_distance, door_width, number_of_turns |
-
-**Insight**
-
-Most anomalies are driven by:
-
-- narrow-space relations  
-- clearance thresholds  
-- obstacle proximity  
-- noise and uncertainty accumulation  
-
-This confirms that **relational spatial context matters more than raw state values**.
-
----
-
-## 3.4 Relation Frequency Across Scenario Categories
-
-Relation frequency was computed to assess how well relational dependencies generalize across environments.
-
-Key observations:
-
-- Door-width scenarios are dominated by `door_too_narrow`
-- Corridor scenarios are dominated by `in_narrow_corridor`
-- Room-size scenarios are dominated by `in_small_room`
-- Noise appears at medium frequency across most contexts
-
-**Conclusion**
-
-Relations are **not uniformly distributed across contexts**. Therefore, evaluating them globally can be misleading — **context-aware evaluation is essential**.
-
----
-
-## 3.5 Prediction Accuracy by Context
-
-| Context | Accuracy Range | Best Predictor Relation |
-|--------|----------------|------------------------|
-| C_near_door | 78–85% | door_too_narrow |
-| C_corridor | 72–80% | in_narrow_corridor |
-| C_small_room | 70–78% | in_small_room |
-| C_obstacles | 65–75% | near_static_obstacle |
-
-### Interpretation
-
-Relations predict anomalies best when their **semantic meaning aligns with the environment**.
-
-Example:
-
-- `door_too_narrow` → highly reliable **near doorways**
-- but weak elsewhere
-
-This supports the use of **context-conditioned relational reasoning** rather than applying features globally.
-
----
-
-## Summary
-
-The generalization study demonstrates that relational features, when paired with ensemble learning, provide highly accurate and context-aware anomaly prediction for robot navigation. Gradient Boosting achieved near-perfect AUC across anomaly types, while Random Forests excelled in low-support categories. Importantly, predictive power was strongly dependent on scenario context; relations such as *door narrowness* or *corridor confinement* generalized well only within semantically appropriate environments. This confirms the benefit of **structured relational representations** over purely metric features for context-dependent anomaly detection.
-
----
-
----
-
-## References
-
-1. [First-Order Logic - Wikipedia](https://en.wikipedia.org/wiki/First-order_logic)
-2. Scikit-learn Documentation
-3. TurtleBot4 Specifications
-
+| Rule | Cov | Prec | Rec | n | Scenarios | Confusion |
+|------|-----|------|-----|---|-----------|-----------|
+| Rule 1 | 4.0% | 1.00 | 0.27 | 12 | 4 (4.0%) | TP=12, FP=0, FN=33, TN=255 |
+| Rule 2 | 2.0% | 0.83 | 0.11 | 6 | 3 (3.0%) | TP=5, FP=1, FN=40, TN=254 |
+| Rule 3 | 17.7% | 0.43 | 0.51 | 53 | 18 (18.0%) | TP=23, FP=30, FN=22, TN=225 |
 
