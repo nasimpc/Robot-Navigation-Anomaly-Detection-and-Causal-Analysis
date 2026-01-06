@@ -106,18 +106,22 @@ Contexts activate **subsets of predicates** depending on spatial or operational 
 
 ### 2.2 Rule Derivation Procedure
 
-1. **Feature Extraction**: Extract 27 features per run from map geometry, robot metrics, and sensor config
-2. **Per-Anomaly Labeling**: Create binary labels for each of 7 anomaly types
-3. **Model Training**: Train Decision Trees (baseline) and ensemble models (RandomForest, GradientBoosting, Decision Tree) per anomaly
-4. **Cross-Validation**: 5-fold stratified CV to evaluate F1 scores
-5. **Rule Extraction**: Extract decision paths from best-performing tree-based models
-6. **FOL Formatting**: Convert conditions to First-Order Logic notation
+We employ a **model distillation / surrogate modeling** approach to derive interpretable First-Order Logic (FOL) rules while maintaining high predictive performance. The procedure consists of four steps:
+
+1.  **High-Capacity Model Training (Ensemble)**:
+    We first train a high-capacity **Ensemble Model** (a Voting Classifier combining Random Forest and Gradient Boosting) for each anomaly type. This ensemble prioritizes F1-score and robustness over interpretability to capture complex, non-linear failure patterns.
+
+2.  **Surrogate Model Training (Distilled Decision Tree)**:
+    To interpret the ensemble’s decision logic, we train a constrained **Surrogate Decision Tree** (`max_depth=4`) using the original feature vectors $X$ as inputs, but the **ensemble predictions** $\hat{y}_{ensemble}$ as the target labels. This distills the ensemble’s complex decision boundaries into a compact, hierarchical set of splits.
+
+3.  **Rule Extraction**:
+    We traverse the surrogate tree’s structure to extract decision paths. Any path from the root to a leaf node that predicts an anomaly with probability $P(Anomaly) > 0.5$ is extracted as a candidate rule.
+    -   *Pruning*: We discard rules with low support (covering few samples) or low confidence.
+
+4.  **FOL Translation**:
+    The extracted numeric thresholds (e.g., `min_door_distance <= 3.35`) are mapped to the semantic predicates defined in Section 1.2 (e.g., `at_door(t)` or `in_narrow_corridor(t)`). This converts the raw conditions into human-readable First-Order Logic statements, which are then validated for Fidelity and Generalization.
 
 ### 2.3 Derived FOL Rules
-
-The following rules were extracted from the best-performing models for each anomaly type. Each rule is expressed in **First-Order Logic (FOL)** and accompanied by a **natural language (NL) interpretation**. These rules illustrate how combinations of geometric, perceptual, and environmental features lead to specific navigation anomalies.
-
----
 
 #### goal_failure
 
@@ -272,3 +276,6 @@ The following rules were extracted from the best-performing models for each anom
 | Rule 2 | 2.0% | 0.83 | 0.11 | 6 | 3 (3.0%) | TP=5, FP=1, FN=40, TN=254 |
 | Rule 3 | 17.7% | 0.43 | 0.51 | 53 | 18 (18.0%) | TP=23, FP=30, FN=22, TN=225 |
 
+---
+
+*Team 02 - Assignment 03*
