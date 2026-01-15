@@ -42,6 +42,39 @@ Specifically, your project should address the following aspects:
     - Well-documented instructions for installation of particular versions of libraries being used and using your pipeline (20 points)
     - Supporting visualizations representing available data, insights from the results and validation of algorithms used for anomaly detection and causal analysis (40)
 
+### Project presentation evaluation criteria
+
+1. Slides: Use of Space, Conveying Method, Time Management (20%)
+    - Prefer figures, plots, tables, and diagrams over text
+    - Clear visibility of plots
+    - Avoid text-heavy slides (≤5–7 bullets, concise lines)
+    - Slide titles must exactly match the content
+    - Use consistent formatting, slide numbers, and good color contrast
+2. Justification of Design Choices (25%)
+    - Justification of all design choices
+    - Explanation of any parameterisation
+3. Connectivity & Traceability (30%)
+    - Maintain a clear flow, **for example**:   
+        → requirements  
+        → overview of available data and optionally highlight any pre-processing step (eg: normalisation)   
+        → metrics identified with justification how you ensure it covers insights from dataset  
+        → detection and classification of anomalies based on abnormal metric behavior  
+        → correlations between metrics at these anomalies  
+        → early prediction insights  
+        → validation of anomaly detection and prediction  
+        → causality analysis methodology + justification  
+        → insights and validation  
+    - Justify how each requirements were met and influenced decision making throughout the presentation to ensure traceability
+    - Explicitly map metrics to where they are used
+    - Clearly distinguish causes vs symptoms. Though not explicitly in slides, but one should be aware of this while structuring and explaining the slides
+4. Technical Rigour (25%)
+    - Coverage of metrics
+    - Understanding of the problem
+    - Inferences derived
+    - Backing up statements/claims with statistical data
+    - Validation of algorithms
+
+
 **Note**:
 - Submit all files and folders in the same folder level where *task.md* is located by **22:00 on January 23, 2026**
 - Upload presentation slides by **08:00 on Jauary 26, 2026**
