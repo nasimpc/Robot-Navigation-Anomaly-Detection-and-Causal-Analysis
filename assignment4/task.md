@@ -37,10 +37,10 @@ Specifically, your project should address the following aspects:
     - Validation and evaluation of algorithms and inference of results
     - Note: Use the following naming convention for the filename: team_\<number\>_project_submission.md (Example: team_1_project_submission.md)
 
-2. **Code + Visualizations** (100 Points): Submit your implementation as a Python script or package that includes the complete pipeline. It will be evaluated based on:
+2. **Code + Visualizations** (100 Points): Submit your implementation as a Python script (*.py) or package that includes the complete pipeline. Please note that, unlike earlier assignments, Jupyter notebooks are not sufficient as the final deliverable. It will be evaluated based on:
     - Code quality, modularity, and best practices (40 points)
-    - Well-documented instructions for installation of particular versions of libraries being used and using your pipeline (20 points)
-    - Supporting visualizations representing available data, insights from the results and validation of algorithms used for anomaly detection and causal analysis (40)
+    - Well-documented instructions (README.md) for installation of particular versions of libraries being used (e.g., requirements.txt) and using your pipeline for both modes, which includes scenario-based and log-based anomaly detection and causal analysis. This can be supported via command line arguments (20 points)
+    - Supporting visualizations representing available data, insights from the results and validation of algorithms used for anomaly detection and causal analysis (40 points)
 
 ### Project presentation evaluation criteria
 
