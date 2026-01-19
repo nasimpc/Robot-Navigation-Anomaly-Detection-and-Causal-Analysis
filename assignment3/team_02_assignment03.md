@@ -15,9 +15,9 @@ This section summarizes all identified **features, functions, atomic relations (
 | ROBOT_RADIUS | 0.11 m | Half of footprint | Used to normalize distances into clearance ratios |
 | SENSOR_HEIGHT | 0.20 m | LiDAR height from ground | Assumption for wall/obstacle interaction |
 
-### 1.2 Extracted Features (28 total)
+### 1.2 Extracted Features (27 total)
 
-#### Continuous Features (13)
+#### Continuous Features (12)
 
 | Feature | Source | Description | Relevance |
 |-------|--------|-------------|-----------|
@@ -28,7 +28,6 @@ This section summarizes all identified **features, functions, atomic relations (
 | room_area | Map geometry | Area of current room (m²) | Small rooms amplify wall proximity effects |
 | clearance_ratio | Computed | min_wall_distance / ROBOT_RADIUS | Normalized measure of navigational safety margin |
 | goal_wall_distance | Map geometry | Goal distance to wall (m) | Goals near walls increase failure probability |
-| path_length | Metrics | Executed path length (m) | Long paths indicate replanning or inefficiency |
 | noise_level | Config | Laser noise standard deviation | High noise degrades AMCL and pose estimation |
 | min_obstacle_distance | Static objects | Distance to closest obstacle (m) | Indicates risk of obstacle-induced failure |
 | obstacle_clearance_ratio | Static objects | Obstacle distance / ROBOT_RADIUS | Normalized obstacle proximity |
