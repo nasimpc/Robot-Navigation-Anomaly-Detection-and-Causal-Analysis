@@ -8,17 +8,17 @@ Specifically, your project should address the following aspects:
 
 1. **Traceability of requirements**: Mapping between requirements and related design decisions in the selection of metrics, algorithms for anomalies, and causal reasoning, and justifying if and how individual requirements were met.
 
-2. **Data understanding and summarization**: statistical overview of available dataset, file formats, sensor logs, and constituents of scenario descriptions.
+2. **Data understanding and summarization**: statistical overview of available dataset, file formats, sensor logs, and constituents of scenario descriptions. (first code then markdown file)
 
 3. **Feature identification and extraction**: Listing of all relevant features derived from scenario descriptions, environment geometry, robot properties, and logs. Justification of feature relevance for anomaly detection and causal analysis, by considering the role of the complete pipeline.
 
-4. **Metric definition and justification**: Definition of all metrics derived from the data. Justification of each metric in the perspective of its role in anomaly detection, and causal reasoning.
+4. **Metric definition and justification**: Definition of all metrics derived from the data. Justification of each metric in the perspective of its role in anomaly detection, and causal reasoning. (doubt)
 
 5. **Anomaly detection approach and validation**: Description and justification for the chosen anomaly-detection methods. Methodology used to validate and evaluate performance of anomaly detection.
 
 6. **Causal analysis and root-cause identification**: Approach for identifying causes of anomalies using environment–task–robot relations. Justification of causal assumptions and representations and the methodology used to validate causal explanations.
 
-7. **End-to-end pipeline design**: Your pipeline should support the following two modes:
+7. **End-to-end pipeline design (code)**: Your pipeline should support the following two modes:
     - Scenario-based prediction: Taking only the scenario description, robot information, and environment JSON file as input to predict any possible anomalies and to explain the reason.
     - Log-based prediction: Taking logs, CSV files, scenario description, robot information, and environment JSON file as input to detect and reason about anomalies.
 

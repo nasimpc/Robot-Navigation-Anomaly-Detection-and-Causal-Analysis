@@ -166,6 +166,8 @@ These goals define objectives for the analytical and ML models:
 
 **Mean Yaw Error** measures orientation tracking accuracy as `mean(abs(wrap_to_pi(est_yaw - gt_yaw)))` in radians. The wrap_to_pi function (implemented as arctan2(sin, cos)) prevents the 2π discontinuity from inflating error values. Yaw accuracy is critical in narrow passages where small orientation errors can cause the robot to brush against walls.
 
+**Mean AMCL Uncertainty** extracts the robot's self-reported localization confidence from the covariance matrix published by AMCL. It is computed as `mean(sqrt(cov[0,0] + cov[1,1]))` in meters. This represents the average positional uncertainty envelope. Crucially, this metric can serve as an early warning signal because AMCL uncertainty often rises before ground-truth-based errors become apparent.
+
 ### Navigation Efficiency Metrics
 
 **Path Efficiency** is computed as `gt_path_length / executed_path_length`, representing the ratio of the true shortest path to the actual path traveled. A value of 1.0 indicates perfect efficiency. Values below 0.6 indicate significant detours, oscillations, or recovery behaviors. We observe that this metric drops substantially in scenarios where the robot encounters local minima or gets temporarily stuck before recovering.
@@ -177,11 +179,6 @@ These goals define objectives for the analytical and ML models:
 **Mean Linear Velocity** is computed as `mean(sqrt(dx² + dy²) / dt)` in m/s, where dx and dy are position differences between consecutive timestamps and dt is the time difference. This metric characterizes the robot's typical speed and provides context for understanding time-to-completion.
 
 **Trajectory Smoothness** measures control quality through mean absolute angular acceleration: `mean(abs(d(angular_vel) / dt))` in rad/s². Lower values indicate smoother motion. High values suggest jerky turning behavior, often caused by oscillation in narrow passages or unstable controller gains.
-
-### AMCL Uncertainty Metrics
-
-**Mean AMCL Uncertainty** extracts the robot's self-reported localization confidence from the covariance matrix published by AMCL. It is computed as `mean(sqrt(cov[0,0] + cov[1,1]))` in meters. This represents the average positional uncertainty envelope. Crucially, this metric can serve as an early warning signal because AMCL uncertainty often rises before ground-truth-based errors become apparent.
-
 
 ### Metric Behavior Justification
 
@@ -221,7 +218,11 @@ Different data sources have different criticality. If poses.csv is missing, the 
 
 ### Approach Overview
 
-We employ a hybrid detection strategy combining rule-based detectors for interpretable, physics-grounded anomalies with a machine learning-based Isolation Forest for capturing complex multi-metric patterns. The rule-based approach provides transparency and direct interpretability, while the ML approach discovers anomalies that might not match any predefined rule.
+indicates sustained localization divergence.
+
+**high_yaw_error**: Detected when mean yaw error exceeds 0.5 radians (~29°). This threshold represents accuracy well beyond what's acceptable for navigating narrow passages safely.
+
+**path_inefficiency (unitless ratio)**: How direct the executed motion is relative to ground truth. Detected when path efficiency falls below 0.6. Computed as`gt_path / executed_path` (0 if executed length is 0). Closer to 1 is better; low values suggest detours. 
 
 ### Rule-Based Anomaly Detection
 
@@ -231,17 +232,13 @@ Rule-based detection identifies specific, well-understood failure modes:
 
 **stuck**: Detected when linear velocity remains below 0.01 m/s continuously for more than 5 seconds. The velocity threshold (0.01 m/s) is set below typical odometry noise to ensure we only flag true immobilization. The 5-second duration distinguishes deliberate stopping (e.g., waiting for a path) from genuine stuck conditions. This anomaly is particularly prevalent in door-width scenarios where narrow passages can trap the robot.
 
-**position_error_spike**: Detected when position error exceeds (global_mean + 3×global_std) for 3 or more consecutive frames. The 3-sigma threshold follows standard outlier detection practice. Requiring 3 consecutive frames filters out transient noise spikes that could cause false positives. This anomaly indicates sustained localization divergence.
-
-**high_yaw_error**: Detected when mean yaw error exceeds 0.5 radians (~29°). This threshold represents accuracy well beyond what's acceptable for navigating narrow passages safely.
-
-**path_inefficiency**: Detected when path efficiency falls below 0.6. This threshold was determined empirically to separate runs with minor deviations from those with major detours or oscillatory behavior.
+**position_error_spike**: Detected when position error exceeds (global_mean + 3×global_std) for 3 or more consecutive frames. The 3-sigma threshold follows standard outlier detection practice. Requiring 3 consecutive frames filters out transient noise spikes that could cause false positives. This anomaly  from those with major detours or oscillatory behavior.
 
 ### ML-Based Anomaly Detection
 
 We use an Isolation Forest model to detect anomalies in an unsupervised manner across an 11-dimensional feature space:
 
-The features are: mean_pos_error, rmse_pos, max_pos_error, mean_yaw_error, executed_path_length, duration, path_efficiency, mean_linear_velocity, trajectory_smoothness, mean_amcl_uncertainty, and max_amcl_uncertainty.
+The features are: mean_pos_error, rmse_pos, max_pos_error, mean_yaw_error, duration, path_efficiency, mean_linear_velocity, trajectory_smoothness, mean_amcl_uncertainty, and max_amcl_uncertainty.
 
 Isolation Forest was chosen because: (1) it requires no labeled anomaly data, (2) it naturally handles the multi-dimensional feature space, (3) its contamination parameter (set to 0.1) aligns with our observed ~10% failure rate, and (4) it can detect complex interactions between features that simple thresholds would miss.
 
