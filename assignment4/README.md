@@ -5,22 +5,6 @@ A modular Python package for detecting and predicting anomalies in robot navigat
 1. **Scenario-based prediction**: Predict potential anomalies from scenario description, robot information, and environment configuration (without runtime logs)
 2. **Log-based prediction**: Detect and reason about anomalies using actual run logs, CSV files, and scenario configuration
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Pipeline Architecture](#pipeline-architecture)
-- [Usage](#usage)
-  - [Training](#training)
-  - [Scenario-based Prediction](#scenario-based-prediction)
-  - [Log-based Prediction](#log-based-prediction)
-  - [Visualization](#visualization)
-- [Input/Output Formats](#inputoutput-formats)
-- [Anomaly Types](#anomaly-types)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Visualizations] (#Visualizations)
-
 ## Installation
 
 ### Prerequisites
@@ -44,65 +28,8 @@ pip install -r requirements.txt
 python3 -c "from anomaly_detection_and_prediction import AnomalyDetectionPipeline; print('Installation successful!')"
 ```
 
-## Quick Start
 
-```python
-from anomaly_detection_and_prediction import AnomalyDetectionPipeline
-from pathlib import Path
-
-# Initialize the pipeline
-pipeline = AnomalyDetectionPipeline(
-    dataset_path=Path('ws25_aia_complete_data'),
-    maps_path=Path('maps_details.json'),
-    models_path=Path('models')
-)
-
-# Train models (first time only)
-pipeline.train()
-
-# Scenario-based prediction
-result = pipeline.predict_scenario(
-    scenario_config_path=Path('ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0/scenario.config')
-)
-print(f"Predicted anomalies: {result.predicted_anomalies}")
-
-# Log-based prediction
-result = pipeline.predict_logs(
-    run_path=Path('ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0')
-)
-print(f"Detected anomalies: {result.predicted_anomalies}")
-```
-
-## Pipeline Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ANOMALY DETECTION PIPELINE                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
-│  │ Data Loading │───▶│ Preprocessing│───▶│   Metrics    │       │
-│  │              │    │              │    │ Calculation  │       │
-│  └──────────────┘    └──────────────┘    └──────────────┘       │
-│         │                                       │                │
-│         ▼                                       ▼                │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
-│  │   Feature    │◀───│   Anomaly    │◀───│  Rule-based  │       │
-│  │  Extraction  │    │  Detection   │    │  Detection   │       │
-│  └──────────────┘    └──────────────┘    └──────────────┘       │
-│         │                   │                                    │
-│         ▼                   ▼                                    │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
-│  │   Ensemble   │───▶│  Surrogate   │───▶│  FOL Rules   │       │
-│  │   Models     │    │    Trees     │    │  & Explain   │       │
-│  └──────────────┘    └──────────────┘    └──────────────┘       │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-## Usage
-
-### Command-Line Interface
+## Command-Line Interface
 
 The pipeline provides a CLI for all operations:
 
@@ -167,7 +94,7 @@ python3 -m anomaly_detection_and_prediction visualize \
     --output images
 ```
 
-### Python API
+## Python API
 
 ```python
 from anomaly_detection_and_prediction import AnomalyDetectionPipeline
@@ -185,8 +112,21 @@ pipeline = AnomalyDetectionPipeline(
 results = pipeline.train(max_scenarios=50, verbose=True)
 print(f"Trained models: {results['models_trained']}")
 
-# Generate visualizations
+# Scenario-based prediction
+result = pipeline.predict_scenario(
+    scenario_config_path=Path('ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0/scenario.config')
+)
+print(f"Predicted anomalies: {result.predicted_anomalies}")
+
+# Log-based prediction
+result = pipeline.predict_logs(
+    run_path=Path('ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0')
+)
+print(f"Detected anomalies: {result.predicted_anomalies}")
+
+# Generate visualizations (all visualizations except visualizations representing avilable data)
 pipeline.generate_visualizations()
+
 ```
 
 ## Input/Output Formats
@@ -280,9 +220,12 @@ assignment4/
 
 The pipeline generates the following visualizations:
 
-1. **Anomaly Distribution** (`anomaly_distribution.png`): Frequency of each anomaly type by scenario category
-2. **Surrogate Trees** (`surrogate_trees.png`): Decision tree visualizations for each anomaly type
-3. **Feature Importance** (`surrogate_feature_importance.png`): Heatmap of feature importance by anomaly type
-4. **Performance Summary** (`surrogate_tree_performance.png`): Heatmap of precision, recall, F1, and fidelity
+1. **Anomaly Distribution (Generated during Training)** (`anomaly_by_category.png`): Frequency of each anomaly type grouped by scenario category.
+2. **Dataset Overview (Generated during Training)** (`runs_per_category.png`): Distribution of total runs across different scenario categories.
+3. **Surrogate Trees (Generated via Visualize Command)** (`surrogate_trees.png`): Visualized decision trees explaining the logic for each anomaly type. Two visualizations, one for cenario-based prediction and one for log-based prediction.
+4. **Feature Importance (Generated via Visualize Command)** (`surrogate_feature_importance.png`): Heatmap identifying which metrics are most predictive for specific anomalies.Two visualizations, one for cenario-based prediction and one for log-based prediction.
+5. **Performance Summary (Generated via Visualize Command)** (`surrogate_tree_performance.png`): Heatmap showing Precision, Recall, F1-score, and Model Fidelity.Two visualizations, one for cenario-based prediction and one for log-based prediction.
+
+---
 
 Team 02 Assignment 4
