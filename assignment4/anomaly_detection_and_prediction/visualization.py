@@ -1,5 +1,5 @@
 """
-Visualization module for the anomaly detection pipeline.
+Visualization module for the anomaly detection and prediction pipeline.
 Provides functions for plotting data insights and algorithm validation.
 """
 
@@ -190,3 +190,80 @@ def plot_generalization_summary(generalization_df: pd.DataFrame, output_path: Pa
     if output_path:
         plt.savefig(output_path, dpi=150, **SAVEFIG_KW)
     plt.close()
+
+
+# --- Supporting visualizations (available data overview) ----------------------
+
+def _extract_run_dataframe(run: RunData) -> Optional[pd.DataFrame]:
+    """
+    Best-effort extraction of a tabular dataframe from a RunData instance.
+    This keeps visualization code resilient to different internal field names.
+    """
+    for attr in ("data", "df", "dataframe", "frame", "features", "features_df", "X", "X_df"):
+        if hasattr(run, attr):
+            obj = getattr(run, attr)
+            if isinstance(obj, pd.DataFrame):
+                return obj
+    return None
+
+
+def plot_supporting_visualizations(
+    valid_runs: List[RunData],
+    output_dir: Path,
+    feature_names: Optional[List[str]] = None,
+    max_features: int = 12,
+) -> None:
+    """
+    Create supporting visualizations representing available data:
+      - Runs per scenario category
+      - Anomaly count per category
+      - Run length distribution (if per-run DataFrames exist)
+      - Feature correlation heatmap (if numeric data exists)
+      - Feature distributions for a subset of numeric features (if numeric data exists)
+
+    Figures are saved into `output_dir`.
+    """
+    configure_matplotlib()
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    if not valid_runs:
+        print("No valid runs available for supporting visualizations.")
+        return
+
+    # Per-run summary (always available)
+    summary_rows = []
+    frames = []
+    for i, run in enumerate(valid_runs):
+        df_run = _extract_run_dataframe(run)
+        run_len = int(len(df_run)) if isinstance(df_run, pd.DataFrame) else np.nan
+        n_anom = int(len(getattr(run, "anomalies", []) or []))
+        summary_rows.append(
+            {
+                "run_id": getattr(run, "run_id", i),
+                "category": getattr(run, "scenario_category", "unknown"),
+                "n_anomalies": n_anom,
+                "run_length": run_len,
+            }
+        )
+        if isinstance(df_run, pd.DataFrame) and not df_run.empty:
+            tmp = df_run.copy()
+            tmp["__category__"] = getattr(run, "scenario_category", "unknown")
+            tmp["__run_id__"] = getattr(run, "run_id", i)
+            frames.append(tmp)
+
+    summary_df = pd.DataFrame(summary_rows)
+
+    # 1) Runs per category
+    fig, ax = plt.subplots(figsize=(10, 5))
+    cat_counts = summary_df["category"].value_counts().sort_index()
+    sns.barplot(x=cat_counts.index, y=cat_counts.values, ax=ax, palette="viridis")
+    ax.set_title("Runs per Scenario Category")
+    ax.set_xlabel("Scenario Category")
+    ax.set_ylabel("Number of Runs")
+    ax.tick_params(axis="x", rotation=30)
+    plt.tight_layout()
+    plt.savefig(output_dir / "runs_per_category.png", dpi=150, **SAVEFIG_KW)
+    plt.close()
+
+    

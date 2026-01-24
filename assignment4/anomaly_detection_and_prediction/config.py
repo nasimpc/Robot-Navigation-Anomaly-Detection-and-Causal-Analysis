@@ -1,5 +1,5 @@
 """
-Configuration constants and settings for the anomaly detection pipeline.
+Configuration constants and settings for the anomaly detection and prediction pipeline.
 """
 
 from pathlib import Path

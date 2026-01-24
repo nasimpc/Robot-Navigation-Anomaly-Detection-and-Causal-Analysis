@@ -1,5 +1,5 @@
 """
-Command-line interface for the anomaly detection pipeline.
+Command-line interface for the anomaly detection and prediction pipeline.
 """
 
 import argparse

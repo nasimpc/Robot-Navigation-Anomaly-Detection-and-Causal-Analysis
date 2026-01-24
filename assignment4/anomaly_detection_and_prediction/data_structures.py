@@ -1,5 +1,5 @@
 """
-Data structures for the anomaly detection pipeline.
+Data structures for the anomaly detection and prediction pipeline.
 """
 
 from dataclasses import dataclass, field

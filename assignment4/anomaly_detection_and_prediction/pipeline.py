@@ -1,5 +1,5 @@
 """
-Main pipeline orchestration for the anomaly detection system.
+Main pipeline orchestration for the anomaly detection and prediction system.
 Provides unified interface for training, prediction, and visualization.
 """
 
@@ -22,7 +22,7 @@ from .models import EnsembleAnomalyPredictor, SurrogateTreeExtractor
 
 
 class AnomalyDetectionPipeline:
-    """Main pipeline for anomaly detection with training and prediction modes."""
+    """Main pipeline for anomaly detection and prediction with training and prediction modes."""
     
     def __init__(self, dataset_path: Path = None, maps_path: Path = None, 
                  models_path: Path = None, images_path: Path = None):
@@ -238,7 +238,22 @@ class AnomalyDetectionPipeline:
                 if verbose:
                     print(f"    Best model: {scenario_predictor.best_model_name}")
                     print(f"    Surrogate fidelity: {scenario_metrics['fidelity']:.3f}, F1: {scenario_metrics.get('f1', 0):.3f}")
+        # visualizations_all
+        from . import visualization as viz
         
+        output_dir = self.images_path
+        output_dir.mkdir(exist_ok=True)
+        
+        configure_matplotlib()
+        
+        viz.plot_anomaly_distribution(self.valid_runs, output_dir / 'anomaly_by_category.png')
+
+            # Supporting visualizations (available data overview)
+        viz.plot_supporting_visualizations(
+                self.valid_runs,
+                output_dir,
+                feature_names=None,  # keep best-effort (don’t assume engineered feature columns exist)
+            )
         # Save models
         self._save_models()
         
@@ -549,7 +564,14 @@ class AnomalyDetectionPipeline:
         # Anomaly distribution
         if self.valid_runs:
             viz.plot_anomaly_distribution(self.valid_runs, output_dir / 'anomaly_by_category.png')
-        
+
+            # Supporting visualizations (available data overview)
+            viz.plot_supporting_visualizations(
+                self.valid_runs,
+                output_dir / "supporting",
+                feature_names=None,  # keep best-effort (don’t assume engineered feature columns exist)
+            )
+
         # Surrogate trees - LOG models
         if self.log_surrogate:
             viz.plot_surrogate_trees(
@@ -611,5 +633,6 @@ class AnomalyDetectionPipeline:
             if gen_data:
                 gen_df = pd.DataFrame(gen_data)
                 viz.plot_generalization_summary(gen_df, output_dir / 'scenario_model_performance.png')
+        
         
         print(f"Visualizations saved to {output_dir}")

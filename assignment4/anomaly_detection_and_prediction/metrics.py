@@ -1,5 +1,5 @@
 """
-Metrics computation module for the anomaly detection pipeline.
+Metrics computation module for the anomaly detection and prediction pipeline.
 Computes performance metrics including position error, velocity, and AMCL uncertainty.
 """
 

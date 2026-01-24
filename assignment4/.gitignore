@@ -40,8 +40,6 @@ venv.bak/
 
 # Project specific
 ws25_aia_complete_data/
-models/
-images/
 predictions.json
 *.pkl
 *.DS_Store

@@ -1,0 +1,222 @@
+{
+  "log_anomaly_types": [
+    "goal_failure",
+    "position_error_spike",
+    "stuck",
+    "high_amcl_uncertainty",
+    "high_yaw_error",
+    "path_inefficiency",
+    "Isolation Forest"
+  ],
+  "scenario_anomaly_types": [
+    "goal_failure",
+    "position_error_spike",
+    "stuck",
+    "high_amcl_uncertainty",
+    "high_yaw_error",
+    "path_inefficiency",
+    "Isolation Forest"
+  ],
+  "log_metrics": {
+    "goal_failure": {
+      "fidelity": 0.84,
+      "n_rules": 8,
+      "tree_depth": 4,
+      "n_leaves": 11,
+      "precision": 0.925,
+      "recall": 0.74,
+      "f1": 0.8222222222222222,
+      "accuracy": 0.84
+    },
+    "position_error_spike": {
+      "fidelity": 0.8566666666666667,
+      "n_rules": 1,
+      "tree_depth": 4,
+      "n_leaves": 5,
+      "precision": 0.25862068965517243,
+      "recall": 1.0,
+      "f1": 0.4109589041095891,
+      "accuracy": 0.8566666666666667
+    },
+    "stuck": {
+      "fidelity": 0.64,
+      "n_rules": 5,
+      "tree_depth": 4,
+      "n_leaves": 13,
+      "precision": 0.5151515151515151,
+      "recall": 0.8869565217391304,
+      "f1": 0.6517571884984025,
+      "accuracy": 0.6366666666666667
+    },
+    "high_amcl_uncertainty": {
+      "fidelity": 0.9733333333333334,
+      "n_rules": 3,
+      "tree_depth": 4,
+      "n_leaves": 7,
+      "precision": 0.8,
+      "recall": 0.8695652173913043,
+      "f1": 0.8333333333333333,
+      "accuracy": 0.9733333333333334
+    },
+    "high_yaw_error": {
+      "fidelity": 0.96,
+      "n_rules": 3,
+      "tree_depth": 3,
+      "n_leaves": 6,
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5454545454545454,
+      "accuracy": 0.95
+    },
+    "path_inefficiency": {
+      "fidelity": 0.9933333333333333,
+      "n_rules": 1,
+      "tree_depth": 3,
+      "n_leaves": 5,
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1": 0.8235294117647058,
+      "accuracy": 0.99
+    },
+    "Isolation Forest": {
+      "fidelity": 0.8533333333333334,
+      "n_rules": 4,
+      "tree_depth": 4,
+      "n_leaves": 8,
+      "precision": 0.5058823529411764,
+      "recall": 0.9555555555555556,
+      "f1": 0.6615384615384614,
+      "accuracy": 0.8533333333333334
+    }
+  },
+  "scenario_metrics": {
+    "goal_failure": {
+      "fidelity": 0.82,
+      "n_rules": 5,
+      "tree_depth": 4,
+      "n_leaves": 13,
+      "precision": 0.7712418300653595,
+      "recall": 0.7866666666666666,
+      "f1": 0.778877887788779,
+      "accuracy": 0.7766666666666666
+    },
+    "position_error_spike": {
+      "fidelity": 0.96,
+      "n_rules": 2,
+      "tree_depth": 4,
+      "n_leaves": 7,
+      "precision": 0.4583333333333333,
+      "recall": 0.7333333333333333,
+      "f1": 0.5641025641025641,
+      "accuracy": 0.9433333333333334
+    },
+    "stuck": {
+      "fidelity": 0.78,
+      "n_rules": 6,
+      "tree_depth": 4,
+      "n_leaves": 12,
+      "precision": 0.7333333333333333,
+      "recall": 0.3826086956521739,
+      "f1": 0.5028571428571429,
+      "accuracy": 0.71
+    },
+    "high_amcl_uncertainty": {
+      "fidelity": 0.98,
+      "n_rules": 3,
+      "tree_depth": 4,
+      "n_leaves": 7,
+      "precision": 0.7,
+      "recall": 0.9130434782608695,
+      "f1": 0.7924528301886793,
+      "accuracy": 0.9633333333333334
+    },
+    "high_yaw_error": {
+      "fidelity": 0.97,
+      "n_rules": 2,
+      "tree_depth": 4,
+      "n_leaves": 6,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "accuracy": 0.97
+    },
+    "path_inefficiency": {
+      "fidelity": 0.99,
+      "n_rules": 1,
+      "tree_depth": 3,
+      "n_leaves": 5,
+      "precision": 0.6666666666666666,
+      "recall": 0.8571428571428571,
+      "f1": 0.75,
+      "accuracy": 0.9866666666666667
+    },
+    "Isolation Forest": {
+      "fidelity": 0.94,
+      "n_rules": 4,
+      "tree_depth": 4,
+      "n_leaves": 10,
+      "precision": 0.65,
+      "recall": 0.8666666666666667,
+      "f1": 0.7428571428571429,
+      "accuracy": 0.91
+    }
+  },
+  "feature_names": [
+    "min_wall_distance",
+    "min_door_distance",
+    "door_width",
+    "corridor_width",
+    "room_area",
+    "clearance_ratio",
+    "goal_wall_distance",
+    "noise_level",
+    "near_wall",
+    "at_door",
+    "door_too_narrow",
+    "in_narrow_corridor",
+    "in_small_room",
+    "tight_clearance",
+    "in_corridor",
+    "goal_near_wall",
+    "goal_through_door",
+    "waypoint_in_tight_space",
+    "high_noise",
+    "min_door_narrow",
+    "min_obstacle_distance",
+    "obstacle_clearance_ratio",
+    "num_obstacles",
+    "total_obstacle_area",
+    "near_static_obstacle",
+    "tight_obstacle_clearance",
+    "has_static_obstacles"
+  ],
+  "static_feature_names": [
+    "min_wall_distance",
+    "min_door_distance",
+    "door_width",
+    "corridor_width",
+    "room_area",
+    "clearance_ratio",
+    "goal_wall_distance",
+    "noise_level",
+    "min_obstacle_distance",
+    "obstacle_clearance_ratio",
+    "num_obstacles",
+    "total_obstacle_area",
+    "near_wall",
+    "at_door",
+    "door_too_narrow",
+    "in_narrow_corridor",
+    "in_small_room",
+    "tight_clearance",
+    "in_corridor",
+    "goal_near_wall",
+    "goal_through_door",
+    "waypoint_in_tight_space",
+    "high_noise",
+    "min_door_narrow",
+    "near_static_obstacle",
+    "tight_obstacle_clearance",
+    "has_static_obstacles"
+  ]
+}

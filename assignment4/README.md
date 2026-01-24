@@ -19,6 +19,7 @@ A modular Python package for detecting and predicting anomalies in robot navigat
 - [Anomaly Types](#anomaly-types)
 - [Features](#features)
 - [Project Structure](#project-structure)
+- [Visualizations] (#Visualizations)
 
 ## Installation
 
@@ -40,13 +41,13 @@ pip install -r requirements.txt
 ### Verify Installation
 
 ```bash
-python3 -c "from anomaly_detection import AnomalyDetectionPipeline; print('Installation successful!')"
+python3 -c "from anomaly_detection_and_prediction import AnomalyDetectionPipeline; print('Installation successful!')"
 ```
 
 ## Quick Start
 
 ```python
-from anomaly_detection import AnomalyDetectionPipeline
+from anomaly_detection_and_prediction import AnomalyDetectionPipeline
 from pathlib import Path
 
 # Initialize the pipeline
@@ -110,7 +111,7 @@ The pipeline provides a CLI for all operations:
 Train the anomaly detection models on the dataset:
 
 ```bash
-python3 -m anomaly_detection train \
+python3 -m anomaly_detection_and_prediction train \
     --dataset ws25_aia_complete_data \
     --maps maps_details.json \
     --models models
@@ -128,7 +129,7 @@ Options:
 Predict potential anomalies from scenario description only:
 
 ```bash
-python3 -m anomaly_detection predict-scenario \
+python3 -m anomaly_detection_and_prediction predict-scenario \
     --scenario ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0/scenario.config \
     --env maps_details.json \
 ```
@@ -144,7 +145,7 @@ Options:
 Detect anomalies from actual run logs:
 
 ```bash
-python3 -m anomaly_detection predict-logs \
+python3 -m anomaly_detection_and_prediction predict-logs \
     --run ws25_aia_complete_data/small-dataset-maps-0-3-door-width-1f1-1/0 \
     --env maps_details.json 
 ```
@@ -157,11 +158,10 @@ Options:
 - `--output`: Output JSON file for predictions (optional)
 
 #### Visualization
-
-Generate all visualizations:
+visualizations representing available data (anomaly by category and runs per category) is generated when running the command for training. For generating all other visualizations:
 
 ```bash
-python3 -m anomaly_detection visualize \
+python3 -m anomaly_detection_and_prediction visualize \
     --dataset ws25_aia_complete_data \
     --maps maps_details.json \
     --output images
@@ -170,7 +170,7 @@ python3 -m anomaly_detection visualize \
 ### Python API
 
 ```python
-from anomaly_detection import AnomalyDetectionPipeline
+from anomaly_detection_and_prediction import AnomalyDetectionPipeline
 from pathlib import Path
 
 # Initialize pipeline
@@ -251,48 +251,11 @@ Prediction results are returned as JSON:
 }
 ```
 
-## Anomaly Types
-
-| Anomaly | Description |
-|---------|-------------|
-| `goal_failure` | Navigation failed to reach the goal |
-| `position_error_spike` | Localization error exceeded threshold |
-| `stuck` | Robot was stationary for extended period |
-| `high_amcl_uncertainty` | High localization uncertainty from AMCL |
-| `high_yaw_error` | Large orientation error |
-| `path_inefficiency` | Path was significantly longer than optimal |
-| `Isolation Forest` | ML-detected anomalous behavior |
-
-## Features
-
-The pipeline extracts 27 features for anomaly prediction:
-
-### Continuous Features (12)
-- `min_wall_distance`: Distance to closest wall
-- `min_door_distance`: Distance to closest door
-- `door_width`: Width of nearest door
-- `corridor_width`: Width of corridor
-- `room_area`: Area of current room
-- `clearance_ratio`: Wall clearance relative to robot size
-- `goal_wall_distance`: Goal distance to wall
-- `noise_level`: Laser noise standard deviation
-- `min_obstacle_distance`: Distance to closest static obstacle
-- `obstacle_clearance_ratio`: Obstacle clearance relative to robot size
-- `num_obstacles`: Number of static obstacles
-- `total_obstacle_area`: Total area of obstacles
-
-### Boolean Features (15)
-- `near_wall`, `at_door`, `door_too_narrow`
-- `in_narrow_corridor`, `in_small_room`, `tight_clearance`
-- `in_corridor`, `goal_near_wall`, `goal_through_door`
-- `waypoint_in_tight_space`, `high_noise`, `min_door_narrow`
-- `near_static_obstacle`, `tight_obstacle_clearance`, `has_static_obstacles`
-
 ## Project Structure
 
 ```
 assignment4/
-├── anomaly_detection/           # Main package
+├── anomaly_detection_and_prediction/           # Main package
 │   ├── __init__.py             # Package exports
 │   ├── main.py                 # CLI entry point
 │   ├── config.py               # Configuration constants

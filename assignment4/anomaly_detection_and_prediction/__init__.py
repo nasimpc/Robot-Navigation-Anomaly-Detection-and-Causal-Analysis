@@ -1,5 +1,5 @@
 """
-Anomaly Detection Pipeline for Robot Navigation
+Anomaly Detection and Prediction Pipeline for Robot Navigation
 
 A modular Python package for detecting and predicting anomalies in robot navigation scenarios.
 Supports two modes:

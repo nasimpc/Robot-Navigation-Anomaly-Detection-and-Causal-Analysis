@@ -1,5 +1,5 @@
 """
-Data loading module for the anomaly detection pipeline.
+Data loading module for the anomaly detection and prediction pipeline.
 Handles loading and parsing of all dataset files.
 """
 

@@ -1,5 +1,5 @@
 """
-Data preprocessing module for the anomaly detection pipeline.
+Data preprocessing module for the anomaly detection and prediction pipeline.
 Handles data synchronization and preprocessing of robot navigation data.
 """
 

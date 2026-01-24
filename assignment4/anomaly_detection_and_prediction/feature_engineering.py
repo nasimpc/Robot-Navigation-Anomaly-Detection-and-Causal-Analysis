@@ -1,5 +1,5 @@
 """
-Feature engineering module for the anomaly detection pipeline.
+Feature engineering module for the anomaly detection and prediction pipeline.
 Provides map geometry parsing, computable functions, atomic relations, and feature extraction.
 """
 
