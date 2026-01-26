@@ -466,20 +466,17 @@ To support generalization, the dataset should include:
 
 ### 7.3 Unique Insights
 
-#### 7.3.1 Technical Insights (Important)
+#### 7.3.1 Methodological and Technical Insights (Important)
 
 1. **Better quality rules with just scenario information**: In case of many anomalies it showed better predictive power and generalization (F1 score and other metrices) when just used scenario description, robot information, and environment JSON file for deriving FOL rules instead of also including more informative logs, CSV files.
 2. **Surrogate Distillation**: Ensemble models achieve higher accuracy, but surrogate trees provide 90%+ fidelity with full interpretability. Surrogate trees where enven simpler than simple decision trees yet showed better results (F1, confusion metrics)
 
-#### 7.3.2 Domain  and Methodological Insights
+#### 7.3.2 Domain  and Navigaion Insights
 
-1. **Narrow Door Width is Critical**: Doors < 1.8× robot footprint cause >60% of goal failures
-2. **Sensor Noise Cascades**: High noise (>0.05) correlates with both localization errors AND path inefficiency
-3. **Corridor Navigation is Challenging**: Narrow corridors (<3× footprint) are disproportionately associated with stuck states
-4. **Static Obstacles Compound Difficulty**: Scenarios with obstacles + narrow passages have 2× failure rate
-5. **Generalization Requires Feature Abstraction**: Relative features (clearance ratios) generalize better than absolute measurements numbers
-
-
+1. “Geometry dominates” (eg: obstacle clearance ratios, door distance/door width, wall distances) most failures.
+2. Corridors are a high-risk context for goal failure (log-based).
+3. Narrow/near-door situations are a recurring hazard zone across multiple failure modes.
+4. Be cautious with “perfect” confidence and perfomance (F1) on tiny supports
 
 ---
 
