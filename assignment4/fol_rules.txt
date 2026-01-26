@@ -1,0 +1,109 @@
+======================================================================
+TOP 3 FOL RULES FROM TRAINED MODELS
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO-BASED MODELS (Static Features Only)
+----------------------------------------------------------------------
+
+[goal_failure]
+  Rule 1: ∀t : clearance_ratio(t) > 5.909 ∧ tight_obstacle_clearance(t) ⇒ goal_failure
+          Confidence: 1.000, Support: 6 samples
+  Rule 2: ∀t : clearance_ratio(t) <= 5.909 ∧ room_area(t) > 12.042 ∧ ¬goal_near_wall(t) ∧ min_door_distance(t) > 0.655 ⇒ goal_failure
+          Confidence: 0.912, Support: 66 samples
+  Rule 3: ∀t : clearance_ratio(t) <= 5.909 ∧ room_area(t) <= 12.042 ∧ goal_wall_distance(t) > 1.215 ∧ ¬high_noise(t) ⇒ goal_failure
+          Confidence: 0.862, Support: 21 samples
+
+[position_error_spike]
+  Rule 1: ∀t : ¬goal_through_door(t) ∧ ¬high_noise(t) ∧ waypoint_in_tight_space(t) ∧ ¬in_small_room(t) ⇒ position_error_spike
+          Confidence: 0.986, Support: 12 samples
+  Rule 2: ∀t : ¬goal_through_door(t) ∧ ¬high_noise(t) ∧ waypoint_in_tight_space(t) ∧ in_small_room(t) ⇒ position_error_spike
+          Confidence: 0.889, Support: 12 samples
+
+[stuck]
+  Rule 1: ∀t : ¬in_small_room(t) ∧ ¬waypoint_in_tight_space(t) ∧ min_door_distance(t) <= 0.655 ∧ corridor_width(t) > 1.665 ⇒ stuck
+          Confidence: 1.000, Support: 18 samples
+  Rule 2: ∀t : ¬in_small_room(t) ∧ ¬waypoint_in_tight_space(t) ∧ min_door_distance(t) > 0.655 ∧ goal_wall_distance(t) > 1.521 ⇒ stuck
+          Confidence: 1.000, Support: 9 samples
+  Rule 3: ∀t : in_small_room(t) ∧ clearance_ratio(t) <= 1.500 ∧ ¬goal_through_door(t) ∧ goal_through_door(t) ⇒ stuck
+          Confidence: 1.000, Support: 6 samples
+
+[high_amcl_uncertainty]
+  Rule 1: ∀t : min_wall_distance(t) > 0.708 ∧ goal_wall_distance(t) > 0.815 ∧ waypoint_in_tight_space(t) ⇒ high_amcl_uncertainty
+          Confidence: 1.000, Support: 15 samples
+  Rule 2: ∀t : min_wall_distance(t) <= 0.708 ∧ waypoint_in_tight_space(t) ∧ ¬goal_through_door(t) ∧ ¬min_door_narrow(t) ⇒ high_amcl_uncertainty
+          Confidence: 0.958, Support: 9 samples
+  Rule 3: ∀t : min_wall_distance(t) > 0.708 ∧ goal_wall_distance(t) > 0.815 ∧ ¬waypoint_in_tight_space(t) ⇒ high_amcl_uncertainty
+          Confidence: 0.920, Support: 6 samples
+
+[high_yaw_error]
+  Rule 1: ∀t : ¬goal_through_door(t) ∧ ¬high_noise(t) ∧ goal_through_door(t) ∧ clearance_ratio(t) > 3.955 ⇒ high_yaw_error
+          Confidence: 1.000, Support: 6 samples
+  Rule 2: ∀t : ¬goal_through_door(t) ∧ ¬high_noise(t) ∧ goal_through_door(t) ∧ clearance_ratio(t) <= 3.955 ⇒ high_yaw_error
+          Confidence: 0.915, Support: 12 samples
+
+[path_inefficiency]
+  Rule 1: ∀t : goal_wall_distance(t) <= 0.416 ∧ ¬goal_through_door(t) ∧ ¬min_door_narrow(t) ⇒ path_inefficiency
+          Confidence: 0.990, Support: 9 samples
+
+[Isolation Forest]
+  Rule 1: ∀t : min_wall_distance(t) > 0.708 ∧ goal_wall_distance(t) > 0.290 ∧ ¬high_noise(t) ∧ noise_level(t) <= 0.010 ⇒ Isolation Forest
+          Confidence: 0.980, Support: 27 samples
+  Rule 2: ∀t : min_wall_distance(t) <= 0.708 ∧ waypoint_in_tight_space(t) ∧ ¬high_noise(t) ∧ ¬goal_through_door(t) ⇒ Isolation Forest
+          Confidence: 0.902, Support: 15 samples
+  Rule 3: ∀t : min_wall_distance(t) > 0.708 ∧ goal_wall_distance(t) > 0.290 ∧ ¬high_noise(t) ∧ noise_level(t) > 0.010 ⇒ Isolation Forest
+          Confidence: 0.860, Support: 12 samples
+
+----------------------------------------------------------------------
+LOG-BASED MODELS (All Features)
+----------------------------------------------------------------------
+
+[goal_failure]
+  Rule 1: ∀t : in_corridor(t) ∧ min_wall_distance(t) > 0.737 ∧ obstacle_clearance_ratio(t) <= 17.970 ⇒ goal_failure
+          Confidence: 1.000, Support: 51 samples
+  Rule 2: ∀t : ¬in_corridor(t) ∧ min_door_distance(t) <= 3.350 ∧ noise_level(t) > 0.030 ∧ ¬min_door_narrow(t) ⇒ goal_failure
+          Confidence: 1.000, Support: 14 samples
+  Rule 3: ∀t : in_corridor(t) ∧ min_wall_distance(t) > 0.737 ∧ obstacle_clearance_ratio(t) > 17.970 ∧ min_obstacle_distance(t) > 2.142 ⇒ goal_failure
+          Confidence: 1.000, Support: 10 samples
+
+[position_error_spike]
+  Rule 1: ∀t : has_static_obstacles(t) ∧ total_obstacle_area(t) <= 0.875 ∧ room_area(t) > 12.127 ∧ goal_wall_distance(t) > 0.245 ⇒ position_error_spike
+          Confidence: 0.869, Support: 58 samples
+
+[stuck]
+  Rule 1: ∀t : min_door_distance(t) > 1.792 ∧ noise_level(t) <= 0.015 ∧ min_door_distance(t) > 2.104 ∧ room_area(t) <= 25.130 ⇒ stuck
+          Confidence: 1.000, Support: 20 samples
+  Rule 2: ∀t : min_door_distance(t) > 1.792 ∧ noise_level(t) <= 0.015 ∧ min_door_distance(t) > 2.104 ∧ room_area(t) > 25.130 ⇒ stuck
+          Confidence: 0.858, Support: 9 samples
+  Rule 3: ∀t : min_door_distance(t) <= 1.792 ∧ min_door_distance(t) > 1.320 ∧ clearance_ratio(t) <= 3.645 ∧ goal_wall_distance(t) > 0.835 ⇒ stuck
+          Confidence: 0.776, Support: 6 samples
+
+[high_amcl_uncertainty]
+  Rule 1: ∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) > 0.935 ⇒ high_amcl_uncertainty
+          Confidence: 1.000, Support: 12 samples
+  Rule 2: ∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) <= 0.935 ⇒ high_amcl_uncertainty
+          Confidence: 0.984, Support: 6 samples
+  Rule 3: ∀t : obstacle_clearance_ratio(t) <= 31.314 ∧ clearance_ratio(t) > 5.874 ∧ total_obstacle_area(t) <= 0.625 ∧ min_obstacle_distance(t) <= 0.802 ⇒ high_amcl_uncertainty
+          Confidence: 0.900, Support: 7 samples
+
+[high_yaw_error]
+  Rule 1: ∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ num_obstacles(t) <= 2.500 ∧ room_area(t) > 21.562 ⇒ high_yaw_error
+          Confidence: 1.000, Support: 8 samples
+  Rule 2: ∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ num_obstacles(t) <= 2.500 ∧ room_area(t) <= 21.562 ⇒ high_yaw_error
+          Confidence: 0.960, Support: 6 samples
+  Rule 3: ∀t : obstacle_clearance_ratio(t) > 8.833 ∧ goal_wall_distance(t) > 1.760 ⇒ high_yaw_error
+          Confidence: 0.727, Support: 10 samples
+
+[path_inefficiency]
+  Rule 1: ∀t : obstacle_clearance_ratio(t) <= 8.833 ∧ clearance_ratio(t) > 6.812 ∧ min_door_distance(t) <= 1.349 ⇒ path_inefficiency
+          Confidence: 0.993, Support: 10 samples
+
+[Isolation Forest]
+  Rule 1: ∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) > 0.935 ⇒ Isolation Forest
+          Confidence: 1.000, Support: 12 samples
+  Rule 2: ∀t : obstacle_clearance_ratio(t) > 31.314 ∧ total_obstacle_area(t) <= 0.875 ∧ door_width(t) <= 0.935 ⇒ Isolation Forest
+          Confidence: 0.966, Support: 6 samples
+  Rule 3: ∀t : obstacle_clearance_ratio(t) <= 31.314 ∧ noise_level(t) <= 0.005 ∧ total_obstacle_area(t) <= 0.625 ∧ ¬goal_near_wall(t) ⇒ Isolation Forest
+          Confidence: 0.813, Support: 53 samples
+
+======================================================================

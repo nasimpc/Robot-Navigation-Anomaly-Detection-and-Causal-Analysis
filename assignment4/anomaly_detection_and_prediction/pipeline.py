@@ -257,6 +257,9 @@ class AnomalyDetectionPipeline:
         # Save models
         self._save_models()
         
+        # Extract and save top 3 FOL rules from both model types
+        top_rules = self._extract_and_save_top_fol_rules(verbose=verbose)
+        
         if verbose:
             print("\n" + "=" * 60)
             print("TRAINING COMPLETE")
@@ -315,6 +318,101 @@ class AnomalyDetectionPipeline:
                 'static_feature_names': STATIC_FEATURE_NAMES
             }), f, indent=2)
     
+    def _extract_and_save_top_fol_rules(self, verbose: bool = True) -> Dict:
+        """Extract top 3 FOL rules from both scenario-based and log-based models.
+        
+        Args:
+            verbose: Print rules to terminal
+            
+        Returns:
+            Dictionary containing top rules for each model type
+        """
+        top_rules = {
+            'scenario_based': {},
+            'log_based': {}
+        }
+        
+        rules_output = []
+        rules_output.append("=" * 70)
+        rules_output.append("TOP 3 FOL RULES FROM TRAINED MODELS")
+        rules_output.append("=" * 70)
+        
+        # Extract from SCENARIO-BASED models
+        rules_output.append("\n" + "-" * 70)
+        rules_output.append("SCENARIO-BASED MODELS (Static Features Only)")
+        rules_output.append("-" * 70)
+        
+        if self.scenario_surrogate:
+            for anom, surrogate in self.scenario_surrogate.items():
+                if surrogate.rules:
+                    rules_output.append(f"\n[{anom}]")
+                    top_3_rules = surrogate.rules[:3]  # Get top 3
+                    top_rules['scenario_based'][anom] = []
+                    
+                    for i, rule in enumerate(top_3_rules, 1):
+                        fol = surrogate.format_fol(rule, anom)
+                        confidence = rule.get('confidence', rule.get('probability', 0))
+                        support = rule.get('support', 0)
+                        
+                        rule_entry = {
+                            'fol': fol,
+                            'confidence': float(confidence),
+                            'support': int(support)
+                        }
+                        top_rules['scenario_based'][anom].append(rule_entry)
+                        
+                        rules_output.append(f"  Rule {i}: {fol}")
+                        rules_output.append(f"          Confidence: {confidence:.3f}, Support: {support} samples")
+        else:
+            rules_output.append("  No scenario-based models trained.")
+        
+        # Extract from LOG-BASED models
+        rules_output.append("\n" + "-" * 70)
+        rules_output.append("LOG-BASED MODELS (All Features)")
+        rules_output.append("-" * 70)
+        
+        if self.log_surrogate:
+            for anom, surrogate in self.log_surrogate.items():
+                if surrogate.rules:
+                    rules_output.append(f"\n[{anom}]")
+                    top_3_rules = surrogate.rules[:3]  # Get top 3
+                    top_rules['log_based'][anom] = []
+                    
+                    for i, rule in enumerate(top_3_rules, 1):
+                        fol = surrogate.format_fol(rule, anom)
+                        confidence = rule.get('confidence', rule.get('probability', 0))
+                        support = rule.get('support', 0)
+                        
+                        rule_entry = {
+                            'fol': fol,
+                            'confidence': float(confidence),
+                            'support': int(support)
+                        }
+                        top_rules['log_based'][anom].append(rule_entry)
+                        
+                        rules_output.append(f"  Rule {i}: {fol}")
+                        rules_output.append(f"          Confidence: {confidence:.3f}, Support: {support} samples")
+        else:
+            rules_output.append("  No log-based models trained.")
+        
+        rules_output.append("\n" + "=" * 70)
+        
+        # Print to terminal
+        if verbose:
+            print("\n")
+            for line in rules_output:
+                print(line)
+        
+        # Save to file
+        rules_file = self.models_path.parent / 'fol_rules.txt'
+        with open(rules_file, 'w') as f:
+            f.write('\n'.join(rules_output))
+        
+        if verbose:
+            print(f"\nFOL rules saved to: {rules_file}")
+        
+        return top_rules
+
     def _load_models(self) -> bool:
         """Load trained models from disk."""
         metadata_path = self.models_path / 'metadata.json'
