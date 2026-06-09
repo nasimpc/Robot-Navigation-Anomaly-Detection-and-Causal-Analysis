@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<testsuite errors="0" failures="0" name="scenario_execution" tests="1" time="83.312421">
-  <testcase classname="tests.scenario" name="nav_scenario" time="83.312421">
-  </testcase>
-</testsuite>

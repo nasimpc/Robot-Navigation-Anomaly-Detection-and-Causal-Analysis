@@ -1,3 +1,0 @@
-[INFO] [1758715672.306723262] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/default/model/static_camera/link/link/sensor/camera/image (gz.msgs.Image) -> /world/default/model/static_camera/link/link/sensor/camera/image (sensor_msgs/msg/Image)] (Lazy 0)
-[INFO] [1758715672.310421262] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/default/model/static_camera/link/link/sensor/camera/camera_info (gz.msgs.CameraInfo) -> /world/default/model/static_camera/link/link/sensor/camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
-[INFO] [1758715733.500878256] [rclcpp]: signal_handler(signum=2)

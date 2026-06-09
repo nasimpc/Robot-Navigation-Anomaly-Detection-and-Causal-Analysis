@@ -1,6 +1,6 @@
 # Anomaly Detection Pipeline for Robot Navigation
 
-A modular Python package for detecting and predicting anomalies in robot navigation scenarios. This pipeline supports two prediction modes:
+A modular Python package for detecting and predicting anomalies as FOL rules in robot navigation scenarios. This pipeline supports two prediction modes:
 
 1. **Scenario-based prediction**: Predict potential anomalies from scenario description, robot information, and environment configuration (without runtime logs)
 2. **Log-based prediction**: Detect and reason about anomalies using actual run logs, CSV files, and scenario configuration
